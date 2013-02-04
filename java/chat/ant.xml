@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="galaxy2_chat" default="dist" basedir=".">
+
+	<!-- set global properties for this build -->
+	<property name="src" value="src" />
+	<property name="build" value="build" />
+	<property name="dist" value="WebRoot/WEB-INF/classes" />
+	<property name="xmldist" value="D:\Program Files\apache-tomcat-7.0.0\conf\Catalina\localhost" />
+	<property name="xmlsrc" value="D:\Program Files\apache-tomcat-7.0.0\conf\Catalina" />
+
+	<target name="copyxml">
+		<delete dir="${xmldist}" includes="saol150_chat*.xml">
+		</delete>
+		<copy tofile="${xmldist}\saol150_chat.xml">
+			<fileset dir="${xmlsrc}" includes="saol150_chat_test.xml">
+			</fileset>
+		</copy>
+	</target>
+	<target name="dist">
+		<copy todir="${dist}">
+			<fileset dir="${build}">
+				<exclude name="**/.svn/**" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="clean">
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${dist}" />
+	</target>
+
+</project>

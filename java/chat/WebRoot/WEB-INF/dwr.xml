@@ -1,0 +1,19 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN"
+    "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+
+<dwr>
+    <allow>
+ 		<convert converter="bean" match="java.lang.StackTraceElement"/>
+		<convert match="java.lang.Exception" converter="exception"/>
+		<convert converter="bean" match="noumena.game.saolchat.dwr.dwrvo.*"/>
+		<convert converter="bean" match="org.directwebremoting.DwrShellVO"/>
+		<create creator="none" javascript="DwrChat">
+			<param name="class" value="noumena.game.saolchat.dwr.DwrChat"/>
+           	<include method="startChat"/>
+           	<include method="getChat"/>
+           	<include method="sendChat"/>
+           	<include method="getAdminChat"/>
+		</create>
+	</allow>
+</dwr>

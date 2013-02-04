@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <context-param>
+    <param-name>webAppRootKey</param-name>
+    <param-value>SAOL150.root</param-value>
+  </context-param>
+  <listener>
+    <listener-class>noumena.game.saolchat.listener.ContextListenerServlet</listener-class>
+  </listener>
+  <listener>
+    <listener-class>noumena.game.saolchat.listener.SessionListenerServlet</listener-class>
+  </listener>
+  <session-config>
+    <session-timeout>15</session-timeout>
+  </session-config>
+  <servlet>
+    <description>SAOL Direct Web Remoter Servlet</description>
+    <display-name>DWR Servlet</display-name>
+    <servlet-name>dwr-invoker</servlet-name>
+    <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>allowScriptTagRemoting</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>classes</param-name>
+      <param-value>java.lang.Object</param-value>
+    </init-param>
+    <init-param>
+      <param-name>crossDomainSessionSecurity</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dwr-invoker</servlet-name>
+    <url-pattern>/dwr/*</url-pattern>
+  </servlet-mapping>
+</web-app>
+
