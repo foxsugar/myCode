@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #Boa:App:BoaApp
+#-*- coding: utf-8 -*-
 
 import wx
 
