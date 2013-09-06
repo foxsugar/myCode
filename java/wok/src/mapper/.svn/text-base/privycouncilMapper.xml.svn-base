@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crystalcg.gamedev.buildingFunction.mapper.PrivycouncilMapper">
+	<resultMap type="com.crystalcg.gamedev.buildingFunction.domain.AffairQueue" id="affairQueue">
+		<id property="id" column="id"/>
+		<result property="characterId" column="character_id"/>
+		<result property="userHeroId" column="user_hero_id"/>
+		<result property="affairNo" column="affair_no"/>
+		<result property="startTime" column="start_time"/>
+		<result property="lastTime" column="last_time"/>
+	</resultMap>
+	<insert id="insertAffairQueue" parameterType="com.crystalcg.gamedev.buildingFunction.domain.AffairQueue">
+		INSERT INTO
+		USER_AFFAIR_QUEUE(character_id,user_hero_id,affair_no,start_time,last_time)
+		VALUES(#{characterId},#{userHeroId},#{affairNo},#{startTime},#{lastTime})
+	</insert>
+	<delete id="deleteAffairQueue" parameterType="java.util.Map">
+		DELETE FROM USER_AFFAIR_QUEUE
+		WHERE character_id = #{characterId} AND user_hero_id = #{userHeroId}
+	</delete>
+	<select id="getAffairQueue" parameterType="java.util.Map" resultMap="affairQueue">
+		SELECT * FROM USER_AFFAIR_QUEUE
+		WHERE character_id = #{characterId} AND user_hero_id = #{userHeroId}
+	</select>
+	<select id="getAllAffairQueue" parameterType="int" resultMap="affairQueue">
+		SELECT * FROM USER_AFFAIR_QUEUE
+		WHERE character_id = #{characterId}
+	</select>
+</mapper>

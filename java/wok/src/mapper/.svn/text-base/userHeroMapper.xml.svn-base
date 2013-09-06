@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crystalcg.gamedev.hero.mapper.UserHeroMapper">
+	<resultMap type="com.crystalcg.gamedev.hero.domain.UserHero" id="userHero">
+		<id property="id" column="id" />
+		<result property="characterId" column="character_id" />
+		<result property="heroName" column="hero_name" />
+		<result property="heroType" column="hero_type" />
+		<result property="gender" column="gender" />
+		<result property="heroIcon" column="hero_icon" />
+		<result property="smallHeroIcon" column="small_hero_icon" />
+		<result property="level" column="level" />
+		<result property="heroForce" column="hero_force" />
+		<result property="strategy" column="strategy" />
+		<result property="physique" column="physique" />
+		<result property="agility" column="agility" />
+		<result property="primaryForce" column="primary_force" />
+		<result property="primaryStrategy" column="primary_strategy" />
+		<result property="primaryPhysique" column="primary_physique" />
+		<result property="primaryAgility" column="primary_agility" />
+		<result property="exp" column="exp" />
+		<result property="gift" column="gift" />
+		<result property="stamina" column="stamina" />
+		<result property="mp" column="mp" />
+		<result property="heroTitle" column="hero_title" />
+		<result property="heroStatus" column="hero_status" />
+		<result property="soldierNo" column="soldier_no" />
+		<result property="soldierAmount" column="soldier_amount" />
+		<result property="heroSoulId" column="hero_soul_id" />
+		<result property="heroSoulGrade" column="hero_soul_grade" />
+		<result property="heroSoulExp" column="hero_soul_exp" />
+		<result property="rankNo" column="rank_no" />
+		<result property="exploit" column="exploit" />
+		<result property="isinWall" column="isin_wall" />
+		<result property="heroAction" column="hero_action" />
+		<result property="point" column="point" />
+		<result property="forcePoint" column="force_point" />
+		<result property="strategyPoint" column="strategy_point" />
+		<result property="physiquePoint" column="physique_point" />
+		<result property="agilityPoint" column="agility_point" />
+	</resultMap>
+   
+	<insert id="insertUserHero" parameterType="com.crystalcg.gamedev.hero.domain.UserHero">
+		INSERT INTO USER_HERO(
+			character_id,
+			hero_name,
+			hero_type,
+			gender,
+			hero_icon,
+			small_hero_icon,
+			hero_force,
+			strategy,
+			physique,
+			agility,
+			primary_force,
+			primary_strategy,
+			primary_physique,
+			primary_agility,
+			gift,
+			hero_action,
+			stamina,
+			mp
+		) VALUES(
+			#{characterId},
+			#{heroName},
+			#{heroType},
+			#{gender},
+			#{heroIcon},
+			#{smallHeroIcon},
+			#{heroForce},
+			#{strategy},
+			#{physique},
+			#{agility},
+			#{primaryForce},
+			#{primaryStrategy},
+			#{primaryPhysique},
+			#{primaryAgility},
+			#{gift},
+			#{heroAction},
+			#{staminaMax},
+			#{mpMax}
+		)
+	</insert>
+	<select id="getUserHero" parameterType="java.util.Map" resultMap="userHero">
+		SELECT * FROM USER_HERO WHERE id=#{id} and character_id=#{characterId};
+	</select>
+	<select id="getAllUserHero" parameterType="int" resultMap="userHero">
+		SELECT * FROM USER_HERO WHERE character_id=#{value} order by level desc,gift desc;
+	</select>
+	<select id="getUserHeroName" parameterType="int" resultType="java.util.Map">
+		SELECT id value,hero_name name FROM USER_HERO WHERE character_id=#{value} order by level desc,gift desc;
+	</select>
+	<update id="updateHeroStatus" parameterType="java.util.Map">
+		UPDATE USER_HERO 
+		SET hero_status=#{heroStatus} 
+		WHERE character_id=#{characterId} AND id=#{id}
+	</update>
+	<select id="getAllUserHeroByRankNo" parameterType="java.util.Map" resultMap="userHero">
+		SELECT * FROM USER_HERO WHERE character_id=#{characterId} and rank_no=#{rankNo} order by level desc,gift desc;
+	</select>
+	<update id="updateHeroRank" parameterType="java.util.Map">
+		UPDATE USER_HERO 
+		SET rank_no=#{rankNo} 
+		WHERE character_id=#{characterId} AND id=#{id}
+	</update>
+	<update id="updateHeroStaminaMp" parameterType="com.crystalcg.gamedev.hero.domain.UserHero">
+		UPDATE USER_HERO 
+		SET stamina=#{stamina},mp=#{mp}
+		WHERE character_id=#{characterId} AND id=#{id}
+	</update>
+	<update id="modifyHeroName" parameterType="java.util.Map">
+		UPDATE USER_HERO 
+		SET hero_name=#{name}
+		WHERE character_id=#{characterId} AND id=#{id}
+	</update>
+	<update id="levelup" parameterType="com.crystalcg.gamedev.hero.domain.UserHero">
+		UPDATE USER_HERO 
+		SET
+		exp=#{exp},
+		level=#{level},
+		hero_force=#{heroForce},
+		strategy=#{strategy},
+		physique=#{physique},
+		agility=#{agility},
+		point=#{point}
+		WHERE character_id=#{characterId} AND id=#{id}
+	</update>
+	<update id="addGift" parameterType="java.util.Map">
+		UPDATE USER_HERO 
+		SET
+		gift=#{gift}
+		WHERE character_id=#{characterId} AND id=#{id}
+	</update>
+	<update id="distributePoint" parameterType="com.crystalcg.gamedev.hero.domain.UserHero">
+		UPDATE USER_HERO
+		SET
+		force_point=#{forcePoint},
+		strategy_point=#{strategyPoint},
+		physique_point=#{physiquePoint},
+		agility_point=#{agilityPoint},
+		point=#{point}
+		WHERE character_id=#{characterId} AND id=#{id}
+	</update>
+	<update id="updateExp" parameterType="java.util.Map">
+		UPDATE USER_HERO
+		SET
+		exp=#{exp}
+		WHERE character_id=#{characterId} AND id=#{id}
+	</update>
+	<delete id="deleteHero" parameterType="java.util.Map">
+		DELETE FROM USER_HERO
+		WHERE character_id=#{characterId} AND id=#{id}
+	</delete>
+	<select id="getUserHeroForBattle" parameterType="java.util.Map" resultMap="userHero">
+		SELECT *
+		 FROM USER_HERO hero WHERE character_id=#{characterId} order by level desc,gift desc limit #{page},#{pageSize}
+	</select>
+	<select id="getUserHeroWithOutBattle" parameterType="int" resultMap="userHero">
+		SELECT *
+		 FROM USER_HERO hero WHERE character_id=#{value} and hero_status != 1 order by level desc,gift desc <!-- 0空闲，1出征，2修炼 -->
+	</select>
+	<select id="getUserHeroAmount" parameterType="int" resultType="int">
+		SELECT count(*)
+		 FROM USER_HERO hero WHERE character_id=#{characterId}
+	</select>
+	<!-- 武将技能 -->
+	<update id="updateHeroSkill" parameterType="java.util.Map">
+		UPDATE rel_hero_skill
+		SET
+		hero_skill_no=#{next}
+		WHERE character_id=#{characterId} AND user_hero_id=#{heroId} and hero_skill_no=#{skillNo}
+	</update>
+	<update id="deleteHeroSkill" parameterType="java.util.Map">
+		delete FROM REL_HERO_SKILL
+		WHERE character_id=#{characterId} AND user_hero_id=#{heroId} and hero_skill_no=#{skillNo}
+	</update>
+	<select id="getSoldierSum" resultType="int">
+		SELECT sum(soldier_amount) FROM USER_HERO
+		WHERE character_id=#{value}
+	</select>
+	<update id="updateUserHeroSoldier" parameterType="com.crystalcg.gamedev.hero.domain.UserHero">
+		UPDATE USER_HERO
+		SET
+		soldier_no=#{soldierNo},
+		soldier_amount = #{soldierAmount}
+		WHERE character_id=#{characterId} AND id=#{id}
+	</update>
+	<update id="updateUserHeroExploit" parameterType="com.crystalcg.gamedev.hero.domain.UserHero">
+		UPDATE USER_HERO
+		SET
+		exploit=#{exploit}
+		WHERE character_id=#{characterId} AND id=#{id}
+	</update>
+	<select id="getAllHero" resultMap="userHero">
+		SELECT * FROM USER_HERO 
+	</select>
+</mapper>

@@ -1,0 +1,226 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<style>BODY { -moz-user-select:none;-webkit-user-select:none}</style>
+<script>
+			var url_exit = "";
+</script>
+
+		<!--sever-->
+        <script type="text/javascript" src="js/server/user.js?v=1"></script>
+		<script type="text/javascript" src="js/server/building.js?v=1"></script>
+        <script type="text/javascript" src="js/server/buildingFunction.js?v=1"></script> 
+        <script type="text/javascript" src="js/server/quest.js?v=1"></script>
+         <!-- client -->
+        <script type="text/javascript" src="js/client/jquery.js?v=1"></script>  
+		<script type="text/javascript" src="js/client/cometd.js?v=1"></script> 
+        <script type="text/javascript" src="js/client/jquery.cometd.js?v=1"></script>
+		<script type="text/javascript" src="js/client/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="js/client/engine.js?v=1"></script>
+		<script type="text/javascript" src="js/client/battlefieldCtrl.js?v=1"></script>
+		<script type="text/javascript" src="js/client/AnimMgr.js?v=1"></script>
+		<script type="text/javascript" src="js/client/list.js?v=1"></script>
+		<script type="text/javascript" src="js/client/static.js?v=1"></script>
+		<script type="text/javascript" src="js/client/tooltip.js?v=1"></script>
+		<script type="text/javascript" src="js/client/chat.js?v=1"></script> 
+		<script type="text/javascript" src="js/client/build.js?v=1"></script>
+		<script type="text/javascript" src="js/client/userComet.js?v=1"></script> 
+		<script type="text/javascript" src="js/client/shoot.js?v=1"></script> 
+        <script type="text/javascript" src="js/client/Touch.js?v=1"></script> 
+		<script type="text/javascript" src="js/client/LoadingImage.js?v=1"></script>
+		<script type="text/javascript" src="js/client/loadScript.js?v=1"></script>
+		<script type="text/javascript" src="js/client/Load_Image.js?v=1"></script>	
+		<script type="text/javascript" src="js/client/loadImage/mainInterface.js?v=1"></script>
+        <script type="text/javascript" src="js/client/loadImage/universal.js?v=1"></script>
+        <script type="text/javascript" src="js/client/font.js?v=1"></script>
+		 
+		
+		<link href="js/client/jquery.mCustomScrollbar.css" rel="stylesheet" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta http-equiv="Pragma" content="no-cache" /> 
+		<meta http-equiv="Expires" content="-1" /> 
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		
+		<script>
+			var isIPhone = false;
+			var ua = navigator.userAgent.toLowerCase();
+			if(ua.indexOf('iphone') > 0)
+			{
+				isIPhone = true;
+				document.write('<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5" />');
+			} else
+			{
+				document.write('<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />');
+			}
+			function onlyForTestPage(){
+				window.open("item/test.jsp");
+			}
+			window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome 
+		</script>	
+	
+		<!-- for iphone ipod -->
+    	<link rel="apple-touch-icon" href="images/loading.png"/>
+    	<link rel="apple-touch-startup-image" href="images/menubg.png" />	
+    	<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+	</head>
+<!-- 	
+	<style type="text/css">
+		body 
+		{
+			font-size:12px;
+			border:none 0px;
+			margin:0px;
+			padding:0px;
+			qheight : 100%;
+			overflow : hidden;
+			height : 100%;
+			background-color : #000;
+			
+			qdisplay : -webkit-box;
+			q-webkit-box-align: center;
+			q-webkit-box-pack: center;
+			
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			-webkit-text-size-adjust: none; 
+			
+		} 	
+	</style> 
+	-->
+	<!--
+	<body onorientationchange="setTimeout(function(){window.scrollTo(0,1)},10);"
+		  onload="setTimeout(function() {window.scrollTo(0,1)},10);fixdiv()">	
+	 -->
+	<body style="cursor:url(images/animaatjes_world_of_warcraft_icon7.cur),default" unselectable="on">
+		<div style="text-align:center">
+		<div id="container" >
+		  <div id="box">
+		    <canvas id="canvas"></canvas>
+		  </div>
+		</div>
+	</div>
+		<div style="position:absolute; top:20px; left:600px;z-index: 40">
+			<button id="testPage" onclick="onlyForTestPage()">测试</button>
+		</div>
+		<div style="position:absolute; top:20px; left:700px;z-index: 40">
+			<button id="testPage" onclick="battlefield.enterBattlefield()">进入战场</button>
+		</div>
+		<div style="position:absolute; top:20px; left:800px;z-index: 40">
+			<button id="testPage" onclick="battlefield.exitBattlefield()">退出战场</button>
+		</div>
+		<script>
+			var cache = window.applicationCache;
+			setTimeout(checkCache, 100);
+			function checkCache()
+			{
+				
+				//console.log(cache.status);
+				if (cache.status == 4)	//更新完毕
+				{
+					console.log('swapCache');
+					cache.swapCache();
+					window.location.reload();
+				} else if (cache.status == 1 || cache.status == 0)//已开启
+				{
+					return;
+				} else
+				{
+					setTimeout(checkCache, 100);
+				}
+			}
+
+			window.scrollTo(0, 1);
+			/****
+				获得用户ID，用户名		 
+			****/
+
+			/****
+			判断浏览器类型		
+			****/
+			var Sys = {};
+			var ua = navigator.userAgent.toLowerCase();
+			function CheckBrower()
+			{
+				var s = '';
+				(s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] : (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1]
+						: (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] : (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] : (s = ua
+								.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+			}
+
+			var applewebkitversion;
+			var webkitversion = 999;
+			CheckBrower();
+			if (Sys.ie)
+			{
+			} else if (Sys.firefox)
+			{
+			} else if (Sys.chrome)
+			{
+			} else if (Sys.opera)
+			{
+			} else if (Sys.safari)
+			{
+				(applewebkitversion = ua.match(/applewebkit\/([\d.]+)/)) ? Sys.applewebkitversion = applewebkitversion[1] : 0;
+				Sys.applewebkitversion = Sys.applewebkitversion.substring(0, Sys.applewebkitversion.indexOf('.'));
+				webkitversion = parseInt(Sys.applewebkitversion);
+			}
+
+			/****
+				自适应屏幕高度，和触摸移动速度，解决android浏览器画图问题		
+			****/
+			var screenHeight = window.innerHeight;
+			if (screenHeight > 533)
+				screenHeight = 533;
+			var touchSpeed = 1;
+			var iphone = false;
+
+			if (ua.indexOf('iphone') > 0)
+			{
+				iphone = true;
+			}
+            startGame();
+			if (webkitversion < 533 && (ua.indexOf('htc') == -1))
+			{
+				var factor = 0.666;
+				drawImage = CanvasRenderingContext2D.prototype.drawImage;
+
+				CanvasRenderingContext2D.prototype.drawImage = function(image, sx, sy, sw, sh, dx, dy, dw, dh)
+				{
+					for ( var i = arguments.length - 1; i >= 1; i--)
+						arguments[i] = arguments[i] * factor;
+
+					drawImage.apply(this, arguments);
+				};
+			}
+			
+	</script>
+	<div class="chatDiv">
+                <div id="broadcast"><img src="images/Universal/zjm_ltk_10.png"></div>
+                <div id="channels">
+                    <div id="chanel_-1" class="_channel _all"></div>
+                    <div id="chanel_0" class="_channel _world"></div>
+                    <div id="chanel_1" class="_channel _country" ></div>
+                    <div id="chanel_2" class="_channel _alliance"></div>
+                    <div id="chanel_3" class="_channel _personal"></div>
+                </div>
+                <div id="content_1" class="content"></div>
+                <div id="inputs" >
+                    <div id="send_channel" class="_channel  nSelect  _world "></div>
+                    <div><input id="msg_content" type="text" /></div>
+                    <div id="send_msg" class="_channel _send" ></div>
+                    <div><img src="images/Universal/zjm_ltk_04.png"></div>
+                </div>
+        </div>
+	<div id="name_menu">
+		<div id="chakan" class="name_menuItem" align="center">查看</div>
+		<div id="siliao" class="name_menuItem" align="center">私聊</div>
+		<div id="fuzhi" class="name_menuItem" align="center">复制名字</div>
+		<div id="tianjia" class="name_menuItem" style="border-bottom: none" align="center">添加好友</div>
+	</div>
+</body>
+
+</html>

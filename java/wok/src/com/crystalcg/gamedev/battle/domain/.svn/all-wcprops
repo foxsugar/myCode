@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/develop/!svn/ver/7597/wok/src/com/crystalcg/gamedev/battle/domain
+END
+BattleJobQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/develop/!svn/ver/7597/wok/src/com/crystalcg/gamedev/battle/domain/BattleJobQueue.java
+END
+CollectionJobQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/7440/wok/src/com/crystalcg/gamedev/battle/domain/CollectionJobQueue.java
+END

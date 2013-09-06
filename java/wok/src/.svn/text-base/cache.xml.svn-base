@@ -1,0 +1,125 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+     
+	<bean id="characterCache" class="com.crystalcg.gamedev.util.cache.CharacterCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="equipmentCache" class="com.crystalcg.gamedev.util.cache.EquipmentCache">
+	<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="itemCache" class="com.crystalcg.gamedev.util.cache.ItemCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="materialCache" class="com.crystalcg.gamedev.util.cache.MaterialCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="questsCache" class="com.crystalcg.gamedev.util.cache.QuestsCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="questCache" class="com.crystalcg.gamedev.util.cache.QuestCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="cityCache" class="com.crystalcg.gamedev.util.cache.CityCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="buildingCache" class="com.crystalcg.gamedev.util.cache.BuildingCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="countryCache" class="com.crystalcg.gamedev.util.cache.CountryCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="tavernCache" class="com.crystalcg.gamedev.util.cache.TavernCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="heroLevelCache" class="com.crystalcg.gamedev.util.cache.HeroLevelCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="heroSkillCache" class="com.crystalcg.gamedev.util.cache.HeroSkillCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="strengthenEquipmentCache" class="com.crystalcg.gamedev.util.cache.StrengthenEquipmentCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="affairBonusCache" class="com.crystalcg.gamedev.util.cache.AffairBonusCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="centrestageCache" class="com.crystalcg.gamedev.util.cache.CentrestageCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="producePlanCache" class="com.crystalcg.gamedev.util.cache.ProducePlanCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="enemyNPCCache" class="com.crystalcg.gamedev.util.cache.EnemyNPCCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="battleRewardCache" class="com.crystalcg.gamedev.util.cache.BattleRewardCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="soldierCache" class="com.crystalcg.gamedev.util.cache.SoldierCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="interiorTechCache" class="com.crystalcg.gamedev.util.cache.InteriorTechCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="soldierTechCache" class="com.crystalcg.gamedev.util.cache.SoldierTechCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="formationCache" class="com.crystalcg.gamedev.util.cache.FormationCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="imageResourceCache" class="com.crystalcg.gamedev.util.cache.ImageResourceCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<!-- 
+	<bean id="FormationTechCache" class="com.crystalcg.gamedev.util.cache.FormationTechCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	 -->
+
+	<bean id="SoldierSkillCache" class="com.crystalcg.gamedev.util.cache.SoldierSkillCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="defenceworksCache" class="com.crystalcg.gamedev.util.cache.DefenceworksCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="worldResourceCache" class="com.crystalcg.gamedev.util.cache.WorldResourceCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="worldCityCache" class="com.crystalcg.gamedev.util.cache.WorldCityCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="allianceBuildingCache" class="com.crystalcg.gamedev.util.cache.AllianceBuildingCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="allianceGradeCache" class="com.crystalcg.gamedev.util.cache.AllianceGradeCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="alliancePositionCache" class="com.crystalcg.gamedev.util.cache.AlliancePositionCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="alliancePrivilegeCache" class="com.crystalcg.gamedev.util.cache.AlliancePrivilegeCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="allianceSalarygeCache" class="com.crystalcg.gamedev.util.cache.AllianceSalaryCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="allianceShopingCache" class="com.crystalcg.gamedev.util.cache.AllianceShopingCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="battleCache" class="com.crystalcg.gamedev.util.cache.BattleCache">
+		<constructor-arg ref="cacheMapper"/>
+	</bean>
+	<bean id="cacheMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+  		<property name="mapperInterface" value="com.crystalcg.gamedev.util.cache.CacheMapper" />
+  		<property name="sqlSessionFactory" ref="staticSqlSessionFactory" />
+	</bean>
+	<bean id="resetServer" class="com.crystalcg.gamedev.util.cache.ResetServer"/>
+</beans>

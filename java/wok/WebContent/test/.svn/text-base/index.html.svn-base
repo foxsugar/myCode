@@ -1,0 +1,54 @@
+<html>
+<head>
+<base href="/wok/">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/exchangeData.js"></script>
+<script type="text/javascript">
+	function _login(){
+		var userName = document.getElementById("userName").value;
+		var password = document.getElementById("password").value;
+		login(userName,password,doLogin);
+	}
+	function doLogin(data){
+		if(typeof(data.error) != "undefined"){
+			alert(data.error);
+		}else{
+			var command = data.command;
+			switch(command){
+				case "main":
+					alert(data.desc);
+					window.location="test/main.jsp";
+					break;
+				case "createCharactor":
+					alert(data.desc);
+					window.location="test/createCharacter.jsp";
+					break;
+				case "incorrectPassword":
+					alert(data.desc);
+					break;
+				case "createError":
+					alert(data.desc);
+					break;
+			}
+		}
+	}
+	document.onkeydown = function(e){
+		   if(!e) e = window.event;
+		   if((e.keyCode || e.which) == 13){
+		     _login();       
+		   }
+		} 
+	function setFocus(){
+		document.getElementById("userName").focus();
+	}
+	window.onload = setFocus;
+</script>
+</head>
+<body>
+username:<input id="userName" type="text" id="userName"/>
+<br />
+password:<input type="password" id="password">
+<br />
+<button type="button" onClick="_login()">µÇÂ¼</button>
+</body>
+</html>

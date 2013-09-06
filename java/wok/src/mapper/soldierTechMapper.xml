@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crystalcg.gamedev.tech.mapper.SoldierTechMapper">
+	<select id="getUserSoldierTech" resultType="string">
+		select tech_no from
+		user_soldier_tech where character_id=#{value}
+	</select>
+	<select id="getUserSoldierTechByPrefix" parameterType="java.util.Map" resultType="string">
+		select tech_no from
+		user_soldier_tech where character_id=#{characterId} and tech_no like #{prefix}"_%"
+	</select>
+	<insert id="insertTech" parameterType="java.util.Map">
+		insert into user_soldier_tech(character_id,tech_no)
+		values(#{characterId},#{techNo});
+	</insert>
+	<update id="updateTech" parameterType="java.util.Map">
+		update user_soldier_tech
+		set tech_no=#{newNo}
+		where character_id=#{characterId} and tech_no=#{oldNo}
+	</update>
+	<delete id="deleteTech" parameterType="java.util.Map">
+		delete from user_soldier_tech
+		where character_id=#{characterId} and tech_no=#{techNo}
+	</delete>
+</mapper>

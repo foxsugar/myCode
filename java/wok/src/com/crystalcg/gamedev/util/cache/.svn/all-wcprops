@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/develop/!svn/ver/9304/wok/src/com/crystalcg/gamedev/util/cache
+END
+DefenceworksCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/develop/!svn/ver/5263/wok/src/com/crystalcg/gamedev/util/cache/DefenceworksCache.java
+END
+BuildingCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/develop/!svn/ver/4939/wok/src/com/crystalcg/gamedev/util/cache/BuildingCache.java
+END
+AllianceShopingCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/6486/wok/src/com/crystalcg/gamedev/util/cache/AllianceShopingCache.java
+END
+RankingCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/develop/!svn/ver/8961/wok/src/com/crystalcg/gamedev/util/cache/RankingCache.java
+END
+HeroSkillCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/cache/HeroSkillCache.java
+END
+BattleCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/cache/BattleCache.java
+END
+SoldierTechCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/develop/!svn/ver/7398/wok/src/com/crystalcg/gamedev/util/cache/SoldierTechCache.java
+END
+EnemyNPCCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/develop/!svn/ver/8607/wok/src/com/crystalcg/gamedev/util/cache/EnemyNPCCache.java
+END
+AlliancePrivilegeCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/util/cache/AlliancePrivilegeCache.java
+END
+AlliancePositionCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/util/cache/AlliancePositionCache.java
+END
+WorldResourceCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/cache/WorldResourceCache.java
+END
+SoldierCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/cache/SoldierCache.java
+END
+CentrestageCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/develop/!svn/ver/7806/wok/src/com/crystalcg/gamedev/util/cache/CentrestageCache.java
+END
+StrengthenEquipmentCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/develop/!svn/ver/5044/wok/src/com/crystalcg/gamedev/util/cache/StrengthenEquipmentCache.java
+END
+BattleRewardCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/cache/BattleRewardCache.java
+END
+ImageResourceCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/cache/ImageResourceCache.java
+END
+AllianceBuildingCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/util/cache/AllianceBuildingCache.java
+END
+EquipmentCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/develop/!svn/ver/7636/wok/src/com/crystalcg/gamedev/util/cache/EquipmentCache.java
+END
+QuestsCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/develop/!svn/ver/7638/wok/src/com/crystalcg/gamedev/util/cache/QuestsCache.java
+END
+ItemCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/develop/!svn/ver/7636/wok/src/com/crystalcg/gamedev/util/cache/ItemCache.java
+END
+CountryCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/develop/!svn/ver/4939/wok/src/com/crystalcg/gamedev/util/cache/CountryCache.java
+END
+AffairBonusCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/develop/!svn/ver/4948/wok/src/com/crystalcg/gamedev/util/cache/AffairBonusCache.java
+END
+TavernCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/cache/TavernCache.java
+END
+WorldCityCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/cache/WorldCityCache.java
+END
+CacheMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/develop/!svn/ver/7609/wok/src/com/crystalcg/gamedev/util/cache/CacheMapper.java
+END
+AllianceGradeCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/util/cache/AllianceGradeCache.java
+END
+AllianceSalaryCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/develop/!svn/ver/6486/wok/src/com/crystalcg/gamedev/util/cache/AllianceSalaryCache.java
+END
+QuestCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/develop/!svn/ver/8454/wok/src/com/crystalcg/gamedev/util/cache/QuestCache.java
+END
+InteriorTechCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/cache/InteriorTechCache.java
+END
+MaterialCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/develop/!svn/ver/7636/wok/src/com/crystalcg/gamedev/util/cache/MaterialCache.java
+END
+CharacterCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/develop/!svn/ver/4948/wok/src/com/crystalcg/gamedev/util/cache/CharacterCache.java
+END
+ProducePlanCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/cache/ProducePlanCache.java
+END
+HeroLevelCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/develop/!svn/ver/4948/wok/src/com/crystalcg/gamedev/util/cache/HeroLevelCache.java
+END
+RankingMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/develop/!svn/ver/8570/wok/src/com/crystalcg/gamedev/util/cache/RankingMapper.java
+END
+CityCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/develop/!svn/ver/5869/wok/src/com/crystalcg/gamedev/util/cache/CityCache.java
+END
+SoldierSkillCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/cache/SoldierSkillCache.java
+END
+ResetServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/develop/!svn/ver/9304/wok/src/com/crystalcg/gamedev/util/cache/ResetServer.java
+END
+Testc.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/develop/!svn/ver/4933/wok/src/com/crystalcg/gamedev/util/cache/Testc.java
+END
+FormationCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/cache/FormationCache.java
+END

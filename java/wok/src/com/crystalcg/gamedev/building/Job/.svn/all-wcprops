@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/develop/!svn/ver/7807/wok/src/com/crystalcg/gamedev/building/Job
+END
+BuildJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/develop/!svn/ver/7807/wok/src/com/crystalcg/gamedev/building/Job/BuildJob.java
+END
+DemolitionJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/develop/!svn/ver/7807/wok/src/com/crystalcg/gamedev/building/Job/DemolitionJob.java
+END
+UpgradeJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/develop/!svn/ver/7807/wok/src/com/crystalcg/gamedev/building/Job/UpgradeJob.java
+END

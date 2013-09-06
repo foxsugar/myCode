@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/develop/!svn/ver/9164/wok/src/com/crystalcg/gamedev/user/dao
+END
+MaincityDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/develop/!svn/ver/9164/wok/src/com/crystalcg/gamedev/user/dao/MaincityDao.java
+END
+CharacterDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/develop/!svn/ver/8570/wok/src/com/crystalcg/gamedev/user/dao/CharacterDao.java
+END
+AccountDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/develop/!svn/ver/4120/wok/src/com/crystalcg/gamedev/user/dao/AccountDao.java
+END

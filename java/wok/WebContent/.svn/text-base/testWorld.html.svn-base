@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title></title>
+    <script src="js/client/jquery.js"></script>
+    <script src="js/server/user.js"></script>
+</head>
+<body>
+<input type="text" id="x" />
+<input type="text" id="y" />
+<button type="button" onclick="dis1()">偏移</button>
+
+        <canvas width="3000" height="3000" id="c"></canvas>
+
+
+</body>
+<head>
+	 <script src="TestWorld.js"></script>
+</head>
+</html>

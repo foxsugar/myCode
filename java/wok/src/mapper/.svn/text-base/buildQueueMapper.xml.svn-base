@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.building.mapper.BuildQueueMapper"> 
+  <resultMap type="com.crystalcg.gamedev.building.domain.QueueBuilding" id="queueBuilding">
+  	<id property="id" column="id"/>
+  	<result property="characterId" column="character_id"/>
+  	<result property="currentBuildingNo" column="current_building_no"/>
+  	<result property="targetBuildingNo" column="target_building_no"/>
+  	<result property="status" column="status"/>
+  	<result property="startTime" column="start_time"/>
+  	<result property="time" column="time"/>
+  	<result property="location" column="location"/>
+  </resultMap>
+  <insert id="insertQueueBuilding" parameterType="com.crystalcg.gamedev.building.domain.QueueBuilding">
+    INSERT INTO USER_BUILD_QUEUE(character_id,current_building_no,target_building_no,status,start_time,time,location)
+    VALUES(#{characterId},#{currentBuildingNo},#{targetBuildingNo},#{status},#{startTime},#{time},#{location})
+  </insert>
+  <update id="updateQueueBuilding" parameterType="java.util.Map">
+    UPDATE INTO USER_BUILD_QUEUE set time=#{time}
+    WHERE  WHERE character_id=#{characterId} and location=#{location}
+  </update>
+  <delete id="deleteQueueBuilding" parameterType="com.crystalcg.gamedev.building.domain.QueueBuilding">
+    DELETE FROM USER_BUILD_QUEUE 
+    WHERE character_id=#{characterId} and location=#{location}
+  </delete>
+  <select id="getAllQueueBuildings" parameterType="int" resultMap="queueBuilding">
+    SELECT * FROM USER_BUILD_QUEUE WHERE character_id=#{value}
+  </select>
+  <select id="getQueueBuilding" parameterType="com.crystalcg.gamedev.building.domain.QueueBuilding" resultMap="queueBuilding">
+    SELECT * FROM USER_BUILD_QUEUE WHERE character_id=#{characterId} and location=#{location}
+  </select>
+</mapper>

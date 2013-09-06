@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<mappers>
+		<mapper resource="mapper/accountMapper.xml" />
+		<mapper resource="mapper/characterMapper.xml" />
+		<mapper resource="mapper/maincityMapper.xml" />
+		<mapper resource="mapper/buildingMapper.xml" />
+		<mapper resource="mapper/buildQueueMapper.xml" />
+		<mapper resource="mapper/userItemMapper.xml"/>
+		<mapper resource="mapper/auctionMapper.xml"/>
+		<mapper resource="mapper/mailMapper.xml"/>
+		<mapper resource="mapper/marketMapper.xml"/>
+		<mapper resource="mapper/userHeroMapper.xml"/>
+		<mapper resource="mapper/collegeMapper.xml"/>
+		<mapper resource="mapper/privycouncilMapper.xml"/>
+		<mapper resource="mapper/itemMapper.xml"/>
+		<mapper resource="mapper/friendMapper.xml"/>
+		<mapper resource="mapper/resourceMapper.xml"/>
+		<mapper resource="mapper/battleMapper.xml"/>
+		<mapper resource="mapper/interiorTechMapper.xml"/>
+		<mapper resource="mapper/soldierTechMapper.xml"/>
+		<mapper resource="mapper/allianceMapper.xml"/>
+
+		<mapper resource="mapper/wallDefensenMapper.xml"/>
+
+		<mapper resource="mapper/formationTechMapper.xml"/>
+
+		<mapper resource="mapper/barracksMapper.xml"/>
+		<mapper resource="mapper/cellarMapper.xml"/>
+		<mapper resource="mapper/rankingMapper.xml"/>
+		<mapper resource="mapper/questMapper.xml"/>
+
+		<!--
+		<mapper resource="mapper/equipDesignMapper.xml"/>
+		<mapper resource="mapper/equipStrengthenMapper.xml"/>
+		<mapper resource="mapper/gemstoneMapper.xml"/>
+		<mapper resource="mapper/centrestageMapper.xml"/>
+		<mapper resource="mapper/houseMapper.xml"/>
+		<mapper resource="mapper/beaconMapper.xml"/>
+		<mapper resource="mapper/hospitalMapper.xml"/>
+		<mapper resource="mapper/battleProcessMapper.xml"/>
+		-->
+	</mappers>
+</configuration>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/develop/!svn/ver/8607/wok/src/com/crystalcg/gamedev/tech/service
+END
+InteriorTechService.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/7747/wok/src/com/crystalcg/gamedev/tech/service/InteriorTechService.java
+END
+FormationTechService.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/develop/!svn/ver/7398/wok/src/com/crystalcg/gamedev/tech/service/FormationTechService.java
+END
+SoldierTechService.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/8607/wok/src/com/crystalcg/gamedev/tech/service/SoldierTechService.java
+END

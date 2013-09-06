@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crystalcg.gamedev.battleProcess.mapper.BattleProcessMapper">
+	<select id="getMonsterSoldierInfo" resultType="com.crystalcg.gamedev.battleProcess.domain.SoldierForBattle">
+		SELECT
+		monsterId id,
+		heroName,
+		heroIcon,
+		smallHeroIcom,
+		soldierLevel,
+		soldierAmout,
+		maxSoldierAmout,
+		mobility,
+		soldierAttack,
+		soldierDefence,
+		attackType,
+		armorType,
+		soldierCriticalStrike,
+		soldierHit,
+		soldierDodge,
+		minRange,
+		maxRange,
+		soldierHp,
+		locationX,
+		locationY,
+		soldierSkill
+		FROM monstermultihero;
+	</select>
+</mapper>

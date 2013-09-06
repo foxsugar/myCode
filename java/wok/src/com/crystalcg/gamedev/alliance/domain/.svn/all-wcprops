@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/develop/!svn/ver/6633/wok/src/com/crystalcg/gamedev/alliance/domain
+END
+ApplicationList.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/alliance/domain/ApplicationList.java
+END
+AllianceTechnologyQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceTechnologyQueue.java
+END
+AllianceReceive.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/5931/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceReceive.java
+END
+AllianceUpgradeQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceUpgradeQueue.java
+END
+AllianceContribute.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/develop/!svn/ver/5931/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceContribute.java
+END
+AllianceTechnology.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceTechnology.java
+END
+AllianceEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/develop/!svn/ver/5931/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceEvent.java
+END
+AllianceSalary.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceSalary.java
+END
+AllianceAllyApply.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceAllyApply.java
+END
+AllianceFriends.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/5931/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceFriends.java
+END
+AllianceSite.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceSite.java
+END
+AllianceQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/develop/!svn/ver/5423/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceQueue.java
+END
+Alliance.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/develop/!svn/ver/5324/wok/src/com/crystalcg/gamedev/alliance/domain/Alliance.java
+END
+AllianceShoping.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/6486/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceShoping.java
+END
+AllianceBarrack.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/6633/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceBarrack.java
+END
+AllianceMember.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/alliance/domain/AllianceMember.java
+END

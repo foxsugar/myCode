@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.item.mapper.EquipDesignMapper">
+	<resultMap type="com.crystalcg.gamedev.item.domain.UserItem" id="userItemResult">
+		<id property="userItemId" column="userItemId"/>
+		<result property="charId" column="charId"/>
+		<result property="itemId" column="itemId"/>
+		<result property="itemCounts" column="itemCounts"/>
+		<result property="strengthLevel" column="strengthLevel"/>
+		<result property="hole1" column="hole1"/>
+		<result property="hole2" column="hole2"/>
+		<result property="hole3" column="hole3"/>
+		<result property="hole4" column="hole4"/>
+		<result property="itemPosition" column="itemPosition"/>
+		<result property="heroUseId" column="heroUseId"/>
+		<result property="bindState" column="bindState"/>
+		<association property="item" javaType="com.crystalcg.gamedev.item.domain.Item">
+			<id property="itemId" column="itemId"/>
+			<result property="itemName" column="itemName"/>
+			<result property="itemDescription" column="itemDescription"/>
+			<result property="itemIcon" column="itemIcon"/>
+			<result property="itemLevel" column="itemLevel"/>
+			<result property="itemType" column="itemType"/>
+			<result property="itemSubType" column="itemSubType"/>
+			<result property="attack" column="attack"/>
+			<result property="defence" column="defence"/>
+			<result property="stamina" column="stamina"/>
+			<result property="agility" column="agility"/>
+			<result property="intelligence" column="intelligence"/>
+			<result property="commandNum" column="commandNum"/>
+			<result property="needLevel" column="needLevel"/>
+			<result property="salePrice" column="salePrice"/>
+			<result property="needCash" column="needCash"/>
+			<result property="needGold" column="needGold"/>
+			<result property="gold" column="gold"/>
+			<result property="money" column="money"/>
+			<result property="food" column="food"/>
+			<result property="wood" column="wood"/>
+			<result property="bronze" column="bronze"/>
+			<result property="medicine" column="medicine"/>
+			<result property="soldierNum" column="soldierNum"/>
+			<result property="useAble" column="useAble"/>
+			<result property="packUseAble" column="packUseAble"/>
+			<result property="sumAble" column="sumAble"/>
+			<result property="throwAble" column="throwAble"/>
+		</association>
+	</resultMap>
+	<parameterMap type="map" id="equipDesignMap">
+		<parameter property="charId"  javaType="int" jdbcType="OTHER"/>
+		<parameter property="equipSign"  javaType="int" jdbcType="OTHER"/>
+	</parameterMap>
+	<select id="getEquipDesignByItemId" parameterType="int" resultType="com.crystalcg.gamedev.item.domain.EquipDesign">
+		SELECT * FROM equipdesign WHERE itemId=#{itemId};
+	</select>
+	<select id="getEquipCanBeMadeByType" parameterType="int" resultType="com.crystalcg.gamedev.item.domain.Item">
+		SELECT item.* FROM equipdesign,item where equipdesign.equipSign=item.itemId and item.itemSubType=#{itemSubType} group by equipdesign.equipSign
+	</select>
+		<select id="getAllEquipCanBeMadeByType"  resultType="com.crystalcg.gamedev.item.domain.Item">
+		SELECT item.* FROM equipdesign,item where equipdesign.equipSign=item.itemId group by equipdesign.equipSign
+	</select>
+	<select id="getUserEquipDesignBySign" parameterMap="equipDesignMap" resultType="java.util.Map">
+		SELECT userItemId userItemId,item.itemName itemName,item.itemDescription itemDescription,item.itemIcon itemIcon,item.itemLevel itemLevel,
+		useritem.itemCounts itemCounts,useritem.bindState bindState FROM equipdesign,item,useritem WHERE equipdesign.itemId=item.itemId and equipdesign.equipSign=#{equipSign} and useritem.itemId=item.itemId and charId=#{charId}
+		and itemPosition=0 
+		ORDER BY item.itemLevel
+	</select>
+	<select id="getEquipCanBeMadeForViewByType" parameterType="int" resultType="java.util.Map">
+		SELECT item.itemId itemId,itemName itemName,itemDescription itemDescription,itemIcon itemIcon,attack attack,defence defence,stamina stamina,
+		agility agility,intelligence intelligence,commandNum commandNum,needLevel needLevel,salePrice salePrice
+		 FROM equipdesign,item where equipdesign.equipSign=item.itemId and item.itemSubType=#{itemSubType} group by equipdesign.equipSign
+	</select>
+	<select id="getOneEquipDesignBySign" parameterType="int" resultType="com.crystalcg.gamedev.item.domain.EquipDesign">
+		SELECT equipdesign.*  FROM equipdesign,item WHERE equipSign=#{equipSign} and item.itemId=equipdesign.itemId  order by item.itemLevel limit 1
+	</select>
+</mapper>

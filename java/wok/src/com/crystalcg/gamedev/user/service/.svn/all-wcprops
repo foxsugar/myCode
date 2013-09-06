@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/develop/!svn/ver/9261/wok/src/com/crystalcg/gamedev/user/service
+END
+CharacterService.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/develop/!svn/ver/9261/wok/src/com/crystalcg/gamedev/user/service/CharacterService.java
+END
+AccountService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/develop/!svn/ver/4315/wok/src/com/crystalcg/gamedev/user/service/AccountService.java
+END
+MaincityService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/develop/!svn/ver/9164/wok/src/com/crystalcg/gamedev/user/service/MaincityService.java
+END

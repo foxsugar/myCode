@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	<bean id="hospitalAction" class="com.crystalcg.gamedev.hospital.action.HospitalAction">
+		<property name="hospitalService" ref="hospitalService"></property>
+	</bean>
+	<bean id="hospitalService" class="com.crystalcg.gamedev.hospital.service.HospitalService">
+		<property name="hospitalDao" ref="hospitalDao"></property>
+	</bean>
+	<bean id="hospitalDao" class="com.crystalcg.gamedev.hospital.dao.HospitalDao">
+		<property name="hospitalMapper" ref="hospitalMapper"></property>
+	</bean>
+	<bean id="hospitalMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+  		<property name="mapperInterface" value="com.crystalcg.gamedev.hospital.mapper.HospitalMapper" />
+  		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+</beans>

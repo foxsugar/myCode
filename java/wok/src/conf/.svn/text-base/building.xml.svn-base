@@ -1,0 +1,2059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<castle>
+	<building id="10110001" name="太尉府"
+		desc="太尉府是城池发展的标志，太尉府每增加一级可增加50%的建筑基础建造速度。" property="基础建造速度"
+		castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110002" name="城墙"
+		desc="高筑墙、广积粮，不失为生存在乱世的好策略。城墙上可以修建各种城防工事，并设定留守城池的部队。城墙每增加一级城防制造速度增加5%。"
+		property="城防空间、城防建造速度" castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110003" name="民居"
+		desc="民居(主城最多15个)为城池中的人口提供住所。建造和升级民居能够提高人口的上限和增长速度。" property="可容纳人口"
+		castleType="main" numLimit="8" maxLevel="30" />
+	<building id="10110004" name="军营"
+		desc="兵营(主城最多12个)用于训练和遣散士兵。建造和升级兵营能够提高新兵的数量上限和增长速度。" property="提供新兵数量上限、新兵增长速度"
+		castleType="main" numLimit="4" maxLevel="30" />
+	<building id="10110005" name="科教馆"
+		desc="科教馆(唯一的)用于研究科技，对内政和军事都有重大影响。升级科教馆，能够将科技研究到更高等级。" property="科技研究速度"
+		castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110006" name="集市" desc="集市(唯一的)是进行装备拍卖资源换取的地方。"
+		property="升级集市可以购买或者卖出更多资源" castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110007" name="国库" desc="国库(唯一的)用来存放资源、装备、道具、礼包等。"
+		property="国库容量" castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110008" name="外务馆" desc="外务馆(唯一的)是加入或建立联盟的必要建筑。"
+		property="同盟目标行军速度" castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110009" name="加工坊"
+		desc="加工坊(唯一的)装备加工的场所，可以进行装备打造、装备强化以及宝石镶嵌。升级加工坊能打造出更多种类的装备。如果您有稀有材料的话，也许铁匠能让您的装备更加强力。"
+		property="" castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110010" name="酒馆"
+		desc="酒馆(唯一的)常会引来一些天赋异禀之士，形形色色，各有所长。可以将其纳入麾下，共创一番霸业。升级酒馆可使高成长武将出现机会增大，随机事件也会增多。"
+		property="随机事件频度" castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110011" name="聚贤阁" desc="聚贤阁(唯一的)为文人武将比武切磋、谋事议政的场所"
+		property="" castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110012" name="修炼馆"
+		desc="修炼馆(唯一的)是培养武将的重要场所，使武将不必征战沙场就能得到锻炼。升级修炼馆将允许武将修炼到更高级别。" property="武将修炼经验奖励"
+		castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110013" name="烽火台"
+		desc="烽火台(特区内唯一)内可派遣哨兵，一旦敌军入侵，哨兵作为先锋迎战。" property="" castleType="main"
+		numLimit="4" maxLevel="30" />
+	<building id="10110014" name="练兵场" desc="练兵场(特区内唯一)乃武将练兵之所，使武将熟练统率更多士兵。"
+		property="" castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110015" name="医馆"
+		desc="生存于乱世，应做好损兵折将的准备。医馆(唯一的)能够医治武将，使其在战场上发挥百分之百的战力。休息中的武将不医治也会缓慢恢复健康。升级医馆能熬制更多膏药。"
+		property="医疗点数" castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110016" name="教坊"
+		desc="教坊(唯一的)装备加工的场所，可以进行装备打造、装备强化以及宝石镶嵌。升级加工坊能打造出更多种类的装备。如果您有稀有材料的话，也许铁匠能让您的装备更加强力。"
+		property="" castleType="main" numLimit="1" maxLevel="30" />
+	<building id="10110017" name="粮仓" desc="" property=""
+		castleType="unmanned" numLimit="12" maxLevel="30" />
+	<building id="10110018" name="伐木场" desc="" property=""
+		castleType="unmanned" numLimit="12" maxLevel="30" />
+	<building id="10110019" name="石料场" desc="" property=""
+		castleType="unmanned" numLimit="12" maxLevel="30" />
+	<building id="10110020" name="矿场" desc="" property=""
+		castleType="unmanned" numLimit="12" maxLevel="30" />
+
+	<buildingEntity id="1" buildingId="10110001" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="0" para2="" para3="" para4="" />
+	<buildingEntity id="2" buildingId="10110001" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="3" buildingId="10110001" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="4" buildingId="10110001" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="5" buildingId="10110001" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="6" buildingId="10110001" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="7" buildingId="10110001" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="8" buildingId="10110001" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="9" buildingId="10110001" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="10" buildingId="10110001" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="11" buildingId="10110001" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="12" buildingId="10110001" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="13" buildingId="10110001" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="14" buildingId="10110001" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="15" buildingId="10110001" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="16" buildingId="10110001" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="17" buildingId="10110001" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="18" buildingId="10110001" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="19" buildingId="10110001" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="20" buildingId="10110001" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="21" buildingId="10110001" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="22" buildingId="10110001" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="23" buildingId="10110001" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="24" buildingId="10110001" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="25" buildingId="10110001" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="26" buildingId="10110001" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="27" buildingId="10110001" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="28" buildingId="10110001" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="29" buildingId="10110001" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="30" buildingId="10110001" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="31" buildingId="10110002" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110001" needBuildingLevel="2" needNumber="1"
+		capacity="400" para1="0.05" para2="" para3="" para4="" />
+	<buildingEntity id="32" buildingId="10110002" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110001" needBuildingLevel="3" needNumber="1"
+		capacity="800" para1="0.1" para2="" para3="" para4="" />
+	<buildingEntity id="33" buildingId="10110002" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110001" needBuildingLevel="4" needNumber="1"
+		capacity="1200" para1="0.15" para2="" para3="" para4="" />
+	<buildingEntity id="34" buildingId="10110002" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110001" needBuildingLevel="5" needNumber="1"
+		capacity="1600" para1="0.2" para2="" para3="" para4="" />
+	<buildingEntity id="35" buildingId="10110002" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110001" needBuildingLevel="6" needNumber="1"
+		capacity="2000" para1="0.25" para2="" para3="" para4="" />
+	<buildingEntity id="36" buildingId="10110002" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110001" needBuildingLevel="7" needNumber="1"
+		capacity="2400" para1="0.3" para2="" para3="" para4="" />
+	<buildingEntity id="37" buildingId="10110002" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110001" needBuildingLevel="8" needNumber="1"
+		capacity="2800" para1="0.35" para2="" para3="" para4="" />
+	<buildingEntity id="38" buildingId="10110002" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110001" needBuildingLevel="9" needNumber="1"
+		capacity="3200" para1="0.4" para2="" para3="" para4="" />
+	<buildingEntity id="39" buildingId="10110002" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110001" needBuildingLevel="10" needNumber="1"
+		capacity="3600" para1="0.45" para2="" para3="" para4="" />
+	<buildingEntity id="40" buildingId="10110002" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110001" needBuildingLevel="10" needNumber="1"
+		capacity="4000" para1="0.5" para2="" para3="" para4="" />
+	<buildingEntity id="41" buildingId="10110002" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110001" needBuildingLevel="11" needNumber="1"
+		capacity="4400" para1="0.55" para2="" para3="" para4="" />
+	<buildingEntity id="42" buildingId="10110002" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110001" needBuildingLevel="12" needNumber="1"
+		capacity="4800" para1="0.6" para2="" para3="" para4="" />
+	<buildingEntity id="43" buildingId="10110002" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110001" needBuildingLevel="13" needNumber="1"
+		capacity="5200" para1="0.65" para2="" para3="" para4="" />
+	<buildingEntity id="44" buildingId="10110002" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110001" needBuildingLevel="14" needNumber="1"
+		capacity="5600" para1="0.7" para2="" para3="" para4="" />
+	<buildingEntity id="45" buildingId="10110002" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110001" needBuildingLevel="15" needNumber="1"
+		capacity="6000" para1="0.75" para2="" para3="" para4="" />
+	<buildingEntity id="46" buildingId="10110002" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110001" needBuildingLevel="16" needNumber="1"
+		capacity="6400" para1="0.8" para2="" para3="" para4="" />
+	<buildingEntity id="47" buildingId="10110002" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110001" needBuildingLevel="17" needNumber="1"
+		capacity="6800" para1="0.85" para2="" para3="" para4="" />
+	<buildingEntity id="48" buildingId="10110002" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110001" needBuildingLevel="18" needNumber="1"
+		capacity="7200" para1="0.9" para2="" para3="" para4="" />
+	<buildingEntity id="49" buildingId="10110002" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110001" needBuildingLevel="19" needNumber="1"
+		capacity="7600" para1="0.95" para2="" para3="" para4="" />
+	<buildingEntity id="50" buildingId="10110002" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110001" needBuildingLevel="20" needNumber="1"
+		capacity="8000" para1="1.0" para2="" para3="" para4="" />
+	<buildingEntity id="51" buildingId="10110002" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110001" needBuildingLevel="21" needNumber="1"
+		capacity="8400" para1="1.05" para2="" para3="" para4="" />
+	<buildingEntity id="52" buildingId="10110002" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110001" needBuildingLevel="22" needNumber="1"
+		capacity="8800" para1="1.1" para2="" para3="" para4="" />
+	<buildingEntity id="53" buildingId="10110002" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110001" needBuildingLevel="23" needNumber="1"
+		capacity="9200" para1="1.15" para2="" para3="" para4="" />
+	<buildingEntity id="54" buildingId="10110002" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110001" needBuildingLevel="24" needNumber="1"
+		capacity="9600" para1="1.2" para2="" para3="" para4="" />
+	<buildingEntity id="55" buildingId="10110002" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110001" needBuildingLevel="25" needNumber="1"
+		capacity="10000" para1="1.25" para2="" para3="" para4="" />
+	<buildingEntity id="56" buildingId="10110002" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110001" needBuildingLevel="26" needNumber="1"
+		capacity="10400" para1="1.3" para2="" para3="" para4="" />
+	<buildingEntity id="57" buildingId="10110002" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110001" needBuildingLevel="27" needNumber="1"
+		capacity="10800" para1="1.35" para2="" para3="" para4="" />
+	<buildingEntity id="58" buildingId="10110002" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110001" needBuildingLevel="28" needNumber="1"
+		capacity="11200" para1="1.4" para2="" para3="" para4="" />
+	<buildingEntity id="59" buildingId="10110002" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110001" needBuildingLevel="29" needNumber="1"
+		capacity="11600" para1="1.45" para2="" para3="" para4="" />
+	<buildingEntity id="60" buildingId="10110002" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110001" needBuildingLevel="30" needNumber="1"
+		capacity="12000" para1="1.5" para2="" para3="" para4="" />
+	<buildingEntity id="61" buildingId="10110003" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="100" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="62" buildingId="10110003" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110001" needBuildingLevel="2" needNumber="1"
+		capacity="200" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="63" buildingId="10110003" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110001" needBuildingLevel="3" needNumber="1"
+		capacity="300" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="64" buildingId="10110003" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110001" needBuildingLevel="4" needNumber="1"
+		capacity="400" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="65" buildingId="10110003" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110001" needBuildingLevel="5" needNumber="1"
+		capacity="500" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="66" buildingId="10110003" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110001" needBuildingLevel="6" needNumber="1"
+		capacity="600" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="67" buildingId="10110003" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110001" needBuildingLevel="7" needNumber="1"
+		capacity="700" para1="35" para2="" para3="" para4="" />
+	<buildingEntity id="68" buildingId="10110003" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110001" needBuildingLevel="8" needNumber="1"
+		capacity="800" para1="40" para2="" para3="" para4="" />
+	<buildingEntity id="69" buildingId="10110003" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110001" needBuildingLevel="9" needNumber="1"
+		capacity="900" para1="45" para2="" para3="" para4="" />
+	<buildingEntity id="70" buildingId="10110003" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110001" needBuildingLevel="10" needNumber="1"
+		capacity="1000" para1="50" para2="" para3="" para4="" />
+	<buildingEntity id="71" buildingId="10110003" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110001" needBuildingLevel="11" needNumber="1"
+		capacity="1100" para1="55" para2="" para3="" para4="" />
+	<buildingEntity id="72" buildingId="10110003" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110001" needBuildingLevel="12" needNumber="1"
+		capacity="1200" para1="60" para2="" para3="" para4="" />
+	<buildingEntity id="73" buildingId="10110003" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110001" needBuildingLevel="13" needNumber="1"
+		capacity="1300" para1="65" para2="" para3="" para4="" />
+	<buildingEntity id="74" buildingId="10110003" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110001" needBuildingLevel="14" needNumber="1"
+		capacity="1400" para1="70" para2="" para3="" para4="" />
+	<buildingEntity id="75" buildingId="10110003" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110001" needBuildingLevel="15" needNumber="1"
+		capacity="1500" para1="75" para2="" para3="" para4="" />
+	<buildingEntity id="76" buildingId="10110003" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110001" needBuildingLevel="16" needNumber="1"
+		capacity="1600" para1="80" para2="" para3="" para4="" />
+	<buildingEntity id="77" buildingId="10110003" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110001" needBuildingLevel="17" needNumber="1"
+		capacity="1700" para1="85" para2="" para3="" para4="" />
+	<buildingEntity id="78" buildingId="10110003" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110001" needBuildingLevel="18" needNumber="1"
+		capacity="1800" para1="90" para2="" para3="" para4="" />
+	<buildingEntity id="79" buildingId="10110003" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110001" needBuildingLevel="19" needNumber="1"
+		capacity="1900" para1="95" para2="" para3="" para4="" />
+	<buildingEntity id="80" buildingId="10110003" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110001" needBuildingLevel="20" needNumber="1"
+		capacity="2000" para1="100" para2="" para3="" para4="" />
+	<buildingEntity id="81" buildingId="10110003" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110001" needBuildingLevel="21" needNumber="1"
+		capacity="2100" para1="105" para2="" para3="" para4="" />
+	<buildingEntity id="82" buildingId="10110003" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110001" needBuildingLevel="22" needNumber="1"
+		capacity="2200" para1="110" para2="" para3="" para4="" />
+	<buildingEntity id="83" buildingId="10110003" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110001" needBuildingLevel="23" needNumber="1"
+		capacity="2300" para1="115" para2="" para3="" para4="" />
+	<buildingEntity id="84" buildingId="10110003" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110001" needBuildingLevel="24" needNumber="1"
+		capacity="2400" para1="120" para2="" para3="" para4="" />
+	<buildingEntity id="85" buildingId="10110003" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110001" needBuildingLevel="25" needNumber="1"
+		capacity="2500" para1="125" para2="" para3="" para4="" />
+	<buildingEntity id="86" buildingId="10110003" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110001" needBuildingLevel="26" needNumber="1"
+		capacity="2600" para1="130" para2="" para3="" para4="" />
+	<buildingEntity id="87" buildingId="10110003" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110001" needBuildingLevel="27" needNumber="1"
+		capacity="2700" para1="135" para2="" para3="" para4="" />
+	<buildingEntity id="88" buildingId="10110003" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110001" needBuildingLevel="28" needNumber="1"
+		capacity="2800" para1="140" para2="" para3="" para4="" />
+	<buildingEntity id="89" buildingId="10110003" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110001" needBuildingLevel="29" needNumber="1"
+		capacity="2900" para1="145" para2="" para3="" para4="" />
+	<buildingEntity id="90" buildingId="10110003" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110001" needBuildingLevel="30" needNumber="1"
+		capacity="3000" para1="150" para2="" para3="" para4="" />
+	<buildingEntity id="91" buildingId="10110004" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="100" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="92" buildingId="10110004" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110001" needBuildingLevel="2" needNumber="1"
+		capacity="200" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="93" buildingId="10110004" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110001" needBuildingLevel="3" needNumber="1"
+		capacity="300" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="94" buildingId="10110004" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110001" needBuildingLevel="4" needNumber="1"
+		capacity="400" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="95" buildingId="10110004" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110001" needBuildingLevel="5" needNumber="1"
+		capacity="500" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="96" buildingId="10110004" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110001" needBuildingLevel="6" needNumber="1"
+		capacity="600" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="97" buildingId="10110004" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110001" needBuildingLevel="7" needNumber="1"
+		capacity="700" para1="35" para2="" para3="" para4="" />
+	<buildingEntity id="98" buildingId="10110004" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110001" needBuildingLevel="8" needNumber="1"
+		capacity="800" para1="40" para2="" para3="" para4="" />
+	<buildingEntity id="99" buildingId="10110004" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110001" needBuildingLevel="9" needNumber="1"
+		capacity="900" para1="45" para2="" para3="" para4="" />
+	<buildingEntity id="100" buildingId="10110004" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110001" needBuildingLevel="10" needNumber="1"
+		capacity="1000" para1="50" para2="" para3="" para4="" />
+	<buildingEntity id="101" buildingId="10110004" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110001" needBuildingLevel="11" needNumber="1"
+		capacity="1100" para1="55" para2="" para3="" para4="" />
+	<buildingEntity id="102" buildingId="10110004" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110001" needBuildingLevel="12" needNumber="1"
+		capacity="1200" para1="60" para2="" para3="" para4="" />
+	<buildingEntity id="103" buildingId="10110004" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110001" needBuildingLevel="13" needNumber="1"
+		capacity="1300" para1="65" para2="" para3="" para4="" />
+	<buildingEntity id="104" buildingId="10110004" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110001" needBuildingLevel="14" needNumber="1"
+		capacity="1400" para1="70" para2="" para3="" para4="" />
+	<buildingEntity id="105" buildingId="10110004" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110001" needBuildingLevel="15" needNumber="1"
+		capacity="1500" para1="75" para2="" para3="" para4="" />
+	<buildingEntity id="106" buildingId="10110004" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110001" needBuildingLevel="16" needNumber="1"
+		capacity="1600" para1="80" para2="" para3="" para4="" />
+	<buildingEntity id="107" buildingId="10110004" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110001" needBuildingLevel="17" needNumber="1"
+		capacity="1700" para1="85" para2="" para3="" para4="" />
+	<buildingEntity id="108" buildingId="10110004" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110001" needBuildingLevel="18" needNumber="1"
+		capacity="1800" para1="90" para2="" para3="" para4="" />
+	<buildingEntity id="109" buildingId="10110004" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110001" needBuildingLevel="19" needNumber="1"
+		capacity="1900" para1="95" para2="" para3="" para4="" />
+	<buildingEntity id="110" buildingId="10110004" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110001" needBuildingLevel="20" needNumber="1"
+		capacity="2000" para1="100" para2="" para3="" para4="" />
+	<buildingEntity id="111" buildingId="10110004" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110001" needBuildingLevel="21" needNumber="1"
+		capacity="2100" para1="105" para2="" para3="" para4="" />
+	<buildingEntity id="112" buildingId="10110004" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110001" needBuildingLevel="22" needNumber="1"
+		capacity="2200" para1="110" para2="" para3="" para4="" />
+	<buildingEntity id="113" buildingId="10110004" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110001" needBuildingLevel="23" needNumber="1"
+		capacity="2300" para1="115" para2="" para3="" para4="" />
+	<buildingEntity id="114" buildingId="10110004" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110001" needBuildingLevel="24" needNumber="1"
+		capacity="2400" para1="120" para2="" para3="" para4="" />
+	<buildingEntity id="115" buildingId="10110004" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110001" needBuildingLevel="25" needNumber="1"
+		capacity="2500" para1="125" para2="" para3="" para4="" />
+	<buildingEntity id="116" buildingId="10110004" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110001" needBuildingLevel="26" needNumber="1"
+		capacity="2600" para1="130" para2="" para3="" para4="" />
+	<buildingEntity id="117" buildingId="10110004" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110001" needBuildingLevel="27" needNumber="1"
+		capacity="2700" para1="135" para2="" para3="" para4="" />
+	<buildingEntity id="118" buildingId="10110004" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110001" needBuildingLevel="28" needNumber="1"
+		capacity="2800" para1="140" para2="" para3="" para4="" />
+	<buildingEntity id="119" buildingId="10110004" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110001" needBuildingLevel="29" needNumber="1"
+		capacity="2900" para1="145" para2="" para3="" para4="" />
+	<buildingEntity id="120" buildingId="10110004" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110001" needBuildingLevel="30" needNumber="1"
+		capacity="3000" para1="150" para2="" para3="" para4="" />
+	<buildingEntity id="121" buildingId="10110005" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="100000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="122" buildingId="10110005" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="200000"
+		needBuildingId="10110001" needBuildingLevel="2" needNumber="1"
+		capacity="4" para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="123" buildingId="10110005" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="300000"
+		needBuildingId="10110001" needBuildingLevel="3" needNumber="1"
+		capacity="6" para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="124" buildingId="10110005" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="400000"
+		needBuildingId="10110001" needBuildingLevel="4" needNumber="1"
+		capacity="8" para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="125" buildingId="10110005" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="500000"
+		needBuildingId="10110001" needBuildingLevel="5" needNumber="1"
+		capacity="10" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="126" buildingId="10110005" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="600000"
+		needBuildingId="10110001" needBuildingLevel="6" needNumber="1"
+		capacity="12" para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="127" buildingId="10110005" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="700000"
+		needBuildingId="10110001" needBuildingLevel="7" needNumber="1"
+		capacity="14" para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="128" buildingId="10110005" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="800000"
+		needBuildingId="10110001" needBuildingLevel="8" needNumber="1"
+		capacity="16" para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="129" buildingId="10110005" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="900000"
+		needBuildingId="10110001" needBuildingLevel="9" needNumber="1"
+		capacity="18" para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="130" buildingId="10110005" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="1000000"
+		needBuildingId="10110001" needBuildingLevel="10" needNumber="1"
+		capacity="20" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="131" buildingId="10110005" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="1100000"
+		needBuildingId="10110001" needBuildingLevel="11" needNumber="1"
+		capacity="22" para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="132" buildingId="10110005" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="1200000"
+		needBuildingId="10110001" needBuildingLevel="12" needNumber="1"
+		capacity="24" para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="133" buildingId="10110005" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="1300000"
+		needBuildingId="10110001" needBuildingLevel="13" needNumber="1"
+		capacity="26" para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="134" buildingId="10110005" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="1400000"
+		needBuildingId="10110001" needBuildingLevel="14" needNumber="1"
+		capacity="28" para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="135" buildingId="10110005" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="1500000"
+		needBuildingId="10110001" needBuildingLevel="15" needNumber="1"
+		capacity="30" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="136" buildingId="10110005" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="1600000"
+		needBuildingId="10110001" needBuildingLevel="16" needNumber="1"
+		capacity="32" para1="16" para2="" para3="" para4="" />
+	<buildingEntity id="137" buildingId="10110005" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="1700000"
+		needBuildingId="10110001" needBuildingLevel="17" needNumber="1"
+		capacity="34" para1="17" para2="" para3="" para4="" />
+	<buildingEntity id="138" buildingId="10110005" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="1800000"
+		needBuildingId="10110001" needBuildingLevel="18" needNumber="1"
+		capacity="36" para1="18" para2="" para3="" para4="" />
+	<buildingEntity id="139" buildingId="10110005" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="1900000"
+		needBuildingId="10110001" needBuildingLevel="19" needNumber="1"
+		capacity="38" para1="19" para2="" para3="" para4="" />
+	<buildingEntity id="140" buildingId="10110005" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="2000000"
+		needBuildingId="10110001" needBuildingLevel="20" needNumber="1"
+		capacity="40" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="141" buildingId="10110005" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="2100000"
+		needBuildingId="10110001" needBuildingLevel="21" needNumber="1"
+		capacity="42" para1="21" para2="" para3="" para4="" />
+	<buildingEntity id="142" buildingId="10110005" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110001" needBuildingLevel="22" needNumber="1"
+		capacity="44" para1="22" para2="" para3="" para4="" />
+	<buildingEntity id="143" buildingId="10110005" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110001" needBuildingLevel="23" needNumber="1"
+		capacity="46" para1="23" para2="" para3="" para4="" />
+	<buildingEntity id="144" buildingId="10110005" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110001" needBuildingLevel="24" needNumber="1"
+		capacity="48" para1="24" para2="" para3="" para4="" />
+	<buildingEntity id="145" buildingId="10110005" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110001" needBuildingLevel="25" needNumber="1"
+		capacity="50" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="146" buildingId="10110005" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110001" needBuildingLevel="26" needNumber="1"
+		capacity="52" para1="26" para2="" para3="" para4="" />
+	<buildingEntity id="147" buildingId="10110005" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110001" needBuildingLevel="27" needNumber="1"
+		capacity="54" para1="27" para2="" para3="" para4="" />
+	<buildingEntity id="148" buildingId="10110005" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110001" needBuildingLevel="28" needNumber="1"
+		capacity="56" para1="28" para2="" para3="" para4="" />
+	<buildingEntity id="149" buildingId="10110005" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110001" needBuildingLevel="29" needNumber="1"
+		capacity="58" para1="29" para2="" para3="" para4="" />
+	<buildingEntity id="150" buildingId="10110005" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110001" needBuildingLevel="30" needNumber="1"
+		capacity="60" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="151" buildingId="10110006" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="152" buildingId="10110006" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="200000"
+		needBuildingId="10110001" needBuildingLevel="2" needNumber="1"
+		capacity="4" para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="153" buildingId="10110006" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="300000"
+		needBuildingId="10110001" needBuildingLevel="3" needNumber="1"
+		capacity="6" para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="154" buildingId="10110006" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="400000"
+		needBuildingId="10110001" needBuildingLevel="4" needNumber="1"
+		capacity="8" para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="155" buildingId="10110006" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="500000"
+		needBuildingId="10110001" needBuildingLevel="5" needNumber="1"
+		capacity="10" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="156" buildingId="10110006" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="600000"
+		needBuildingId="10110001" needBuildingLevel="6" needNumber="1"
+		capacity="12" para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="157" buildingId="10110006" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="700000"
+		needBuildingId="10110001" needBuildingLevel="7" needNumber="1"
+		capacity="14" para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="158" buildingId="10110006" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="800000"
+		needBuildingId="10110001" needBuildingLevel="8" needNumber="1"
+		capacity="16" para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="159" buildingId="10110006" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="900000"
+		needBuildingId="10110001" needBuildingLevel="9" needNumber="1"
+		capacity="18" para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="160" buildingId="10110006" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="1000000"
+		needBuildingId="10110001" needBuildingLevel="10" needNumber="1"
+		capacity="20" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="161" buildingId="10110006" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="1100000"
+		needBuildingId="10110001" needBuildingLevel="11" needNumber="1"
+		capacity="22" para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="162" buildingId="10110006" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="1200000"
+		needBuildingId="10110001" needBuildingLevel="12" needNumber="1"
+		capacity="24" para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="163" buildingId="10110006" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="1300000"
+		needBuildingId="10110001" needBuildingLevel="13" needNumber="1"
+		capacity="26" para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="164" buildingId="10110006" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="1400000"
+		needBuildingId="10110001" needBuildingLevel="14" needNumber="1"
+		capacity="28" para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="165" buildingId="10110006" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="1500000"
+		needBuildingId="10110001" needBuildingLevel="15" needNumber="1"
+		capacity="30" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="166" buildingId="10110006" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="1600000"
+		needBuildingId="10110001" needBuildingLevel="16" needNumber="1"
+		capacity="32" para1="16" para2="" para3="" para4="" />
+	<buildingEntity id="167" buildingId="10110006" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="1700000"
+		needBuildingId="10110001" needBuildingLevel="17" needNumber="1"
+		capacity="34" para1="17" para2="" para3="" para4="" />
+	<buildingEntity id="168" buildingId="10110006" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="1800000"
+		needBuildingId="10110001" needBuildingLevel="18" needNumber="1"
+		capacity="36" para1="18" para2="" para3="" para4="" />
+	<buildingEntity id="169" buildingId="10110006" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="1900000"
+		needBuildingId="10110001" needBuildingLevel="19" needNumber="1"
+		capacity="38" para1="19" para2="" para3="" para4="" />
+	<buildingEntity id="170" buildingId="10110006" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110001" needBuildingLevel="20" needNumber="1"
+		capacity="40" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="171" buildingId="10110006" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110001" needBuildingLevel="21" needNumber="1"
+		capacity="42" para1="21" para2="" para3="" para4="" />
+	<buildingEntity id="172" buildingId="10110006" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110001" needBuildingLevel="22" needNumber="1"
+		capacity="44" para1="22" para2="" para3="" para4="" />
+	<buildingEntity id="173" buildingId="10110006" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110001" needBuildingLevel="23" needNumber="1"
+		capacity="46" para1="23" para2="" para3="" para4="" />
+	<buildingEntity id="174" buildingId="10110006" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110001" needBuildingLevel="24" needNumber="1"
+		capacity="48" para1="24" para2="" para3="" para4="" />
+	<buildingEntity id="175" buildingId="10110006" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110001" needBuildingLevel="25" needNumber="1"
+		capacity="50" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="176" buildingId="10110006" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110001" needBuildingLevel="26" needNumber="1"
+		capacity="52" para1="26" para2="" para3="" para4="" />
+	<buildingEntity id="177" buildingId="10110006" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110001" needBuildingLevel="27" needNumber="1"
+		capacity="54" para1="27" para2="" para3="" para4="" />
+	<buildingEntity id="178" buildingId="10110006" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110001" needBuildingLevel="28" needNumber="1"
+		capacity="56" para1="28" para2="" para3="" para4="" />
+	<buildingEntity id="179" buildingId="10110006" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110001" needBuildingLevel="29" needNumber="1"
+		capacity="58" para1="29" para2="" para3="" para4="" />
+	<buildingEntity id="180" buildingId="10110006" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110001" needBuildingLevel="30" needNumber="1"
+		capacity="60" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="181" buildingId="10110007" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="182" buildingId="10110007" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110001" needBuildingLevel="2" needNumber="1"
+		capacity="4" para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="183" buildingId="10110007" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110001" needBuildingLevel="3" needNumber="1"
+		capacity="6" para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="184" buildingId="10110007" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110001" needBuildingLevel="4" needNumber="1"
+		capacity="8" para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="185" buildingId="10110007" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110001" needBuildingLevel="5" needNumber="1"
+		capacity="10" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="186" buildingId="10110007" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110001" needBuildingLevel="6" needNumber="1"
+		capacity="12" para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="187" buildingId="10110007" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110001" needBuildingLevel="7" needNumber="1"
+		capacity="14" para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="188" buildingId="10110007" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110001" needBuildingLevel="8" needNumber="1"
+		capacity="16" para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="189" buildingId="10110007" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110001" needBuildingLevel="9" needNumber="1"
+		capacity="18" para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="190" buildingId="10110007" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110001" needBuildingLevel="10" needNumber="1"
+		capacity="20" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="191" buildingId="10110007" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110001" needBuildingLevel="11" needNumber="1"
+		capacity="22" para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="192" buildingId="10110007" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110001" needBuildingLevel="12" needNumber="1"
+		capacity="24" para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="193" buildingId="10110007" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110001" needBuildingLevel="13" needNumber="1"
+		capacity="26" para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="194" buildingId="10110007" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110001" needBuildingLevel="14" needNumber="1"
+		capacity="28" para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="195" buildingId="10110007" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110001" needBuildingLevel="15" needNumber="1"
+		capacity="30" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="196" buildingId="10110007" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110001" needBuildingLevel="16" needNumber="1"
+		capacity="32" para1="16" para2="" para3="" para4="" />
+	<buildingEntity id="197" buildingId="10110007" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110001" needBuildingLevel="17" needNumber="1"
+		capacity="34" para1="17" para2="" para3="" para4="" />
+	<buildingEntity id="198" buildingId="10110007" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110001" needBuildingLevel="18" needNumber="1"
+		capacity="36" para1="18" para2="" para3="" para4="" />
+	<buildingEntity id="199" buildingId="10110007" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110001" needBuildingLevel="19" needNumber="1"
+		capacity="38" para1="19" para2="" para3="" para4="" />
+	<buildingEntity id="200" buildingId="10110007" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110001" needBuildingLevel="20" needNumber="1"
+		capacity="40" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="201" buildingId="10110007" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110001" needBuildingLevel="21" needNumber="1"
+		capacity="42" para1="21" para2="" para3="" para4="" />
+	<buildingEntity id="202" buildingId="10110007" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110001" needBuildingLevel="22" needNumber="1"
+		capacity="44" para1="22" para2="" para3="" para4="" />
+	<buildingEntity id="203" buildingId="10110007" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110001" needBuildingLevel="23" needNumber="1"
+		capacity="46" para1="23" para2="" para3="" para4="" />
+	<buildingEntity id="204" buildingId="10110007" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110001" needBuildingLevel="24" needNumber="1"
+		capacity="48" para1="24" para2="" para3="" para4="" />
+	<buildingEntity id="205" buildingId="10110007" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110001" needBuildingLevel="25" needNumber="1"
+		capacity="50" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="206" buildingId="10110007" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110001" needBuildingLevel="26" needNumber="1"
+		capacity="52" para1="26" para2="" para3="" para4="" />
+	<buildingEntity id="207" buildingId="10110007" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110001" needBuildingLevel="27" needNumber="1"
+		capacity="54" para1="27" para2="" para3="" para4="" />
+	<buildingEntity id="208" buildingId="10110007" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110001" needBuildingLevel="28" needNumber="1"
+		capacity="56" para1="28" para2="" para3="" para4="" />
+	<buildingEntity id="209" buildingId="10110007" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110001" needBuildingLevel="29" needNumber="1"
+		capacity="58" para1="29" para2="" para3="" para4="" />
+	<buildingEntity id="210" buildingId="10110007" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110001" needBuildingLevel="30" needNumber="1"
+		capacity="60" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="211" buildingId="10110008" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="212" buildingId="10110008" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110001" needBuildingLevel="2" needNumber="1"
+		capacity="4" para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="213" buildingId="10110008" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110001" needBuildingLevel="3" needNumber="1"
+		capacity="6" para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="214" buildingId="10110008" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110001" needBuildingLevel="4" needNumber="1"
+		capacity="8" para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="215" buildingId="10110008" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110001" needBuildingLevel="5" needNumber="1"
+		capacity="10" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="216" buildingId="10110008" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110001" needBuildingLevel="6" needNumber="1"
+		capacity="12" para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="217" buildingId="10110008" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110001" needBuildingLevel="7" needNumber="1"
+		capacity="14" para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="218" buildingId="10110008" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110001" needBuildingLevel="8" needNumber="1"
+		capacity="16" para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="219" buildingId="10110008" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110001" needBuildingLevel="9" needNumber="1"
+		capacity="18" para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="220" buildingId="10110008" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110001" needBuildingLevel="10" needNumber="1"
+		capacity="20" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="221" buildingId="10110008" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110001" needBuildingLevel="11" needNumber="1"
+		capacity="22" para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="222" buildingId="10110008" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110001" needBuildingLevel="12" needNumber="1"
+		capacity="24" para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="223" buildingId="10110008" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110001" needBuildingLevel="13" needNumber="1"
+		capacity="26" para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="224" buildingId="10110008" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110001" needBuildingLevel="14" needNumber="1"
+		capacity="28" para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="225" buildingId="10110008" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110001" needBuildingLevel="15" needNumber="1"
+		capacity="30" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="226" buildingId="10110008" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110001" needBuildingLevel="16" needNumber="1"
+		capacity="32" para1="16" para2="" para3="" para4="" />
+	<buildingEntity id="227" buildingId="10110008" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110001" needBuildingLevel="17" needNumber="1"
+		capacity="34" para1="17" para2="" para3="" para4="" />
+	<buildingEntity id="228" buildingId="10110008" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110001" needBuildingLevel="18" needNumber="1"
+		capacity="36" para1="18" para2="" para3="" para4="" />
+	<buildingEntity id="229" buildingId="10110008" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110001" needBuildingLevel="19" needNumber="1"
+		capacity="38" para1="19" para2="" para3="" para4="" />
+	<buildingEntity id="230" buildingId="10110008" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110001" needBuildingLevel="20" needNumber="1"
+		capacity="40" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="231" buildingId="10110008" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110001" needBuildingLevel="21" needNumber="1"
+		capacity="42" para1="21" para2="" para3="" para4="" />
+	<buildingEntity id="232" buildingId="10110008" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110001" needBuildingLevel="22" needNumber="1"
+		capacity="44" para1="22" para2="" para3="" para4="" />
+	<buildingEntity id="233" buildingId="10110008" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110001" needBuildingLevel="23" needNumber="1"
+		capacity="46" para1="23" para2="" para3="" para4="" />
+	<buildingEntity id="234" buildingId="10110008" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110001" needBuildingLevel="24" needNumber="1"
+		capacity="48" para1="24" para2="" para3="" para4="" />
+	<buildingEntity id="235" buildingId="10110008" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110001" needBuildingLevel="25" needNumber="1"
+		capacity="50" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="236" buildingId="10110008" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110001" needBuildingLevel="26" needNumber="1"
+		capacity="52" para1="26" para2="" para3="" para4="" />
+	<buildingEntity id="237" buildingId="10110008" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110001" needBuildingLevel="27" needNumber="1"
+		capacity="54" para1="27" para2="" para3="" para4="" />
+	<buildingEntity id="238" buildingId="10110008" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110001" needBuildingLevel="28" needNumber="1"
+		capacity="56" para1="28" para2="" para3="" para4="" />
+	<buildingEntity id="239" buildingId="10110008" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110001" needBuildingLevel="29" needNumber="1"
+		capacity="58" para1="29" para2="" para3="" para4="" />
+	<buildingEntity id="240" buildingId="10110008" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110001" needBuildingLevel="30" needNumber="1"
+		capacity="60" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="241" buildingId="10110009" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110007" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="242" buildingId="10110009" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110007" needBuildingLevel="2" needNumber="1"
+		capacity="4" para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="243" buildingId="10110009" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110007" needBuildingLevel="3" needNumber="1"
+		capacity="6" para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="244" buildingId="10110009" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110007" needBuildingLevel="4" needNumber="1"
+		capacity="8" para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="245" buildingId="10110009" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110007" needBuildingLevel="5" needNumber="1"
+		capacity="10" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="246" buildingId="10110009" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110007" needBuildingLevel="6" needNumber="1"
+		capacity="12" para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="247" buildingId="10110009" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110007" needBuildingLevel="7" needNumber="1"
+		capacity="14" para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="248" buildingId="10110009" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110007" needBuildingLevel="8" needNumber="1"
+		capacity="16" para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="249" buildingId="10110009" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110007" needBuildingLevel="9" needNumber="1"
+		capacity="18" para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="250" buildingId="10110009" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110007" needBuildingLevel="10" needNumber="1"
+		capacity="20" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="251" buildingId="10110009" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110007" needBuildingLevel="11" needNumber="1"
+		capacity="22" para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="252" buildingId="10110009" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110007" needBuildingLevel="12" needNumber="1"
+		capacity="24" para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="253" buildingId="10110009" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110007" needBuildingLevel="13" needNumber="1"
+		capacity="26" para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="254" buildingId="10110009" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110007" needBuildingLevel="14" needNumber="1"
+		capacity="28" para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="255" buildingId="10110009" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110007" needBuildingLevel="15" needNumber="1"
+		capacity="30" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="256" buildingId="10110009" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110007" needBuildingLevel="16" needNumber="1"
+		capacity="32" para1="16" para2="" para3="" para4="" />
+	<buildingEntity id="257" buildingId="10110009" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110007" needBuildingLevel="17" needNumber="1"
+		capacity="34" para1="17" para2="" para3="" para4="" />
+	<buildingEntity id="258" buildingId="10110009" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110007" needBuildingLevel="18" needNumber="1"
+		capacity="36" para1="18" para2="" para3="" para4="" />
+	<buildingEntity id="259" buildingId="10110009" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110007" needBuildingLevel="19" needNumber="1"
+		capacity="38" para1="19" para2="" para3="" para4="" />
+	<buildingEntity id="260" buildingId="10110009" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110007" needBuildingLevel="20" needNumber="1"
+		capacity="40" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="261" buildingId="10110009" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110007" needBuildingLevel="21" needNumber="1"
+		capacity="42" para1="21" para2="" para3="" para4="" />
+	<buildingEntity id="262" buildingId="10110009" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110007" needBuildingLevel="22" needNumber="1"
+		capacity="44" para1="22" para2="" para3="" para4="" />
+	<buildingEntity id="263" buildingId="10110009" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110007" needBuildingLevel="23" needNumber="1"
+		capacity="46" para1="23" para2="" para3="" para4="" />
+	<buildingEntity id="264" buildingId="10110009" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110007" needBuildingLevel="24" needNumber="1"
+		capacity="48" para1="24" para2="" para3="" para4="" />
+	<buildingEntity id="265" buildingId="10110009" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110007" needBuildingLevel="25" needNumber="1"
+		capacity="50" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="266" buildingId="10110009" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110007" needBuildingLevel="26" needNumber="1"
+		capacity="52" para1="26" para2="" para3="" para4="" />
+	<buildingEntity id="267" buildingId="10110009" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110007" needBuildingLevel="27" needNumber="1"
+		capacity="54" para1="27" para2="" para3="" para4="" />
+	<buildingEntity id="268" buildingId="10110009" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110007" needBuildingLevel="28" needNumber="1"
+		capacity="56" para1="28" para2="" para3="" para4="" />
+	<buildingEntity id="269" buildingId="10110009" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110007" needBuildingLevel="29" needNumber="1"
+		capacity="58" para1="29" para2="" para3="" para4="" />
+	<buildingEntity id="270" buildingId="10110009" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110007" needBuildingLevel="30" needNumber="1"
+		capacity="60" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="271" buildingId="10110010" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110003" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="272" buildingId="10110010" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110003" needBuildingLevel="2" needNumber="1"
+		capacity="4" para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="273" buildingId="10110010" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110003" needBuildingLevel="3" needNumber="1"
+		capacity="6" para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="274" buildingId="10110010" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110003" needBuildingLevel="4" needNumber="1"
+		capacity="8" para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="275" buildingId="10110010" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110003" needBuildingLevel="5" needNumber="1"
+		capacity="10" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="276" buildingId="10110010" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110003" needBuildingLevel="6" needNumber="1"
+		capacity="12" para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="277" buildingId="10110010" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110003" needBuildingLevel="7" needNumber="1"
+		capacity="14" para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="278" buildingId="10110010" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110003" needBuildingLevel="8" needNumber="1"
+		capacity="16" para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="279" buildingId="10110010" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110003" needBuildingLevel="9" needNumber="1"
+		capacity="18" para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="280" buildingId="10110010" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110003" needBuildingLevel="10" needNumber="1"
+		capacity="20" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="281" buildingId="10110010" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110003" needBuildingLevel="11" needNumber="1"
+		capacity="22" para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="282" buildingId="10110010" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110003" needBuildingLevel="12" needNumber="1"
+		capacity="24" para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="283" buildingId="10110010" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110003" needBuildingLevel="13" needNumber="1"
+		capacity="26" para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="284" buildingId="10110010" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110003" needBuildingLevel="14" needNumber="1"
+		capacity="28" para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="285" buildingId="10110010" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110003" needBuildingLevel="15" needNumber="1"
+		capacity="30" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="286" buildingId="10110010" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110003" needBuildingLevel="16" needNumber="1"
+		capacity="32" para1="16" para2="" para3="" para4="" />
+	<buildingEntity id="287" buildingId="10110010" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110003" needBuildingLevel="17" needNumber="1"
+		capacity="34" para1="17" para2="" para3="" para4="" />
+	<buildingEntity id="288" buildingId="10110010" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110003" needBuildingLevel="18" needNumber="1"
+		capacity="36" para1="18" para2="" para3="" para4="" />
+	<buildingEntity id="289" buildingId="10110010" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110003" needBuildingLevel="19" needNumber="1"
+		capacity="38" para1="19" para2="" para3="" para4="" />
+	<buildingEntity id="290" buildingId="10110010" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110003" needBuildingLevel="20" needNumber="1"
+		capacity="40" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="291" buildingId="10110010" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110003" needBuildingLevel="21" needNumber="1"
+		capacity="42" para1="21" para2="" para3="" para4="" />
+	<buildingEntity id="292" buildingId="10110010" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110003" needBuildingLevel="22" needNumber="1"
+		capacity="44" para1="22" para2="" para3="" para4="" />
+	<buildingEntity id="293" buildingId="10110010" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110003" needBuildingLevel="23" needNumber="1"
+		capacity="46" para1="23" para2="" para3="" para4="" />
+	<buildingEntity id="294" buildingId="10110010" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110003" needBuildingLevel="24" needNumber="1"
+		capacity="48" para1="24" para2="" para3="" para4="" />
+	<buildingEntity id="295" buildingId="10110010" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110003" needBuildingLevel="25" needNumber="1"
+		capacity="50" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="296" buildingId="10110010" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110003" needBuildingLevel="26" needNumber="1"
+		capacity="52" para1="26" para2="" para3="" para4="" />
+	<buildingEntity id="297" buildingId="10110010" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110003" needBuildingLevel="27" needNumber="1"
+		capacity="54" para1="27" para2="" para3="" para4="" />
+	<buildingEntity id="298" buildingId="10110010" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110003" needBuildingLevel="28" needNumber="1"
+		capacity="56" para1="28" para2="" para3="" para4="" />
+	<buildingEntity id="299" buildingId="10110010" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110003" needBuildingLevel="29" needNumber="1"
+		capacity="58" para1="29" para2="" para3="" para4="" />
+	<buildingEntity id="300" buildingId="10110010" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110003" needBuildingLevel="30" needNumber="1"
+		capacity="60" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="301" buildingId="10110011" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110010" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="302" buildingId="10110011" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110010" needBuildingLevel="2" needNumber="1"
+		capacity="4" para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="303" buildingId="10110011" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110010" needBuildingLevel="3" needNumber="1"
+		capacity="6" para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="304" buildingId="10110011" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110010" needBuildingLevel="4" needNumber="1"
+		capacity="8" para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="305" buildingId="10110011" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110010" needBuildingLevel="5" needNumber="1"
+		capacity="10" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="306" buildingId="10110011" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110010" needBuildingLevel="6" needNumber="1"
+		capacity="12" para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="307" buildingId="10110011" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110010" needBuildingLevel="7" needNumber="1"
+		capacity="14" para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="308" buildingId="10110011" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110010" needBuildingLevel="8" needNumber="1"
+		capacity="16" para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="309" buildingId="10110011" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110010" needBuildingLevel="9" needNumber="1"
+		capacity="18" para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="310" buildingId="10110011" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110010" needBuildingLevel="10" needNumber="1"
+		capacity="20" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="311" buildingId="10110011" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110010" needBuildingLevel="11" needNumber="1"
+		capacity="22" para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="312" buildingId="10110011" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110010" needBuildingLevel="12" needNumber="1"
+		capacity="24" para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="313" buildingId="10110011" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110010" needBuildingLevel="13" needNumber="1"
+		capacity="26" para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="314" buildingId="10110011" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110010" needBuildingLevel="14" needNumber="1"
+		capacity="28" para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="315" buildingId="10110011" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110010" needBuildingLevel="15" needNumber="1"
+		capacity="30" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="316" buildingId="10110011" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110010" needBuildingLevel="16" needNumber="1"
+		capacity="32" para1="16" para2="" para3="" para4="" />
+	<buildingEntity id="317" buildingId="10110011" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110010" needBuildingLevel="17" needNumber="1"
+		capacity="34" para1="17" para2="" para3="" para4="" />
+	<buildingEntity id="318" buildingId="10110011" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110010" needBuildingLevel="18" needNumber="1"
+		capacity="36" para1="18" para2="" para3="" para4="" />
+	<buildingEntity id="319" buildingId="10110011" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110010" needBuildingLevel="19" needNumber="1"
+		capacity="38" para1="19" para2="" para3="" para4="" />
+	<buildingEntity id="320" buildingId="10110011" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110010" needBuildingLevel="20" needNumber="1"
+		capacity="40" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="321" buildingId="10110011" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110010" needBuildingLevel="21" needNumber="1"
+		capacity="42" para1="21" para2="" para3="" para4="" />
+	<buildingEntity id="322" buildingId="10110011" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110010" needBuildingLevel="22" needNumber="1"
+		capacity="44" para1="22" para2="" para3="" para4="" />
+	<buildingEntity id="323" buildingId="10110011" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110010" needBuildingLevel="23" needNumber="1"
+		capacity="46" para1="23" para2="" para3="" para4="" />
+	<buildingEntity id="324" buildingId="10110011" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110010" needBuildingLevel="24" needNumber="1"
+		capacity="48" para1="24" para2="" para3="" para4="" />
+	<buildingEntity id="325" buildingId="10110011" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110010" needBuildingLevel="25" needNumber="1"
+		capacity="50" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="326" buildingId="10110011" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110010" needBuildingLevel="26" needNumber="1"
+		capacity="52" para1="26" para2="" para3="" para4="" />
+	<buildingEntity id="327" buildingId="10110011" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110010" needBuildingLevel="27" needNumber="1"
+		capacity="54" para1="27" para2="" para3="" para4="" />
+	<buildingEntity id="328" buildingId="10110011" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110010" needBuildingLevel="28" needNumber="1"
+		capacity="56" para1="28" para2="" para3="" para4="" />
+	<buildingEntity id="329" buildingId="10110011" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110010" needBuildingLevel="29" needNumber="1"
+		capacity="58" para1="29" para2="" para3="" para4="" />
+	<buildingEntity id="330" buildingId="10110011" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110010" needBuildingLevel="30" needNumber="1"
+		capacity="60" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="331" buildingId="10110012" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110011" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="332" buildingId="10110012" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110011" needBuildingLevel="2" needNumber="1"
+		capacity="4" para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="333" buildingId="10110012" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110011" needBuildingLevel="3" needNumber="1"
+		capacity="6" para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="334" buildingId="10110012" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110011" needBuildingLevel="4" needNumber="1"
+		capacity="8" para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="335" buildingId="10110012" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110011" needBuildingLevel="5" needNumber="1"
+		capacity="10" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="336" buildingId="10110012" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110011" needBuildingLevel="6" needNumber="1"
+		capacity="12" para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="337" buildingId="10110012" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110011" needBuildingLevel="7" needNumber="1"
+		capacity="14" para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="338" buildingId="10110012" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110011" needBuildingLevel="8" needNumber="1"
+		capacity="16" para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="339" buildingId="10110012" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110011" needBuildingLevel="9" needNumber="1"
+		capacity="18" para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="340" buildingId="10110012" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110011" needBuildingLevel="10" needNumber="1"
+		capacity="20" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="341" buildingId="10110012" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110011" needBuildingLevel="11" needNumber="1"
+		capacity="22" para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="342" buildingId="10110012" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110011" needBuildingLevel="12" needNumber="1"
+		capacity="24" para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="343" buildingId="10110012" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110011" needBuildingLevel="13" needNumber="1"
+		capacity="26" para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="344" buildingId="10110012" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110011" needBuildingLevel="14" needNumber="1"
+		capacity="28" para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="345" buildingId="10110012" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110011" needBuildingLevel="15" needNumber="1"
+		capacity="30" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="346" buildingId="10110012" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110011" needBuildingLevel="16" needNumber="1"
+		capacity="32" para1="16" para2="" para3="" para4="" />
+	<buildingEntity id="347" buildingId="10110012" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110011" needBuildingLevel="17" needNumber="1"
+		capacity="34" para1="17" para2="" para3="" para4="" />
+	<buildingEntity id="348" buildingId="10110012" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110011" needBuildingLevel="18" needNumber="1"
+		capacity="36" para1="18" para2="" para3="" para4="" />
+	<buildingEntity id="349" buildingId="10110012" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110011" needBuildingLevel="19" needNumber="1"
+		capacity="38" para1="19" para2="" para3="" para4="" />
+	<buildingEntity id="350" buildingId="10110012" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110011" needBuildingLevel="20" needNumber="1"
+		capacity="40" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="351" buildingId="10110012" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110011" needBuildingLevel="21" needNumber="1"
+		capacity="42" para1="21" para2="" para3="" para4="" />
+	<buildingEntity id="352" buildingId="10110012" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110011" needBuildingLevel="22" needNumber="1"
+		capacity="44" para1="22" para2="" para3="" para4="" />
+	<buildingEntity id="353" buildingId="10110012" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110011" needBuildingLevel="23" needNumber="1"
+		capacity="46" para1="23" para2="" para3="" para4="" />
+	<buildingEntity id="354" buildingId="10110012" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110011" needBuildingLevel="24" needNumber="1"
+		capacity="48" para1="24" para2="" para3="" para4="" />
+	<buildingEntity id="355" buildingId="10110012" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110011" needBuildingLevel="25" needNumber="1"
+		capacity="50" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="356" buildingId="10110012" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110011" needBuildingLevel="26" needNumber="1"
+		capacity="52" para1="26" para2="" para3="" para4="" />
+	<buildingEntity id="357" buildingId="10110012" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110011" needBuildingLevel="27" needNumber="1"
+		capacity="54" para1="27" para2="" para3="" para4="" />
+	<buildingEntity id="358" buildingId="10110012" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110011" needBuildingLevel="28" needNumber="1"
+		capacity="56" para1="28" para2="" para3="" para4="" />
+	<buildingEntity id="359" buildingId="10110012" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110011" needBuildingLevel="29" needNumber="1"
+		capacity="58" para1="29" para2="" para3="" para4="" />
+	<buildingEntity id="360" buildingId="10110012" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110011" needBuildingLevel="30" needNumber="1"
+		capacity="60" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="361" buildingId="10110013" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110004" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="362" buildingId="10110013" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110004" needBuildingLevel="2" needNumber="1"
+		capacity="4" para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="363" buildingId="10110013" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110004" needBuildingLevel="3" needNumber="1"
+		capacity="6" para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="364" buildingId="10110013" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110004" needBuildingLevel="4" needNumber="1"
+		capacity="8" para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="365" buildingId="10110013" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110004" needBuildingLevel="5" needNumber="1"
+		capacity="10" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="366" buildingId="10110013" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110004" needBuildingLevel="6" needNumber="1"
+		capacity="12" para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="367" buildingId="10110013" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110004" needBuildingLevel="7" needNumber="1"
+		capacity="14" para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="368" buildingId="10110013" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110004" needBuildingLevel="8" needNumber="1"
+		capacity="16" para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="369" buildingId="10110013" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110004" needBuildingLevel="9" needNumber="1"
+		capacity="18" para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="370" buildingId="10110013" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110004" needBuildingLevel="10" needNumber="1"
+		capacity="20" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="371" buildingId="10110013" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110004" needBuildingLevel="11" needNumber="1"
+		capacity="22" para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="372" buildingId="10110013" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110004" needBuildingLevel="12" needNumber="1"
+		capacity="24" para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="373" buildingId="10110013" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110004" needBuildingLevel="13" needNumber="1"
+		capacity="26" para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="374" buildingId="10110013" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110004" needBuildingLevel="14" needNumber="1"
+		capacity="28" para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="375" buildingId="10110013" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110004" needBuildingLevel="15" needNumber="1"
+		capacity="30" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="376" buildingId="10110013" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110004" needBuildingLevel="16" needNumber="1"
+		capacity="32" para1="16" para2="" para3="" para4="" />
+	<buildingEntity id="377" buildingId="10110013" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110004" needBuildingLevel="17" needNumber="1"
+		capacity="34" para1="17" para2="" para3="" para4="" />
+	<buildingEntity id="378" buildingId="10110013" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110004" needBuildingLevel="18" needNumber="1"
+		capacity="36" para1="18" para2="" para3="" para4="" />
+	<buildingEntity id="379" buildingId="10110013" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110004" needBuildingLevel="19" needNumber="1"
+		capacity="38" para1="19" para2="" para3="" para4="" />
+	<buildingEntity id="380" buildingId="10110013" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110004" needBuildingLevel="20" needNumber="1"
+		capacity="40" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="381" buildingId="10110013" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110004" needBuildingLevel="21" needNumber="1"
+		capacity="42" para1="21" para2="" para3="" para4="" />
+	<buildingEntity id="382" buildingId="10110013" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110004" needBuildingLevel="22" needNumber="1"
+		capacity="44" para1="22" para2="" para3="" para4="" />
+	<buildingEntity id="383" buildingId="10110013" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110004" needBuildingLevel="23" needNumber="1"
+		capacity="46" para1="23" para2="" para3="" para4="" />
+	<buildingEntity id="384" buildingId="10110013" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110004" needBuildingLevel="24" needNumber="1"
+		capacity="48" para1="24" para2="" para3="" para4="" />
+	<buildingEntity id="385" buildingId="10110013" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110004" needBuildingLevel="25" needNumber="1"
+		capacity="50" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="386" buildingId="10110013" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110004" needBuildingLevel="26" needNumber="1"
+		capacity="52" para1="26" para2="" para3="" para4="" />
+	<buildingEntity id="387" buildingId="10110013" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110004" needBuildingLevel="27" needNumber="1"
+		capacity="54" para1="27" para2="" para3="" para4="" />
+	<buildingEntity id="388" buildingId="10110013" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110004" needBuildingLevel="28" needNumber="1"
+		capacity="56" para1="28" para2="" para3="" para4="" />
+	<buildingEntity id="389" buildingId="10110013" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110004" needBuildingLevel="29" needNumber="1"
+		capacity="58" para1="29" para2="" para3="" para4="" />
+	<buildingEntity id="390" buildingId="10110013" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110004" needBuildingLevel="30" needNumber="1"
+		capacity="60" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="391" buildingId="10110014" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110004" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="392" buildingId="10110014" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110004" needBuildingLevel="2" needNumber="1"
+		capacity="4" para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="393" buildingId="10110014" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110004" needBuildingLevel="3" needNumber="1"
+		capacity="6" para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="394" buildingId="10110014" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110004" needBuildingLevel="4" needNumber="1"
+		capacity="8" para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="395" buildingId="10110014" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110004" needBuildingLevel="5" needNumber="1"
+		capacity="10" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="396" buildingId="10110014" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110004" needBuildingLevel="6" needNumber="1"
+		capacity="12" para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="397" buildingId="10110014" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110004" needBuildingLevel="7" needNumber="1"
+		capacity="14" para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="398" buildingId="10110014" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110004" needBuildingLevel="8" needNumber="1"
+		capacity="16" para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="399" buildingId="10110014" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110004" needBuildingLevel="9" needNumber="1"
+		capacity="18" para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="400" buildingId="10110014" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110004" needBuildingLevel="10" needNumber="1"
+		capacity="20" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="401" buildingId="10110014" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110004" needBuildingLevel="11" needNumber="1"
+		capacity="22" para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="402" buildingId="10110014" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110004" needBuildingLevel="12" needNumber="1"
+		capacity="24" para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="403" buildingId="10110014" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110004" needBuildingLevel="13" needNumber="1"
+		capacity="26" para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="404" buildingId="10110014" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110004" needBuildingLevel="14" needNumber="1"
+		capacity="28" para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="405" buildingId="10110014" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110004" needBuildingLevel="15" needNumber="1"
+		capacity="30" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="406" buildingId="10110014" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110004" needBuildingLevel="16" needNumber="1"
+		capacity="32" para1="16" para2="" para3="" para4="" />
+	<buildingEntity id="407" buildingId="10110014" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110004" needBuildingLevel="17" needNumber="1"
+		capacity="34" para1="17" para2="" para3="" para4="" />
+	<buildingEntity id="408" buildingId="10110014" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110004" needBuildingLevel="18" needNumber="1"
+		capacity="36" para1="18" para2="" para3="" para4="" />
+	<buildingEntity id="409" buildingId="10110014" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110004" needBuildingLevel="19" needNumber="1"
+		capacity="38" para1="19" para2="" para3="" para4="" />
+	<buildingEntity id="410" buildingId="10110014" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110004" needBuildingLevel="20" needNumber="1"
+		capacity="40" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="411" buildingId="10110014" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110004" needBuildingLevel="21" needNumber="1"
+		capacity="42" para1="21" para2="" para3="" para4="" />
+	<buildingEntity id="412" buildingId="10110014" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110004" needBuildingLevel="22" needNumber="1"
+		capacity="44" para1="22" para2="" para3="" para4="" />
+	<buildingEntity id="413" buildingId="10110014" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110004" needBuildingLevel="23" needNumber="1"
+		capacity="46" para1="23" para2="" para3="" para4="" />
+	<buildingEntity id="414" buildingId="10110014" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110004" needBuildingLevel="24" needNumber="1"
+		capacity="48" para1="24" para2="" para3="" para4="" />
+	<buildingEntity id="415" buildingId="10110014" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110004" needBuildingLevel="25" needNumber="1"
+		capacity="50" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="416" buildingId="10110014" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110004" needBuildingLevel="26" needNumber="1"
+		capacity="52" para1="26" para2="" para3="" para4="" />
+	<buildingEntity id="417" buildingId="10110014" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110004" needBuildingLevel="27" needNumber="1"
+		capacity="54" para1="27" para2="" para3="" para4="" />
+	<buildingEntity id="418" buildingId="10110014" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110004" needBuildingLevel="28" needNumber="1"
+		capacity="56" para1="28" para2="" para3="" para4="" />
+	<buildingEntity id="419" buildingId="10110014" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110004" needBuildingLevel="29" needNumber="1"
+		capacity="58" para1="29" para2="" para3="" para4="" />
+	<buildingEntity id="420" buildingId="10110014" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110004" needBuildingLevel="30" needNumber="1"
+		capacity="60" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="421" buildingId="10110015" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110005" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="422" buildingId="10110015" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110005" needBuildingLevel="2" needNumber="1"
+		capacity="4" para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="423" buildingId="10110015" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110005" needBuildingLevel="3" needNumber="1"
+		capacity="6" para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="424" buildingId="10110015" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110005" needBuildingLevel="4" needNumber="1"
+		capacity="8" para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="425" buildingId="10110015" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110005" needBuildingLevel="5" needNumber="1"
+		capacity="10" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="426" buildingId="10110015" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110005" needBuildingLevel="6" needNumber="1"
+		capacity="12" para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="427" buildingId="10110015" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110005" needBuildingLevel="7" needNumber="1"
+		capacity="14" para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="428" buildingId="10110015" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110005" needBuildingLevel="8" needNumber="1"
+		capacity="16" para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="429" buildingId="10110015" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110005" needBuildingLevel="9" needNumber="1"
+		capacity="18" para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="430" buildingId="10110015" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110005" needBuildingLevel="10" needNumber="1"
+		capacity="20" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="431" buildingId="10110015" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110005" needBuildingLevel="11" needNumber="1"
+		capacity="22" para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="432" buildingId="10110015" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110005" needBuildingLevel="12" needNumber="1"
+		capacity="24" para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="433" buildingId="10110015" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110005" needBuildingLevel="13" needNumber="1"
+		capacity="26" para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="434" buildingId="10110015" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110005" needBuildingLevel="14" needNumber="1"
+		capacity="28" para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="435" buildingId="10110015" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110005" needBuildingLevel="15" needNumber="1"
+		capacity="30" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="436" buildingId="10110015" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110005" needBuildingLevel="16" needNumber="1"
+		capacity="32" para1="16" para2="" para3="" para4="" />
+	<buildingEntity id="437" buildingId="10110015" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110005" needBuildingLevel="17" needNumber="1"
+		capacity="34" para1="17" para2="" para3="" para4="" />
+	<buildingEntity id="438" buildingId="10110015" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110005" needBuildingLevel="18" needNumber="1"
+		capacity="36" para1="18" para2="" para3="" para4="" />
+	<buildingEntity id="439" buildingId="10110015" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110005" needBuildingLevel="19" needNumber="1"
+		capacity="38" para1="19" para2="" para3="" para4="" />
+	<buildingEntity id="440" buildingId="10110015" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110005" needBuildingLevel="20" needNumber="1"
+		capacity="40" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="441" buildingId="10110015" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110005" needBuildingLevel="21" needNumber="1"
+		capacity="42" para1="21" para2="" para3="" para4="" />
+	<buildingEntity id="442" buildingId="10110015" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110005" needBuildingLevel="22" needNumber="1"
+		capacity="44" para1="22" para2="" para3="" para4="" />
+	<buildingEntity id="443" buildingId="10110015" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110005" needBuildingLevel="23" needNumber="1"
+		capacity="46" para1="23" para2="" para3="" para4="" />
+	<buildingEntity id="444" buildingId="10110015" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110005" needBuildingLevel="24" needNumber="1"
+		capacity="48" para1="24" para2="" para3="" para4="" />
+	<buildingEntity id="445" buildingId="10110015" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110005" needBuildingLevel="25" needNumber="1"
+		capacity="50" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="446" buildingId="10110015" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110005" needBuildingLevel="26" needNumber="1"
+		capacity="52" para1="26" para2="" para3="" para4="" />
+	<buildingEntity id="447" buildingId="10110015" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110005" needBuildingLevel="27" needNumber="1"
+		capacity="54" para1="27" para2="" para3="" para4="" />
+	<buildingEntity id="448" buildingId="10110015" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110005" needBuildingLevel="28" needNumber="1"
+		capacity="56" para1="28" para2="" para3="" para4="" />
+	<buildingEntity id="449" buildingId="10110015" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110005" needBuildingLevel="29" needNumber="1"
+		capacity="58" para1="29" para2="" para3="" para4="" />
+	<buildingEntity id="450" buildingId="10110015" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110005" needBuildingLevel="30" needNumber="1"
+		capacity="60" para1="30" para2="" para3="" para4="" />
+	<buildingEntity id="451" buildingId="10110016" level="1"
+		money="0" food="100" wood="100" stone="100" bronze="100" time="10000"
+		needBuildingId="10110005" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+	<buildingEntity id="452" buildingId="10110016" level="2"
+		money="0" food="400" wood="400" stone="400" bronze="400" time="20000"
+		needBuildingId="10110005" needBuildingLevel="2" needNumber="1"
+		capacity="4" para1="2" para2="" para3="" para4="" />
+	<buildingEntity id="453" buildingId="10110016" level="3"
+		money="0" food="900" wood="900" stone="900" bronze="900" time="30000"
+		needBuildingId="10110005" needBuildingLevel="3" needNumber="1"
+		capacity="6" para1="3" para2="" para3="" para4="" />
+	<buildingEntity id="454" buildingId="10110016" level="4"
+		money="0" food="1600" wood="1600" stone="1600" bronze="1600" time="40000"
+		needBuildingId="10110005" needBuildingLevel="4" needNumber="1"
+		capacity="8" para1="4" para2="" para3="" para4="" />
+	<buildingEntity id="455" buildingId="10110016" level="5"
+		money="0" food="2500" wood="2500" stone="2500" bronze="2500" time="50000"
+		needBuildingId="10110005" needBuildingLevel="5" needNumber="1"
+		capacity="10" para1="5" para2="" para3="" para4="" />
+	<buildingEntity id="456" buildingId="10110016" level="6"
+		money="0" food="3600" wood="3600" stone="3600" bronze="3600" time="60000"
+		needBuildingId="10110005" needBuildingLevel="6" needNumber="1"
+		capacity="12" para1="6" para2="" para3="" para4="" />
+	<buildingEntity id="457" buildingId="10110016" level="7"
+		money="0" food="4900" wood="4900" stone="4900" bronze="4900" time="70000"
+		needBuildingId="10110005" needBuildingLevel="7" needNumber="1"
+		capacity="14" para1="7" para2="" para3="" para4="" />
+	<buildingEntity id="458" buildingId="10110016" level="8"
+		money="0" food="6400" wood="6400" stone="6400" bronze="6400" time="80000"
+		needBuildingId="10110005" needBuildingLevel="8" needNumber="1"
+		capacity="16" para1="8" para2="" para3="" para4="" />
+	<buildingEntity id="459" buildingId="10110016" level="9"
+		money="0" food="8100" wood="8100" stone="8100" bronze="8100" time="90000"
+		needBuildingId="10110005" needBuildingLevel="9" needNumber="1"
+		capacity="18" para1="9" para2="" para3="" para4="" />
+	<buildingEntity id="460" buildingId="10110016" level="10"
+		money="0" food="10000" wood="10000" stone="10000" bronze="10000" time="100000"
+		needBuildingId="10110005" needBuildingLevel="10" needNumber="1"
+		capacity="20" para1="10" para2="" para3="" para4="" />
+	<buildingEntity id="461" buildingId="10110016" level="11"
+		money="0" food="12100" wood="12100" stone="12100" bronze="12100" time="110000"
+		needBuildingId="10110005" needBuildingLevel="11" needNumber="1"
+		capacity="22" para1="11" para2="" para3="" para4="" />
+	<buildingEntity id="462" buildingId="10110016" level="12"
+		money="0" food="14400" wood="14400" stone="14400" bronze="14400" time="120000"
+		needBuildingId="10110005" needBuildingLevel="12" needNumber="1"
+		capacity="24" para1="12" para2="" para3="" para4="" />
+	<buildingEntity id="463" buildingId="10110016" level="13"
+		money="0" food="16900" wood="16900" stone="16900" bronze="16900" time="130000"
+		needBuildingId="10110005" needBuildingLevel="13" needNumber="1"
+		capacity="26" para1="13" para2="" para3="" para4="" />
+	<buildingEntity id="464" buildingId="10110016" level="14"
+		money="0" food="19600" wood="19600" stone="19600" bronze="19600" time="140000"
+		needBuildingId="10110005" needBuildingLevel="14" needNumber="1"
+		capacity="28" para1="14" para2="" para3="" para4="" />
+	<buildingEntity id="465" buildingId="10110016" level="15"
+		money="0" food="22500" wood="22500" stone="22500" bronze="22500" time="150000"
+		needBuildingId="10110005" needBuildingLevel="15" needNumber="1"
+		capacity="30" para1="15" para2="" para3="" para4="" />
+	<buildingEntity id="466" buildingId="10110016" level="16"
+		money="0" food="25600" wood="25600" stone="25600" bronze="25600" time="160000"
+		needBuildingId="10110005" needBuildingLevel="16" needNumber="1"
+		capacity="32" para1="16" para2="" para3="" para4="" />
+	<buildingEntity id="467" buildingId="10110016" level="17"
+		money="0" food="28900" wood="28900" stone="28900" bronze="28900" time="170000"
+		needBuildingId="10110005" needBuildingLevel="17" needNumber="1"
+		capacity="34" para1="17" para2="" para3="" para4="" />
+	<buildingEntity id="468" buildingId="10110016" level="18"
+		money="0" food="32400" wood="32400" stone="32400" bronze="32400" time="180000"
+		needBuildingId="10110005" needBuildingLevel="18" needNumber="1"
+		capacity="36" para1="18" para2="" para3="" para4="" />
+	<buildingEntity id="469" buildingId="10110016" level="19"
+		money="0" food="36100" wood="36100" stone="36100" bronze="36100" time="190000"
+		needBuildingId="10110005" needBuildingLevel="19" needNumber="1"
+		capacity="38" para1="19" para2="" para3="" para4="" />
+	<buildingEntity id="470" buildingId="10110016" level="20"
+		money="0" food="40000" wood="40000" stone="40000" bronze="40000" time="200000"
+		needBuildingId="10110005" needBuildingLevel="20" needNumber="1"
+		capacity="40" para1="20" para2="" para3="" para4="" />
+	<buildingEntity id="471" buildingId="10110016" level="21"
+		money="0" food="44100" wood="44100" stone="44100" bronze="44100" time="210000"
+		needBuildingId="10110005" needBuildingLevel="21" needNumber="1"
+		capacity="42" para1="21" para2="" para3="" para4="" />
+	<buildingEntity id="472" buildingId="10110016" level="22"
+		money="0" food="48400" wood="48400" stone="48400" bronze="48400" time="220000"
+		needBuildingId="10110005" needBuildingLevel="22" needNumber="1"
+		capacity="44" para1="22" para2="" para3="" para4="" />
+	<buildingEntity id="473" buildingId="10110016" level="23"
+		money="0" food="52900" wood="52900" stone="52900" bronze="52900" time="230000"
+		needBuildingId="10110005" needBuildingLevel="23" needNumber="1"
+		capacity="46" para1="23" para2="" para3="" para4="" />
+	<buildingEntity id="474" buildingId="10110016" level="24"
+		money="0" food="57600" wood="57600" stone="57600" bronze="57600" time="240000"
+		needBuildingId="10110005" needBuildingLevel="24" needNumber="1"
+		capacity="48" para1="24" para2="" para3="" para4="" />
+	<buildingEntity id="475" buildingId="10110016" level="25"
+		money="0" food="62500" wood="62500" stone="62500" bronze="62500" time="250000"
+		needBuildingId="10110005" needBuildingLevel="25" needNumber="1"
+		capacity="50" para1="25" para2="" para3="" para4="" />
+	<buildingEntity id="476" buildingId="10110016" level="26"
+		money="0" food="67600" wood="67600" stone="67600" bronze="67600" time="260000"
+		needBuildingId="10110005" needBuildingLevel="26" needNumber="1"
+		capacity="52" para1="26" para2="" para3="" para4="" />
+	<buildingEntity id="477" buildingId="10110016" level="27"
+		money="0" food="72900" wood="72900" stone="72900" bronze="72900" time="270000"
+		needBuildingId="10110005" needBuildingLevel="27" needNumber="1"
+		capacity="54" para1="27" para2="" para3="" para4="" />
+	<buildingEntity id="478" buildingId="10110016" level="28"
+		money="0" food="78400" wood="78400" stone="78400" bronze="78400" time="280000"
+		needBuildingId="10110005" needBuildingLevel="28" needNumber="1"
+		capacity="56" para1="28" para2="" para3="" para4="" />
+	<buildingEntity id="479" buildingId="10110016" level="29"
+		money="0" food="84100" wood="84100" stone="84100" bronze="84100" time="290000"
+		needBuildingId="10110005" needBuildingLevel="29" needNumber="1"
+		capacity="58" para1="29" para2="" para3="" para4="" />
+	<buildingEntity id="480" buildingId="10110016" level="30"
+		money="0" food="90000" wood="90000" stone="90000" bronze="90000" time="300000"
+		needBuildingId="10110005" needBuildingLevel="30" needNumber="1"
+		capacity="60" para1="30" para2="" para3="" para4="" />
+		
+		
+		<!--<buildingEntity id="481" buildingId="10110001" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="" needBuildingLevel="" needNumber="" capacity=""
+		para1="0" para2="" para3="" para4="" />
+		<buildingEntity id="482" buildingId="10110002" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="400" para1="0.05" para2="" para3="" para4="" />
+		 -->
+		<buildingEntity id="483" buildingId="10110003" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="100" para1="5" para2="" para3="" para4="" />
+		<buildingEntity id="484" buildingId="10110004" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="100" para1="5" para2="" para3="" para4="" />
+		<buildingEntity id="485" buildingId="10110005" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		
+		<buildingEntity id="486" buildingId="10110006" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="487" buildingId="10110007" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="488" buildingId="10110008" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="489" buildingId="10110009" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110007" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="490" buildingId="10110010" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110003" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="491" buildingId="10110011" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110010" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="492" buildingId="10110012" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110011" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="493" buildingId="10110013" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110004" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="494" buildingId="10110014" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110004" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="495" buildingId="10110015" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110005" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="496" buildingId="10110016" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110005" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="497" buildingId="10110017" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="498" buildingId="10110018" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="499" buildingId="10110019" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+		<buildingEntity id="500" buildingId="10110020" level="0"
+		money="0" food="50" wood="50" stone="50" bronze="50" time="8000"
+		needBuildingId="10110001" needBuildingLevel="1" needNumber="1"
+		capacity="2" para1="1" para2="" para3="" para4="" />
+</castle>

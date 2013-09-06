@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crystalcg.gamedev.util.cache.CacheMapper">
+	<!-- 君主等级信息表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticCharacter" id="staticCharacter">
+		<result property="level" column="level"/>
+		<result property="experience" column="experience"/>
+		<result property="heroLimit" column="heroLimit"/>
+	</resultMap>
+	<!-- 城池等级信息表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticCity" id="staticCity">
+		<result property="level" column="level"/>
+		<result property="experience" column="experience"/>
+		<result property="bulidingNum" column="buliding_num"/>
+		<result property="resourceNum" column="resource_num"/>
+		<result property="tributaryNum" column="tributary_num"/>
+		<result property="age" column="age"/>
+	</resultMap>
+	<!-- 国家 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticCountry" id="staticCountry">
+		<result property="countryId" column="country_id"/>
+		<result property="countryName" column="country_name"/>
+	</resultMap>
+	<!-- 武将等级信息表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticHeroLevel" id="staticHeroLevel">
+	
+		<result property="heroLevel" column="hero_level"/>
+		<result property="expLimit" column="exp_limit"/>
+		<result property="poolLimit" column="pool_limit"/>
+	</resultMap>
+	<!-- 聚贤阁等级信息表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticCentrestage" id="staticCentrestage">
+		<result property="level" column="level"/>
+		<result property="rank1Num" column="rank1_num"/>
+		<result property="rank2Num" column="rank2_num"/>
+		<result property="rank3Num" column="rank3_num"/>
+		<result property="rank4Num" column="rank4_num"/>
+		<result property="rank5Num" column="rank5_num"/>
+		<result property="rank6Num" column="rank6_num"/>
+		<result property="rank7Num" column="rank7_num"/>
+	</resultMap>
+	<!-- 官职信息表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticRank" id="staticRank">
+		<result property="rankNo" column="rank_no"/>
+		<result property="rankName" column="rank_name"/>
+		<result property="rankCommand" column="rank_command"/>
+		<result property="needExploit" column="need_exploit"/>
+		<result property="needItem" column="need_item"/>
+	</resultMap>
+	<!-- 建筑实体 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticBuilding" id="staticBuilding">
+		<result property="buildingNo" column="building_no" />
+		<result property="buildingName" column="building_name" />
+		<result property="preBuilding" column="pre_building" />
+		<result property="buildingType" column="building_type" />
+		<result property="needWood" column="need_wood" />
+		<result property="needStone" column="need_stone" />
+		<result property="needIronore" column="need_ironore" />
+		<result property="needMoney" column="need_money" />
+		<result property="characterExp" column="character_exp" />
+		<result property="cityExp" column="city_exp" />
+		<result property="limitAmount" column="limit_amount" />
+		<result property="upgradeTime" column="upgrade_time" />
+		<result property="level" column="level" />
+		<result property="image" column="image" />
+		<result property="buildingDesc" column="building_desc" />
+		<result property="upgradeDesc" column="upgrade_desc" />
+		<result property="demolitionDesc" column="demolition_desc" />
+		<result property="function1" column="function1" />
+		<result property="functionvalue1" column="functionvalue1" />
+		<result property="function2" column="function2" />
+		<result property="functionvalue2" column="functionvalue2" />
+		<result property="function3" column="function3" />
+		<result property="functionvalue3" column="functionvalue3" />
+		<result property="function4" column="function4" />
+		<result property="functionvalue4" column="functionvalue4" />
+	</resultMap>
+	<!-- 酒馆武将刷新规则 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticTavern" id="staticTavern">
+		<result property="level" column="level"/>
+		<result property="whiteHeroRate" column="white_hero_rate"/>
+		<result property="greenHeroRate" column="green_hero_rate"/>
+		<result property="blueHeroRate" column="blue_hero_rate"/>
+		<result property="purpleHeroRate" column="purple_hero_rate"/>
+		<result property="orangeHeroRate" column="orange_hero_rate"/>
+		<result property="redHeroRate" column="red_hero_rate"/>
+	</resultMap>
+	<!-- 武将属性刷新规则 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticTavernHeroAttr" id="staticTavernHeroAttr">
+		<result property="quality" column="quality"/>
+		<result property="minGift" column="min_gift"/>
+		<result property="maxGift" column="max_gift"/>
+		<result property="minAttr" column="min_attr"/>
+		<result property="maxAttr" column="max_attr"/>
+		<result property="minRate" column="min_rate"/>
+		<result property="maxRate" column="max_rate"/>
+	</resultMap>
+	<!-- 武将技能 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticHeroSkill" id="staticHeroSkill">
+		<result property="skillNo" column="skill_no"/>
+		<result property="name" column="name"/>
+		<result property="level" column="level"/>
+		<result property="icon" column="icon"/>
+		<result property="animationSingle" column="animation_single"/>
+		<result property="animationMulti" column="animation_multi"/>
+		<result property="heroAction" column="hero_action"/>
+		<result property="description" column="description"/>
+		<result property="type" column="type"/>
+		<result property="dmgType" column="dmg_type"/>
+		<result property="targetLimit" column="target_limit"/>
+		<result property="skillRange" column="skill_range"/>
+		<result property="effectType" column="effect_type"/>
+		<result property="effectMode" column="effect_mode"/>
+		<result property="effectValue" column="effect_value"/>
+		<result property="needWeapon" column="need_weapon"/>
+		<result property="coolDown" column="cool_down"/>
+		<result property="needHeroLevel" column="need_hero_level"/>
+		<result property="upgradeNeedExp" column="upgrade_need_exp"/>
+		<result property="upgradeNeedItem" column="upgrade_need_item"/>
+		<result property="upgradeNeedItemNum" column="upgrade_need_item_num"/>
+		<result property="needVnp" column="need_vnp"/>
+		<result property="needItem" column="need_item"/>
+		<result property="needItemNum" column="need_item_num"/>
+		<result property="addEffect1" column="add_effect1"/>
+		<result property="addEffectRate1" column="add_effect_rate1"/>
+		<result property="addEffect2" column="add_effect2"/>
+		<result property="addEffectRate2" column="add_effect_rate2"/>
+		<result property="addEffect3" column="add_effect3"/>
+		<result property="addEffectRate3" column="add_effect_rate3"/>
+	</resultMap>
+	<!-- 装备强化静态表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticStrengthenEquipment" id="staticStrengthenEquipment">
+		<result property="strengthLevel" column="strength_level"/>
+		<result property="needMaterialNo" column="need_material_no"/>
+		<result property="quality" column="quality"/>
+		<result property="needMaterialAmount" column="need_material_amount"/>
+		<result property="needMoney" column="need_money"/>
+		<result property="successRate" column="success_rate"/>
+		<result property="baseValue" column="base_value"/>
+		<result property="propertyBonus" column="property_bonus"/>
+		<result property="reduceLevel" column="reduce_level"/>
+	</resultMap>
+	<!-- 内政策略奖励 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticAffairBonus" id="staticAffairBonus">
+		<result property="affairNo" column="affair_no"/>
+		<result property="affairName" column="affair_name"/>
+		<result property="needItem" column="need_item"/>
+		<result property="needAmount" column="need_amount"/>
+		<result property="addHeroExp" column="add_hero_exp"/>
+		<result property="addMoney" column="add_money"/>
+		<result property="addIornore" column="add_iornore"/>
+		<result property="addWood" column="add_wood"/>
+		<result property="addFood" column="add_food"/>
+		<result property="addPopularSupport" column="add_popular_support"/>
+		<result property="addSoldier" column="add_soldier"/>
+		<result property="addPeople" column="add_people"/>
+		<result property="addItem" column="add_item"/>
+		<result property="addItemRate" column="add_item_rate"/>
+		<result property="addForce" column="add_force"/>
+		<result property="addStrategy" column="add_strategy"/>
+		<result property="addPhysique" column="add_physique"/>
+		<result property="addAgility" column="add_agility"/>
+		<result property="affairdesc" column="affairdesc"/>
+		<result property="description" column="description"/>
+	</resultMap>
+	<!-- 装备图样静态表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticProducePlan" id="staticProducePlan">
+		<result property="planNo" column="plan_no"/>
+		<result property="productionNo" column="production_no"/>
+		<result property="needMaterialNo" column="need_material_no"/>
+		<result property="needMaterialAmount" column="need_material_amount"/>
+		<result property="needBaseMoney" column="need_base_money"/>
+	</resultMap>
+	<!-- 打造奖励表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticProduceReward" id="staticProduceReward">
+		<result property="materialLevel" column="material_level"/>
+		<result property="qualityRate1" column="quality_rate1"/>
+		<result property="qualityRate2" column="quality_rate2"/>
+		<result property="qualityRate3" column="quality_rate3"/>
+		<result property="qualityRate4" column="quality_rate4"/>
+		<result property="qualityRate5" column="quality_rate5"/>
+		<result property="qualityRate6" column="quality_rate6"/>
+	</resultMap>
+	<!-- 野怪静态信息 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticEnemyNPC" id="staticEnemyNPC">
+		<result property="enemyNo" column="enemy_no"/>
+		<result property="enemyName" column="enemy_name"/>
+		<result property="flag" column="flag"/>
+		<result property="soldierNum" column="soldier_num"/>
+		<result property="soldierType1" column="soldier_type1"/>
+		<result property="soldierType2" column="soldier_type2"/>
+		<result property="soldierType3" column="soldier_type3"/>
+		<result property="soldierType4" column="soldier_type4"/>
+		<result property="soldierType5" column="soldier_type5"/>
+		<result property="formationNo" column="formation_no"/>
+		<result property="heroLevel" column="hero_level"/>
+		<result property="heroForce" column="hero_force"/>
+		<result property="heroStrategy" column="hero_strategy"/>
+		<result property="heroPhysique" column="hero_physique"/>
+		<result property="heroAgility" column="hero_agility"/>
+		<result property="aiNo" column="ai_no"/>
+		<result property="heroIcon" column="hero_icon"/>
+		<result property="smallHeroIcon" column="small_hero_icon"/>
+		<result property="description" column="description"/>
+		<result property="forceLevel" column="force_level"/>
+		<result property="heroAction" column="hero_action"/>
+		<result property="img" column="img_no"/>
+	</resultMap>
+	<!-- 战斗奖励静态信息 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticBattleReward" id="staticBattleReward">
+		<result property="enemyNo" column="enemy_no"/>
+		<result property="exploitReward" column="exploit_reward"/>
+		<result property="expReward" column="exp_reward"/>
+		<result property="foodReward" column="food_reward"/>
+		<result property="woodReward" column="wood_reward"/>
+		<result property="stoneReward" column="stone_reward"/>
+		<result property="ironoreReward" column="ironore_reward"/>
+		<result property="articleReward1" column="article_reward1"/>
+		<result property="articleReward2" column="article_reward2"/>
+	</resultMap>
+	<!-- 战斗物品奖励静态信息 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticArticleReward" id="staticArticleReward">
+		<result property="itemRewardNo" column="item_reward_no"/>
+		<result property="itemNo" column="item_no"/>
+		<result property="itemType" column="item_type"/>
+		<result property="amount" column="amount"/>
+		<result property="dropRate" column="drop_rate"/>
+	</resultMap>
+	<!-- 兵种静态信息 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticSoldier" id="staticSoldier">
+		<result property="soldierNo" column="soldier_no"/>
+		<result property="soldierName" column="soldier_name"/>
+		<result property="soldierLevel" column="soldier_level"/>
+		<result property="imageName" column="image_name"/>
+		<result property="trainTime" column="train_time"/>
+		<result property="soldierDescription" column="soldier_description"/>
+		<result property="soldierType" column="soldier_type"/>
+		<result property="soldierAttack" column="soldier_attack"/>
+		<result property="soldierDefence" column="soldier_defence"/>
+		<result property="soldierCritical" column="soldier_critical"/>
+		<result property="soldierHit" column="soldier_hit"/>
+		<result property="soldierDodge" column="soldier_dodge"/>
+		<result property="attackType" column="attack_type"/>
+		<result property="armorType" column="armor_type"/>
+		<result property="soldierHp" column="soldier_hp"/>
+		<result property="maxRange" column="max_range"/>
+		<result property="minRange" column="min_range"/>
+		<result property="mobility" column="mobility"/>
+		<result property="needMoney" column="need_money"/>
+		<result property="needMoney" column="need_food"/>
+		<result property="needIronore" column="need_ironore"/>
+		<result property="soldierSkill" column="soldier_skill"/>
+	</resultMap>
+	<!-- 内政科技表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticInteriorTech" id="staticInteriorTech">
+		<result property="techNo" column="tech_no"/>
+		<result property="techName" column="tech_name"/>
+		<result property="needTime" column="need_time"/>
+		<result property="needLevel" column="need_level"/>
+		<result property="techLevel" column="tech_level"/>
+		<result property="effectType" column="effect_type"/>
+		<result property="valueType" column="value_type"/>
+		<result property="effectValue" column="effect_value"/>
+		<result property="description" column="description"/>
+		<result property="techKey" column="tech_key"/>
+		<result property="techIcon" column="tech_icon"/>
+	</resultMap>
+	<!-- 兵种科技表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticSoldierTech" id="staticSoldierTech">
+		<result property="techNo" column="tech_no"/>
+		<result property="techName" column="tech_name"/>
+		<result property="preTech" column="pre_tech"/>
+		<result property="needTime" column="need_time"/>
+		<result property="techLevel" column="tech_level"/>
+		<result property="soldierType" column="soldier_type"/>
+		<result property="soldierNo" column="soldier_no"/>
+		<result property="valueMode" column="value_mode"/>
+		<result property="addHealth" column="add_health"/>
+		<result property="addAtk" column="add_atk"/>
+		<result property="addDef" column="add_def"/>
+		<result property="addHit" column="add_hit"/>
+		<result property="addDodge" column="add_dodge"/>
+		<result property="addCrt" column="add_crt"/>
+		<result property="addSkill" column="add_skill"/>
+		<result property="techIcon" column="tech_icon"/>
+		<result property="description" column="description"/>
+	</resultMap>
+	<!-- 阵型表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticFormation" id="staticFormation">
+		<result property="formationNo" column="formation_no"/>
+		<result property="formationIcon" column="formation_icon"/>
+		<result property="formationSmallIcon" column="formation_small_icon"/>
+		<result property="name" column="name"/>
+		<result property="coordinate1" column="coordinate1"/>
+		<result property="coordinate2" column="coordinate2"/>
+		<result property="coordinate3" column="coordinate3"/>
+		<result property="coordinate4" column="coordinate4"/>
+		<result property="coordinate5" column="coordinate5"/>
+		<result property="applyToSoldier1" column="apply_to_soldier1"/>
+		<result property="effect1" column="effect1"/>
+		<result property="applyToSoldier2" column="apply_to_soldier2"/>
+		<result property="effect2" column="effect2"/>
+		<result property="applyToSoldier3" column="apply_to_soldier3"/>
+		<result property="effect3" column="effect3"/>
+		<result property="description" column="description"/>
+		<result property="effectDescription" column="effect_description"/>
+	</resultMap>
+	<!-- 阵法科技表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticFormationTech" id="staticFormationTech">
+		<result property="techNo" column="tech_no"/>
+		<result property="techName" column="tech_name"/>
+		<result property="preTech" column="pre_tech"/>
+		<result property="needTime" column="need_time"/>
+		<result property="techLevel" column="tech_level"/>
+		<result property="formationNo" column="formation_no"/>
+		<result property="techLocation" column="tech_location"/>
+		<result property="techIcon" column="tech_icon"/>
+		<result property="description" column="description"/>
+	</resultMap>
+	<!-- 装备静态表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticEquipment" id="staticEquipment">
+		<result property="id" column="id"/>
+		<result property="equipmentNo" column="equipment_no"/>
+		<result property="equipmentName" column="equipment_name"/>
+		<result property="quality" column="quality"/>
+		<result property="equipmentType" column="equipment_type"/>
+		<result property="weaponType" column="weapon_type"/>
+		<result property="needLevel" column="need_level"/>
+		<result property="sellable" column="sellable"/>
+		<result property="dropable" column="dropable"/>
+		<result property="isBop" column="is_bop"/>
+		<result property="price" column="price"/>
+		<result property="heroForce" column="hero_force"/>
+		<result property="strategy" column="strategy"/>
+		<result property="physique" column="physique"/>
+		<result property="agility" column="agility"/>
+		<result property="specialSkill1" column="special_skill1"/>
+		<result property="skillProbability1" column="skill_probability1"/>
+		<result property="specialSkill2" column="special_skill2"/>
+		<result property="skillProbability2" column="skill_probability2"/>
+		<result property="specialSkill3" column="special_skill3"/>
+		<result property="skillProbability3" column="skill_probability3"/>
+		<result property="icon" column="icon"/>
+		<result property="iconLarge" column="icon_large"/>
+		<result property="description" column="description"/>
+	</resultMap>
+	<!-- 武将技能持续性效果表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticHeroSkillLastEffect" id="staticHeroSkillLastEffect">
+		<result property="effectNo" column="effect_no"/>
+		<result property="icon" column="icon"/>
+		<result property="animationSingle" column="animation_single"/>
+		<result property="animationMulti" column="animation_multi"/>
+		<result property="targetLimit" column="target_limit"/>
+		<result property="description" column="description"/>
+		<result property="lastTime" column="last_time"/>
+		<result property="coexistType" column="coexist_type"/>
+		<result property="dispelable" column="dispelable"/>
+		<result property="type" column="type"/>
+		<result property="mode" column="mode"/>
+		<result property="value" column="value"/>
+		<result property="heroForce" column="hero_force"/>
+		<result property="strategy" column="strategy"/>
+		<result property="agility" column="agility"/>
+		<result property="physique" column="physique"/>
+		<result property="atk" column="atk"/>
+		<result property="def" column="def"/>
+		<result property="crit" column="crit"/>
+		<result property="hit" column="hit"/>
+		<result property="dodge" column="dodge"/>
+		<result property="mobility" column="mobility"/>
+	</resultMap>
+	<!-- 消耗品道具表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticItem" id="staticItem">
+		<result property="id" column="id"/>
+		<result property="itemNo" column="item_no"/>
+		<result property="itemName" column="item_name"/>
+		<result property="itemSubtype" column="item_subtype"/>
+		<result property="useEffectType" column="use_effect_type"/>
+		<result property="quality" column="quality"/>
+		<result property="useable" column="useable"/>
+		<result property="batchUseable" column="batch_useable"/>
+		<result property="sellable" column="sellable"/>
+		<result property="price" column="price"/>
+		<result property="stackable" column="stackable"/>
+		<result property="stackLimit" column="stack_limit"/>
+		<result property="dropable" column="dropable"/>
+		<result property="isBop" column="is_bop"/>
+		<result property="specialSkill1" column="special_skill1"/>
+		<result property="specialSkill2" column="special_skill2"/>
+		<result property="specialSkill3" column="special_skill3"/>
+		<result property="icon" column="icon"/>
+		<result property="description" column="description"/>
+	</resultMap>
+	<!-- 材料静态表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticMaterial" id="staticMaterial">
+		<result property="id" column="id"/>
+		<result property="materialNo" column="material_no"/>
+		<result property="materialName" column="material_name"/>
+		<result property="materialType" column="material_type"/>
+		<result property="quality" column="quality"/>
+		<result property="sellable" column="sellable"/>
+		<result property="price" column="price"/>
+		<result property="stackable" column="stackable"/>
+		<result property="stackLimit" column="stack_limit"/>
+		<result property="isBop" column="is_bop"/>
+		<result property="dropable" column="dropable"/>
+		<result property="icon" column="icon"/>
+		<result property="description" column="description"/>
+		<result property="iconLarge" column="icon_large"/>
+		<result property="gemstoneType" column="gemstone_type"/>
+		<result property="attributeType" column="attribute_type"/>
+		<result property="attributeValue" column="attribute_value"/>
+		<result property="gemstoneDescription" column="gemstone_description"/>
+	</resultMap>
+	<!-- 任务道具静态表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticQuests" id="staticQuests">
+		<result property="id" column="id"/>
+		<result property="itemNo" column="item_no"/>
+		<result property="itemName" column="item_name"/>
+		<result property="itemType" column="item_type"/>
+		<result property="quality" column="quality"/>
+		<result property="stackable" column="stackable"/>
+		<result property="stackLimit" column="stack_limit"/>
+		<result property="icon" column="icon"/>
+		<result property="description" column="description"/>
+		<result property="iconLarge" column="icon_large"/>
+		<result property="dropable" column="dropable"/>
+	</resultMap>
+	<!-- 兵种技能静态表 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticSoldierSkill" id="staticSoldierSkill">
+		<result property="skillNo" column="skill_no"/>
+		<result property="skillLevel" column="skill_level"/>
+		<result property="effectType" column="effect_type"/>
+		<result property="probability" column="probability"/>
+	</resultMap>
+	<!-- 城防工事 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticDefenceworks" id="staticDefenceworks">
+		<result property="defenceworksNo" column="defenceworks_no"/>
+		<result property="name" column="name"/>
+		<result property="produceTime" column="produce_time"/>
+		<result property="needWood" column="need_wood"/>
+		<result property="needStone" column="need_stone"/>
+		<result property="needIronore" column="need_ironore"/>
+		<result property="needItem" column="need_item"/>
+		<result property="itemRate" column="item_rate"/>
+		<result property="atk" column="atk"/>
+		<result property="atkType" column="atk_type"/>
+		<result property="atkRange" column="atk_range"/>
+		<result property="description" column="description"/>
+	</resultMap>
+	<!-- 图片资源 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticImageResource" id="staticImageResource">
+		<result property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="x" column="x"/>
+		<result property="y" column="y"/>
+		<result property="type" column="type"/>
+	</resultMap>
+	<!-- 野怪AI -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticEnemyAi" id="staticEnemyAi">
+		<result property="id" column="id"/>
+		<result property="aiNo" column="ai_no"/>
+		<result property="type" column="type"/>
+		<result property="condition" column="condition"/>
+		<result property="conditionType" column="condition_type"/>
+		<result property="conditionValue" column="condition_value"/>
+		<result property="action" column="action"/>
+		<result property="actionType" column="action_type"/>
+		<result property="actionValue" column="action_value"/>
+	</resultMap>
+<!-- 	联盟特权 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticAlliancePrivilege" id="staticAlliancePrivilege">
+		<result property="privilegeNo" column="privilege_no"/>
+		<result property="privilageName" column="privilage_name"/>
+		<result property="needLevel" column="need_level"/>
+		<result property="positionLimit" column="position_limit"/>
+	</resultMap>
+<!-- 	 联盟建筑-->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticAllianceBuilding" id="staticAllianceBuilding">
+		<result property="bulidingNo" column="alliance_buliding_no"/>
+		<result property="bulidingName" column="alliance_buliding_name"/>
+		<result property="bulidingEffectType" column="buliding_effect_type"/>
+		<result property="effectValueMode" column="effect_value_mode"/>
+		<result property="effectValue" column="effect_value"/>
+		<result property="needAllianceLevel" column="need_alliance_level"/>
+		<result property="upgradeNeedWealth" column="upgrade_need_wealth"/>
+		<result property="upgradeNeedTime" column="upgrade_need_time"/>
+		<result property="bulidingDesc" column="buliding_desc"/>
+	</resultMap>
+<!-- 	联盟职位-->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticAlliancePosition" id="staticAlliancePosition">
+		<result property="positionNo" column="position_no"/>
+		<result property="positionName" column="position_name"/>
+		<result property="authoLevel" column="autho_level"/>
+		<result property="positionDesc" column="position_desc"/>
+	</resultMap>
+<!-- 	 联盟等级 -->
+    <resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticAllianceGrade" id="staticAllianceGrade">
+		<result property="allianceLevel" column="alliance_level"/>
+		<result property="upgradeNeedWealth" column="upgrade_need_wealth"/>
+		<result property="upgradeNeedTime" column="upgrade_need_time"/>
+		<result property="memberLimit" column="member_limit"/>
+		<result property="barrackLimit" column="barrack_limit"/>
+	</resultMap>
+<!-- 	联盟俸禄表 -->
+	 <resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticAllianceSalary" id="staticAllianceSalary">
+		<result property="positionNo" column="position_no"/>
+		<result property="allianceLevel1" column="alliance_level_1"/>
+		<result property="allianceLevel2" column="alliance_level_2"/>
+		<result property="allianceLevel3" column="alliance_level_3"/>
+		<result property="allianceLevel4" column="alliance_level_4"/>
+		<result property="allianceLevel5" column="alliance_level_5"/>
+		<result property="allianceLevel6" column="alliance_level_6"/>
+		<result property="allianceLevel7" column="alliance_level_7"/>
+	</resultMap>
+<!-- 	联盟市场 -->
+     <resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticAllianceShoping" id="staticAllianceShoping">
+		<result property="shopingNo" column="shoping_no"/>
+		<result property="itemNo" column="item_no"/>
+		<result property="itemType" column="item_type"/>
+		<result property="needAllianceLevel" column="need_alliance_level"/>
+		<result property="sellLimit" column="sell_limit"/>
+		<result property="price" column="price"/>
+		<result property="buyLimit" column="buy_limit"/>
+	</resultMap>
+
+	<!-- 礼包表-->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticGiftBox" id="staticGiftBox">
+		<result property="id" column="id"/>
+		<result property="giftNo" column="gift_no"/>
+		<result property="needLevel" column="need_level"/>
+		<result property="includeItemNo" column="include_item_no"/>
+		<result property="includeItemType" column="include_item_type"/>
+		<result property="includeItemAmount" column="include_item_amount"/>
+	</resultMap>
+	<!-- 礼包表-->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticBattleHurt" id="staticBattleHurt">
+		<result property="id" column="id"/>
+		<result property="hurtNo" column="hurt_no"/>
+		<result property="value" column="value"/>
+	</resultMap>
+	<!-- 静态君主头像 -->
+  	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticPic" id="StaticPic">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="gender" column="gender" />
+		<result property="type" column="type" />
+		<result property="requirePType" column="require_vip_type"/>
+		<result property="requirePValue" column="require_vip_Value"/>
+	</resultMap>
+	<!-- 静态任务数据 -->
+	<resultMap type="com.crystalcg.gamedev.util.cache.domain.StaticQuest" id="staticQuest">
+		<result property="questNo" column="quest_no"/>
+		<result property="questName" column="quest_name"/>
+		<result property="questType" column="quest_type"/>
+		<result property="resetTyp" column="reset_type"/>
+		<result property="needType" column="need_type"/>
+		<result property="needValue" column="need_value"/>
+		<result property="needQuestNo" column="need_quest_no"/>
+		<result property="targetType" column="target_type"/>
+		<result property="targetStr" column="target"/>
+		<result property="targetNum" column="target_num"/>
+		<result property="timeLimit" column="time_limit"/>
+		<result property="monExp" column="mon_exp"/>
+		<result property="copper" column="copper"/>
+		<result property="iornbar" column="iornbar"/>
+		<result property="wood" column="wood"/>
+		<result property="forage" column="forage"/>
+		<result property="credit" column="credit"/>
+		<result property="soldier" column="soldier"/>
+		<result property="population" column="population"/>
+		<result property="itemNo" column="item_no"/>
+		<result property="itemType" column="item_type"/>
+		<result property="itemNum" column="item_num"/>
+		<result property="questDesc" column="quest_desc"/>
+		<result property="targetDesc" column="target_desc"/>
+	</resultMap>
+	<!-- 以下为查询 SQL -->
+	
+	<select id="getStaticCharacter" resultMap="staticCharacter">
+		SELECT * FROM STATIC_CHARACTER
+	</select>
+	<select id="getStaticCity" resultMap="staticCity">
+		SELECT * FROM STATIC_CITY
+	</select>
+	<select id="getStaticBuilding" resultMap="staticBuilding">
+		SELECT * FROM STATIC_BUILDING
+	</select>
+	<select id="getStaticCountry" resultMap="staticCountry">
+		SELECT * FROM STATIC_COUNTRY
+	</select>
+	<select id="getStaticTavern" resultMap="staticTavern">
+		SELECT * FROM STATIC_TAVERN
+	</select>
+	<select id="getStaticHeroLevel" resultMap="staticHeroLevel">
+		SELECT * FROM STATIC_HERO_LEVEL
+	</select>
+	<select id="getStaticTavernHeroAttr" resultMap="staticTavernHeroAttr">
+		SELECT * FROM STATIC_TAVERN_HERO_ATTR
+	</select>
+	<select id="getStaticHeroSkill" resultMap="staticHeroSkill">
+		SELECT * FROM STATIC_HERO_SKILL
+	</select>
+	<select id="getStaticStrengthenEquipment" resultMap="staticStrengthenEquipment">
+		SELECT * FROM STATIC_STRENGTHEN_EQUIPMENT
+	</select>
+	<select id="getStaticAffairBonus" resultMap="staticAffairBonus">
+		SELECT * FROM STATIC_AFFAIR_BONUS
+	</select>
+	<select id="getStaticCentrestage" resultMap="staticCentrestage">
+		SELECT * FROM STATIC_CENTRESTAGE
+	</select>
+	<select id="getStaticRank" resultMap="staticRank">
+		SELECT * FROM STATIC_RANK
+	</select>
+	<select id="getStaticProducePlan" resultMap="staticProducePlan">
+		SELECT * FROM STATIC_PRODUCE_PLAN
+	</select>
+	<select id="getStaticProduceReward" resultMap="staticProduceReward">
+		SELECT * FROM STATIC_PRODUCE_REWARD
+	</select>
+	<select id="getStaticEnemyNPC" resultMap="staticEnemyNPC">
+		SELECT * FROM STATIC_ENEMY_NPC ORDER BY hero_level;
+	</select>
+	<select id="getStaticBattleReward" resultMap="staticBattleReward">
+		SELECT * FROM STATIC_BATTLE_REWARD
+	</select>
+	<select id="getStaticArticleReward" resultMap="staticArticleReward">
+		SELECT * FROM STATIC_ARTICLE_REWARD
+	</select>
+	<select id="getStaticSoldier" resultMap="staticSoldier">
+		SELECT * FROM STATIC_SOLDIER;
+	</select>
+	<select id="getStaticInteriroTech" resultMap="staticInteriorTech">
+		SELECT * FROM STATIC_INTERIOR_TECH ORDER BY tech_key;
+	</select>
+	<select id="getStaticSoldierTech" resultMap="staticSoldierTech">
+		SELECT * FROM STATIC_SOLDIER_TECH;
+	</select>
+	<select id="getStaticFormation" resultMap="staticFormation">
+		SELECT * FROM STATIC_FORMATION;
+	</select>
+	<select id="getStaticFormationTech" resultMap="staticFormationTech">
+		SELECT * FROM STATIC_FORMATION_TECH;
+	</select>
+	<select id="getStaticEquipment" resultMap="staticEquipment">
+		SELECT * FROM STATIC_EQUIPMENT;
+	</select>
+	<select id="getStaticHeroSkillLastEffect" resultMap="staticHeroSkillLastEffect">
+		SELECT * FROM STATIC_HERO_SKILL_LAST_EFFECT;
+	</select>
+	<select id="getStaticItem" resultMap="staticItem">
+		SELECT * FROM STATIC_ITEM;
+	</select>
+	<select id="getStaticMaterial" resultMap="staticMaterial">
+		SELECT * FROM STATIC_MATERIAL;
+	</select>
+	<select id="getStaticQuests" resultMap="staticQuests">
+		SELECT * FROM STATIC_QUESTS;
+	</select>
+	<select id="getStaticSoldierSkill" resultMap="staticSoldierSkill">
+		SELECT * FROM STATIC_SOLDIER_SKILL;
+	</select>
+	<select id="getStaticDefenceworks" resultMap="staticDefenceworks">
+		SELECT * FROM STATIC_DEFENCEWORKS;
+	</select>
+	<select id="getStaticImageResources" resultMap="staticImageResource">
+		SELECT * FROM STATIC_IMAGE_RESOURCE;
+	</select>
+	<select id="getStaticWorldResource" resultType="com.crystalcg.gamedev.util.cache.domain.StaticWorldResource">
+		select * from static_world_resource
+	</select>
+	<select id="getStaticWorldCity" resultType="com.crystalcg.gamedev.util.cache.domain.StaticWorldCity">
+		select * from static_world_city
+	</select>
+	<select id="getStaticEnemyAi" resultMap="staticEnemyAi">
+		SELECT * FROM STATIC_ENEMY_AI
+	</select>
+	<select id="getStaticGiftBox" resultMap="staticGiftBox">
+		SELECT * FROM STATIC_GIFT_BOX
+	</select>
+	<select id="getStaticAlliancePrivilege" resultMap="staticAlliancePrivilege">
+		SELECT * FROM static_alliance_privilege
+	</select>
+	<select id="getStaticAllianceBuilding" resultMap="staticAllianceBuilding">
+		SELECT * FROM static_alliance_building
+	</select>
+	<select id="getStaticAlliancePosition" resultMap="staticAlliancePosition">
+		SELECT * FROM static_alliance_position
+	</select>
+	<select id="getStaticAllianceGrade" resultMap="staticAllianceGrade">
+		SELECT * FROM static_alliance_grade
+	</select>
+	<select id="getStaticAllianceSalary" resultMap="staticAllianceSalary">
+		SELECT * FROM static_alliance_salary
+	</select>
+	<select id="getStaticAllianceShoping" resultMap="staticAllianceShoping">
+		SELECT * FROM static_alliance_shoping
+	</select>
+	<select id="getStaticBattleHurt" resultMap="staticBattleHurt">
+		SELECT * FROM static_battle_hurt
+	</select>
+	<select id="getSystemPic" resultMap="StaticPic">
+  		  SELECT * FROM STATIC_Pic
+  	</select>
+	<select id="getStaticQuest" resultMap="staticQuest">
+  		  SELECT * FROM static_quest
+  	</select>
+</mapper>

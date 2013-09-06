@@ -1,0 +1,14 @@
+.div0 {
+	border: solid 1px black;
+	width: 300px;
+	position: absolute;
+	left: 0px;
+	background-color: #eeeeee;
+}
+
+.div1 {
+	background-color: #757575;
+	width: 300px;
+	height: 186px;
+	overflow: scroll;
+}

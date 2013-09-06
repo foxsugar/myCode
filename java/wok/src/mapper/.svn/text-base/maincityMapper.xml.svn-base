@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.user.mapper.MaincityMapper">
+	<resultMap type="com.crystalcg.gamedev.user.domain.Maincity" id="maincity">
+		<id property="id" column="id"/>
+		<id property="characterId" column="character_id"/>
+		<result property="level" column="level"/>
+		<result property="experience" column="experience"/>
+		<result property="damaged_experience" column="damagedExperience"/>
+		<result property="status" column="status"/>
+		<result property="x" column="x"/>
+		<result property="y" column="y"/>
+		<result property="money" column="money"/>
+		<result property="moneyLimit" column="money_limit"/>
+		<result property="food" column="food"/>
+		<result property="foodLimit" column="food_limit"/>
+		<result property="wood" column="wood"/>
+		<result property="woodLimit" column="wood_limit"/>
+		<result property="stone" column="stone"/>
+		<result property="stoneLimit" column="stone_limit"/>
+		<result property="ironore" column="ironore"/>
+		<result property="ironoreLimit" column="ironore_limit"/>
+		<result property="people" column="people"/>
+		<result property="peopleLimit" column="people_limit"/>
+		<result property="workingPeople" column="working_people"/>
+		<result property="soldier" column="soldier"/>
+		<result property="soldierLimit" column="soldier_limit"/>
+		<result property="newSoldier" column="new_soldier"/>
+		<result property="newSoldierLimit" column="new_soldier_limit"/>
+		<result property="medicine" column="medicine"/>
+		<result property="medicineLimit" column="medicine_limit"/>
+		<result property="popularSupport" column="popular_support"/>
+		<result property="peopleLastIncrease" column="people_last_increase"/>
+		<result property="moneyLastIncrease" column="money_last_increase"/>
+		<result property="medicineLastIncrease" column="medicine_last_increase"/>
+		<result property="cellarStartTime" column="cellar_start_time"/>
+		<result property="cellarLastTime" column="cellar_last_time"/>
+		<result property="cellarMoney" column="cellar_money"/>
+		<result property="cellarFood" column="cellar_food"/>
+		<result property="cellarWood" column="cellar_wood"/>
+		<result property="cellarStone" column="cellar_stone"/>
+		<result property="cellarIronore" column="cellar_ironore"/>
+		<result property="cellarLimit" column="cellar_limit"/>
+	</resultMap>
+	<insert id="insertMaincity">
+		INSERT INTO USER_MAIN_CITY(character_id) VALUES (#{characterId})
+	</insert>
+	<select id="getMaincity" parameterType="int" resultMap="maincity">
+		SELECT * FROM USER_MAIN_CITY WHERE character_id=#{value}
+	</select>
+	<select id="getBaseInfo" parameterType="int" resultMap="maincity">
+		SELECT * FROM USER_MAIN_CITY WHERE character_id=#{value}
+	</select>
+	<select id="getResource" parameterType="int" resultMap="maincity">
+		SELECT * FROM USER_MAIN_CITY WHERE character_id=#{characterId}
+	</select>
+	<select id="getBuildResource" parameterType="int" resultMap="maincity">
+		SELECT * FROM USER_MAIN_CITY WHERE character_id=#{characterId}
+	</select>
+	<update id="updateBuildResource" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET money=#{money},wood=#{wood},stone=#{stone},ironore=#{ironore} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateSuburbsResource" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET food=#{food},wood=#{wood},stone=#{stone},ironore=#{ironore} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateExperience" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET experience=#{experience} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateLevel" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET level=#{level},experience=#{exp} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateStatus" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET status=#{status} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateCoordinate" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET x=#{x},y=#{y} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateMoney" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET money=#{money}
+		<if test="updateMoneyTime != null">
+		,money_last_increase = #{updateMoneyTime}
+		</if>
+		 WHERE character_id=#{characterId}
+	</update>
+	<update id="updateFood" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET food=#{food} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateWood" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET wood=#{wood} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateStone" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET stone=#{stone} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateIronore" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET ironore=#{ironore} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateMoneyLimit" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET money_limit=#{moneyLimit} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateResourceLimit" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET food_limit=#{foodLimit},wood_limit=#{woodLimit},stone_limit=#{stoneLimit},ironore_limit=#{ironoreLimit} WHERE character_id=#{characterId}
+	</update>
+	<select id="getFreePeople" parameterType="int" resultMap="maincity">
+		SELECT * FROM USER_MAIN_CITY WHERE character_id=#{characterId}
+	</select>
+	<select id="getPeopleInfo" parameterType="int" resultMap="maincity">
+		SELECT * FROM USER_MAIN_CITY WHERE character_id=#{characterId}
+	</select>
+	<update id="updateWorkingPeople" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET working_people=#{workingPeople} WHERE character_id=#{characterId}
+	</update>
+	<update id="updatePeople" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET people=#{people} WHERE character_id=#{characterId}
+	</update>
+	<update id="updatePeopleLimit" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET people_limit=#{peopleLimit} WHERE character_id=#{characterId}
+	</update>
+	<select id="getSoldierInfo" parameterType="int" resultMap="maincity">
+		SELECT * FROM USER_MAIN_CITY WHERE character_id=#{characterId}
+	</select>
+	<update id="updateNewSoldier" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET new_soldier=#{newSoldier} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateSoldier" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET soldier=#{soldier} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateSoldierLimit" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET soldier_limit=#{soldierLimit} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateNewSoldierLimit" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET new_soldier_limit=#{newSoldierLimit} WHERE character_id=#{characterId}
+	</update>
+	<select id="getMedicineInfo" parameterType="int" resultMap="maincity">
+		SELECT * FROM USER_MAIN_CITY WHERE character_id=#{characterId}
+	</select>
+	<update id="updateMedicine" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET medicine=#{medicine} WHERE character_id=#{characterId}
+	</update>
+	<update id="updateMedicineLimit" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET medicine_limit=#{medicineLimit} WHERE character_id=#{characterId}
+	</update>
+	<select id="getPopularSupport" parameterType="int" resultMap="maincity">
+		SELECT * FROM USER_MAIN_CITY WHERE character_id=#{characterId}
+	</select>
+	<update id="updatePopularSupport" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY SET popular_support=#{popularSupport} WHERE character_id=#{characterId}
+	</update>
+	<!-- 民居 -->
+	<select id="getHouseInfo" parameterType="int" resultMap="maincity">
+		SELECT * FROM USER_MAIN_CITY WHERE character_id=#{characterId}
+	</select>
+	<!-- 地窖 -->
+	<update id="beginCellarProtect" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY 
+		SET cellar_start_time=#{cellarStartTime},
+			cellar_last_time=#{cellarLastTime},
+			cellar_money=#{cellarMoney},
+			cellar_food=#{cellarFood},
+			cellar_wood=#{cellarWood},
+			cellar_stone=#{cellarStone},
+			cellar_ironore=#{cellarIronore}
+		WHERE character_id=#{characterId}
+	</update>
+	<update id="updateCellarLimit" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY 
+		SET cellar_limit=#{cellarLimit}
+		WHERE character_id=#{characterId}
+	</update>
+	<!-- 更新铜币、人口、膏药时间 -->
+	<update id="updateIncreaseTime" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY 
+		SET money_last_increase=#{moneyLastIncrease},
+			people_last_increase=#{peopleLastIncrease},
+			medicine_last_increase=#{medicineLastIncrease}
+		WHERE character_id=#{characterId}
+	</update>
+	<update id="cancelCellarProtect" parameterType="java.util.Map">
+		UPDATE USER_MAIN_CITY 
+		SET cellar_start_time=#{cellarStartTime},
+			cellar_last_time=#{cellarLastTime}
+		WHERE character_id=#{characterId}
+	</update>
+	<!-- 更新兵营需要数据 -->
+	<update id="updateSoldierAndResource">
+		UPDATE USER_MAIN_CITY 
+		SET new_soldier=#{newSoldier},
+			soldier=#{soldier},
+			money=#{money},
+			food=#{food},
+			ironore=#{ironore}
+		WHERE character_id=#{characterId}
+	</update>
+	<select id="getResourceForComet" parameterType="int" resultType="java.util.Map">
+		SELECT
+		money,
+		money_limit moneyLimit,
+		food,
+		food_limit foodLimit,
+		wood,
+		wood_limit woodLimit,
+		stone,
+		stone_limit stoneLimit,
+		ironore,
+		ironore_limit ironoreLimit
+		FROM user_main_city WHERE character_id = #{value};
+	</select>
+</mapper>

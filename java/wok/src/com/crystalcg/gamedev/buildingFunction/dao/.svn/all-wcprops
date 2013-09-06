@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/develop/!svn/ver/8851/wok/src/com/crystalcg/gamedev/buildingFunction/dao
+END
+CellarDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/buildingFunction/dao/CellarDao.java
+END
+CentrestageDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/develop/!svn/ver/4241/wok/src/com/crystalcg/gamedev/buildingFunction/dao/CentrestageDao.java
+END
+PrivycouncilDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/develop/!svn/ver/4950/wok/src/com/crystalcg/gamedev/buildingFunction/dao/PrivycouncilDao.java
+END
+CollegeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/4950/wok/src/com/crystalcg/gamedev/buildingFunction/dao/CollegeDao.java
+END
+WallDefensenDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/develop/!svn/ver/8851/wok/src/com/crystalcg/gamedev/buildingFunction/dao/WallDefensenDao.java
+END
+BarracksDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/buildingFunction/dao/BarracksDao.java
+END
+HospitalDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/4241/wok/src/com/crystalcg/gamedev/buildingFunction/dao/HospitalDao.java
+END
+MarketDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/develop/!svn/ver/4436/wok/src/com/crystalcg/gamedev/buildingFunction/dao/MarketDao.java
+END
+HouseDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/develop/!svn/ver/4241/wok/src/com/crystalcg/gamedev/buildingFunction/dao/HouseDao.java
+END

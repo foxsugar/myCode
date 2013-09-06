@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>注册账号</title>
+<script type="text/javascript" src="js/client/jquery.js"></script>
+<script type="text/javascript">
+//登录
+function createAccount(){
+	var un = document.getElementById("username").value;
+	var pwd = document.getElementById("password").value;
+	$.ajaxPost('register',{username:un,password:pwd},doCreateAccount);
+}
+
+function doCreateAccount(data){
+  	window.serverTime = data.loginTime;
+	if(data.command=="success")
+	{
+		if(window.confirm("注册成功，是否进入登录页面？")){
+        	window.location="index.html"; 
+		}
+	}
+	else
+	{
+        alert(data.desc);
+	}
+}
+</script>
+</head>
+<body>
+	<div style="background-color: #C8C8C8">
+		<img alt="fd" src="images/login/loginTitle.png">
+	</div>
+	<div style="float: left; background-color: #C0C0C0">
+		<img alt="" src="images/login/7.png"><img alt=""
+			src="images/login/7.png"> <br /> <br /> <img alt=""
+			src="images/login/2.png">&nbsp;<img alt=""
+			src="images/login/2.png"><br /> <img alt=""
+			src="images/login/2.png">&nbsp;<img alt=""
+			src="images/login/2.png"><br /> <img alt=""
+			src="images/login/2.png">&nbsp;<img alt=""
+			src="images/login/2.png"><br /> <img alt=""
+			src="images/login/2.png">&nbsp;<img alt=""
+			src="images/login/2.png"><br /> <img alt=""
+			src="images/login/2.png">&nbsp;<img alt=""
+			src="images/login/2.png"><br /> <img alt=""
+			src="images/login/2.png">&nbsp;<img alt=""
+			src="images/login/2.png"><br /> <img alt=""
+			src="images/login/2.png">&nbsp;<img alt=""
+			src="images/login/2.png"><br />
+	</div>
+	<h2>&nbsp;用户注册</h2>
+	<hr />
+	<div align="center" style="background-color: #F0F8FF">
+			<table>
+				<tr>
+					<td>用户名：</td>
+					<td><input type="text" name="username" id="username"/></td>
+				</tr>
+				<tr>
+					<td>密码：</td>
+					<td><input type="password" name="password" id="password"/></td>
+				</tr>
+				<tr>
+					<td>确认密码：</td>
+					<td><input type="password" /></td>
+				</tr>
+				<tr>
+					<td>邮箱：</td>
+					<td><input type="text" /></td>
+				</tr>
+				<tr>
+					<td>密保问题：</td>
+					<td><select>
+							<option value="1">早饭吃什么?</option>
+							<option value="2">午饭吃什么?</option>
+							<option value="3">晚饭吃什么?</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>答案：</td>
+					<td><input type="text" /></td>
+				</tr>
+			</table>
+			<button onClick="createAccount()">创建用户</button>
+	</div>
+</body>
+</html>

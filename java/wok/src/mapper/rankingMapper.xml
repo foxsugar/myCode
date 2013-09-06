@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crystalcg.gamedev.util.cache.RankingMapper">
+
+	<select id="getBuildList" resultType="Map">
+			SELECT user_character.country_id ,user_character.name name,user_main_city.experience experience,user_character.id id
+             FROM user_character,user_main_city
+             WHERE user_character.id=user_main_city.character_id
+             ORDER BY user_main_city.experience DESC ,user_character.name;
+	</select>
+	
+	<select id="getLevelList" resultType="Map">
+	 SELECT user_character.id,user_character.country_id ,user_character.name,user_character.level
+           FROM user_character
+           WHERE user_character.id>0
+           ORDER BY user_character.level DESC ,user_character.name;
+	</select>
+	<select id="getReputationList" resultType="Map">
+	    SELECT user_character.id,user_character.country_id,user_character.name, user_character.reputation reputation
+           FROM user_character
+           WHERE user_character.id>0
+           ORDER BY user_character.reputation DESC ,user_character.name;
+	</select>
+	<select id="getRechargeList" resultType="Map"> 
+        SELECT user_character.id,user_character.country_id,user_character.name, user_character.cash cash
+         FROM user_character
+         WHERE  user_character.id>0
+         ORDER BY user_character.cash DESC,user_character.name;
+	</select>
+	<select id="getAllianceList" resultType="Map">
+	SELECT  id,name,country,chief,level,own_country ownCountry,member_amount amount,wealth
+		   FROM user_alliance
+		   ORDER BY level DESC,member_amount DESC,own_country DESC,wealth DESC
+	</select>
+	<select id="getHeroList" resultType="Map">
+	
+	</select>
+</mapper>

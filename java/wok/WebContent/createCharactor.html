@@ -1,0 +1,169 @@
+﻿<html>
+	<head>
+<script>
+			var url_exit = "";
+</script> 
+        <script type="text/javascript" src="js/list.js"></script>
+        <script type="text/javascript" src="js/static.js"></script>
+        <script type="text/javascript" src="js/AnimMgr.js"></script>
+        <script type="text/javascript" src="js/AnimData.js"></script>
+        <script type="text/javascript" src="js/Load_Image.js"></script>	
+        <script type="text/javascript" src="js/engine.js"></script>
+        <script type="text/javascript" src="js/shoot.js"></script> 
+        <script type="text/javascript" src="js/Touch.js"></script> 
+        <script type="text/javascript" src="js/generals.js"></script>
+        <script type="text/javascript" src="js/task.js"></script>
+        <script type="text/javascript" src="js/jiuguan.js"></script>
+        <script type="text/javascript" src="js/wujiangZhaomu.js"></script>   
+        <script type="text/javascript" src="js/jiagongFang.js"></script>   
+        <script type="text/javascript" src="js/hoursebuilding.js"></script>  
+        <script type="text/javascript" src="js/commandList.js"></script> 
+        <script type="text/javascript" src="js/cjJiaose.js"></script>     
+		<script type="text/javascript" src="js/city.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta http-equiv="Pragma" content="no-cache" /> 
+		<meta http-equiv="Expires" content="-1" /> 
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		
+		<script>
+			var isIPhone = false;
+			var ua = navigator.userAgent.toLowerCase();
+			if(ua.indexOf('iphone') > 0)
+			{
+				isIPhone = true;
+				document.write('<meta name="viewport" content="user-scalable=no, width=device-width; initial-scale=0.5; minimum-scale=0.5; maximum-scale=0.5;" />');
+			} else
+			{
+				document.write('<meta name="viewport" content="user-scalable=no, width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0;" />');
+			}
+		</script>	
+	
+		<!-- for iphone ipod -->
+    	<link rel="apple-touch-icon" href="images/loading.png"/>
+    	<link rel="apple-touch-startup-image" href="images/menubg.png" />		
+	</head>
+<!-- 	
+	<style type="text/css">
+		body 
+		{
+			font-size:12px;
+			border:none 0px;
+			margin:0px;
+			padding:0px;
+			qheight : 100%;
+			overflow : hidden;
+			height : 100%;
+			background-color : #000;
+			
+			qdisplay : -webkit-box;
+			q-webkit-box-align: center;
+			q-webkit-box-pack: center;
+			
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			-webkit-text-size-adjust: none; 
+			
+		} 	
+	</style> 
+	-->
+	<body onorientationchange="setTimeout(function(){window.scrollTo(0,1)},10);"
+		  onload="setTimeout(function() {window.scrollTo(0,1)},10);">
+		<div style="text-align:center">
+		<div id="container">
+		  <div id="box">
+		    <canvas id="canvas"></canvas>
+		  </div>
+		</div>
+	</div>
+		<script>
+			var cache = window.applicationCache;
+			setTimeout(checkCache, 100);
+			function checkCache()
+			{
+				
+				//console.log(cache.status);
+				if (cache.status == 4)	//更新完毕
+				{
+					console.log('swapCache');
+					cache.swapCache();
+					window.location.reload();
+				} else if (cache.status == 1 || cache.status == 0)//已开启
+				{
+					return;
+				} else
+				{
+					setTimeout(checkCache, 100);
+				}
+			}
+
+			window.scrollTo(0, 1);
+			/****
+				获得用户ID，用户名		 
+			****/
+
+			/****
+			判断浏览器类型		
+			****/
+			var Sys = {};
+			var ua = navigator.userAgent.toLowerCase();
+			function CheckBrower()
+			{
+				var s = '';
+				(s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] : (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1]
+						: (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] : (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] : (s = ua
+								.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+			}
+
+			var applewebkitversion;
+			var webkitversion = 999;
+			CheckBrower();
+			if (Sys.ie)
+			{
+			} else if (Sys.firefox)
+			{
+			} else if (Sys.chrome)
+			{
+			} else if (Sys.opera)
+			{
+			} else if (Sys.safari)
+			{
+				(applewebkitversion = ua.match(/applewebkit\/([\d.]+)/)) ? Sys.applewebkitversion = applewebkitversion[1] : 0;
+				Sys.applewebkitversion = Sys.applewebkitversion.substring(0, Sys.applewebkitversion.indexOf('.'));
+				webkitversion = parseInt(Sys.applewebkitversion);
+			}
+
+			/****
+				自适应屏幕高度，和触摸移动速度，解决android浏览器画图问题		
+			****/
+			var screenHeight = window.innerHeight;
+			if (screenHeight > 533)
+				screenHeight = 533;
+			var touchSpeed = 1;
+			var iphone = false;
+
+			if (ua.indexOf('iphone') > 0)
+			{
+				iphone = true;
+			}
+            startGame();
+			if (webkitversion < 533 && (ua.indexOf('htc') == -1))
+			{
+				var factor = 0.666;
+				drawImage = CanvasRenderingContext2D.prototype.drawImage;
+
+				CanvasRenderingContext2D.prototype.drawImage = function(image, sx, sy, sw, sh, dx, dy, dw, dh)
+				{
+					for ( var i = arguments.length - 1; i >= 1; i--)
+						arguments[i] = arguments[i] * factor;
+
+					drawImage.apply(this, arguments);
+				};
+			}
+			
+	</script>
+</body>
+
+</html>

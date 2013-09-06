@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/develop/!svn/ver/9190/wok/src/com/crystalcg/gamedev/cometD
+END
+CometProcess.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/develop/!svn/ver/9190/wok/src/com/crystalcg/gamedev/cometD/CometProcess.java
+END
+GameComet.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/develop/!svn/ver/8578/wok/src/com/crystalcg/gamedev/cometD/GameComet.java
+END
+CometThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/develop/!svn/ver/6788/wok/src/com/crystalcg/gamedev/cometD/CometThread.java
+END
+CometThreadPool.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/develop/!svn/ver/6788/wok/src/com/crystalcg/gamedev/cometD/CometThreadPool.java
+END
+UserComet.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/develop/!svn/ver/9190/wok/src/com/crystalcg/gamedev/cometD/UserComet.java
+END
+CustomSecurityPolicy.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/develop/!svn/ver/6144/wok/src/com/crystalcg/gamedev/cometD/CustomSecurityPolicy.java
+END

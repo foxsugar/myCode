@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.crystalcg.gamedev.tech.mapper.FormationTechMapper">
+		<select id="getUserFormationTech" parameterType="java.util.Map" resultType="com.crystalcg.gamedev.tech.domain.UserFormationTech">
+			SELECT id,tech_no techNo, character_id characterId,tech_location techLocation FROM user_formation_tech
+			WHERE character_id=#{characterId} and tech_location &lt; #{techLocationMax} and tech_location>=#{techLocationMin}
+		</select>
+		<select id="getUserFormationTechByLocation" parameterType="java.util.Map" resultType="com.crystalcg.gamedev.tech.domain.UserFormationTech">
+			SELECT id,tech_no techNo, character_id characterId,tech_location techLocation FROM user_formation_tech
+			WHERE character_id=#{characterId} and tech_location =#{techLoaction};
+		</select>
+		<update id="updateUserFormationTech" parameterType="com.crystalcg.gamedev.tech.domain.UserFormationTech">
+			UPDATE user_formation_tech SET tech_no=#{techNo} WHERE character_id=#{characterId} and tech_location=#{techLocation}
+		</update>
+		<insert id="addUserFormationTech" parameterType="com.crystalcg.gamedev.tech.domain.UserFormationTech">
+			INSERT user_formation_tech(tech_no,character_id,tech_location) values(#{techNo},#{characterId},#{techLocation})
+		</insert>
+		<delete id="deleteUserFormationTech" parameterType="java.util.Map">
+			DELETE FROM user_formation_tech WHERE character_id=#{characterId} and tech_location=#{techLocation}
+		</delete>
+		<select id="getUserFormationTechsForBattle" parameterType="int" resultType="com.crystalcg.gamedev.tech.domain.UserFormationTech">
+			SELECT id,tech_no techNo, character_id characterId,tech_location techLocation FROM user_formation_tech
+			WHERE character_id=#{value} ORDER BY tech_location
+		</select>
+		<select id="getUserFormationTechByNo" parameterType="java.util.Map" resultType="com.crystalcg.gamedev.tech.domain.UserFormationTech">
+			SELECT id,tech_no techNo, character_id characterId,tech_location techLocation FROM user_formation_tech
+			WHERE character_id=#{characterId} and tech_no =#{techNo}
+		</select>
+	</mapper>

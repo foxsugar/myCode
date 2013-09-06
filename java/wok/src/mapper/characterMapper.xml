@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.user.mapper.CharacterMapper">
+	<resultMap type="com.crystalcg.gamedev.user.domain.UserCharacter" id="character">
+		<id property="id" column="id"/>
+		<result property="accountId" column="account_id"/>
+		<result property="name" column="name"/>
+		<result property="countryId" column="country_id"/>
+		<result property="gender" column="gender"/>
+		<result property="level" column="level"/>
+		<result property="experience" column="experience"/>
+		<result property="cash" column="cash"/>
+		<result property="ticket" column="ticket"/>
+		<result property="allianceId" column="alliance_id"/>
+		<result property="alliancePosition" column="alliance_position"/>
+		<result property="allianceReputation" column="alliance_reputation"/>
+		<result property="reputation" column="reputation"/>
+		<result property="abilityPoint" column="ability_point"/>
+		<result property="militaryStrength" column="military_strength"/>
+		<result property="internalAffairs" column="internal_affairs"/>
+		<result property="strategyValue" column="strategy_value"/>
+		<result property="vipId" column="vip_id"/>
+		
+		<result property="buff1" column="buff1"/>
+		<result property="buff2" column="buff2"/>
+		<result property="buff3" column="buff3"/>
+		<result property="buff4" column="buff4"/>
+		<result property="buff5" column="buff5"/>
+		<result property="buff6" column="buff6"/>
+		<result property="techPoint" column="tech_point"/>
+		<result property="description" column="description"/>
+	</resultMap>
+  <insert id="insertCharacter" parameterType="com.crystalcg.gamedev.user.domain.UserCharacter">
+    INSERT INTO USER_CHARACTER(account_id,name,country_id,gender,image)
+    VALUES(#{accountId},#{name},#{countryId},#{gender},#{image})
+  </insert>
+  <select id="getCharacterById" parameterType="int" resultMap="character">
+    SELECT * FROM USER_CHARACTER
+    WHERE id=#{id}
+  </select>
+  <select id="getCharacterByName" parameterType="string" resultMap="character">
+    SELECT * FROM USER_CHARACTER
+    WHERE name=#{value}
+  </select>
+  <select id="getCharacterIdByName" parameterType="string" resultType="int">
+    SELECT IFNULl((SELECT id FROM USER_CHARACTER WHERE name=#{value}),0) as id
+  </select>
+  <update id="updateName" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET name=#{name}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateCountry" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET country_id=#{countryId}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateGender" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET gender=#{gender}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateImage" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET image=#{image}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateExperience" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET experience=#{experience}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateLevel" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET level=#{level}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateCash" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET cash=#{cash}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateTicket" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET ticket=#{ticket}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateAbilityPoint" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET ability_point=#{abilityPoint}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateMilitaryStrength" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET military_strength=#{militaryStrength}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateInternalAffairs" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET internal_affairs=#{internalAffairs}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateTechPoint" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET tech_point=#{techPoint}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateDescription" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET description=#{description}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateAttribute" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET ability_point=#{abilityPoint},military_strength=#{militaryStrength},internal_affairs=#{internalAffairs}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateLoginTime" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET login_time = #{loginTime}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateLogoutTime" parameterType="java.util.Map">
+    UPDATE USER_CHARACTER
+    SET logout_time = #{logoutTime}
+    WHERE id=#{characterId}
+  </update>
+  <update id="updateAlliance" parameterType="java.util.Map">
+		UPDATE USER_CHARACTER SET alliance_id=#{allianceId},alliance_position=#{allianceposition} WHERE id=#{characterId}
+  </update>
+  <select id="getCharacterName" parameterType="int" resultType="String">
+    SELECT name FROM USER_CHARACTER
+    WHERE id=#{id}
+  </select>
+   <select id="getCharacterId"  resultType="int">
+    SELECT id FROM USER_CHARACTER
+  </select>
+</mapper>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tavern>
+	<type id="1" level="1" white="9500" green="500" blue="0" purple="0"
+		red="0" circleTime="5" />
+	<type id="2" level="2" white="9500" green="500" blue="0" purple="0"
+		red="0" circleTime="4" />
+	<type id="3" level="3" white="9000" green="1000" blue="0" purple="0"
+		red="0" circleTime="3" />
+	<type id="4" level="4" white="9000" green="1000" blue="0" purple="0"
+		red="0" circleTime="2" />
+	<type id="5" level="5" white="8500" green="1500" blue="0" purple="0"
+		red="0" circleTime="1" />
+	<type id="6" level="6" white="8000" green="2000" blue="0" purple="0"
+		red="0" circleTime="1" />
+	<type id="7" level="7" white="7000" green="2000" blue="1000"
+		purple="0" red="0" circleTime="1" />
+	<type id="8" level="8" white="6000" green="2500" blue="1500"
+		purple="0" red="0" circleTime="1" />
+	<type id="9" level="9" white="5500" green="2500" blue="2000"
+		purple="0" red="0" circleTime="1" />
+	<type id="10" level="10" white="5000" green="3000" blue="2000"
+		purple="0" red="0" circleTime="1" />
+	<type id="11" level="11" white="4500" green="3000" blue="2000"
+		purple="500" red="0" circleTime="1" />
+	<type id="12" level="12" white="4000" green="3200" blue="2000"
+		purple="800" red="0" circleTime="5" />
+	<type id="13" level="13" white="3500" green="3700" blue="2000"
+		purple="800" red="0" circleTime="1" />
+	<type id="14" level="14" white="3000" green="4000" blue="2000"
+		purple="1000" red="0" circleTime="1" />
+	<type id="15" level="15" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="16" level="16" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="17" level="17" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="18" level="18" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="19" level="19" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="20" level="20" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="21" level="21" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="22" level="22" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="23" level="23" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="24" level="24" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="25" level="25" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="26" level="26" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="27" level="27" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="28" level="28" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="29" level="29" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<type id="30" level="30" white="2500" green="4000" blue="2500"
+		purple="1000" red="0" circleTime="1" />
+	<property id="1" basePoint="32" range="2" minPointRate="10"
+		heroSoulRate="30" white="10000" green="0" blue="0" purple="0" red="0" heroPoint="3"/>
+	<property id="2" basePoint="48" range="4" minPointRate="5"
+		heroSoulRate="40" white="6000" green="4000" blue="0" purple="0" red="0" heroPoint="4"/>
+	<property id="3" basePoint="72" range="8" minPointRate="6"
+		heroSoulRate="50" white="5000" green="3000" blue="2000" purple="0"
+		red="0"  heroPoint="5"/>
+	<property id="4" basePoint="108" range="12" minPointRate="8"
+		heroSoulRate="60" white="4000" green="3000" blue="2000" purple="1000"
+		red="0"  heroPoint="6"/>
+	<property id="5" basePoint="160" range="20" minPointRate="12"
+		heroSoulRate="70" white="3500" green="2500" blue="2000" purple="1500"
+		red="500"  heroPoint="7"/>
+	<heroSoul id="1" effect="10" />
+	<heroSoul id="2" effect="20" />
+	<heroSoul id="3" effect="40" />
+	<heroSoul id="4" effect="60" />
+	<heroSoul id="5" effect="90" />
+	<gift id="white" rate1="55" min1="1" max1="29" rate2="30" min2="30"
+		max2="49" rate3="12" min3="50" max3="69" rate4="3" min4="70" max4="89" />
+	<gift id="green" rate1="55" min1="90" max1="139" rate2="30" min2="140"
+		max2="159" rate3="12" min3="160" max3="179" rate4="3" min4="180" max4="199" />
+	<gift id="blue" rate1="55" min1="200" max1="269" rate2="30" min2="270"
+		max2="339" rate3="12" min3="340" max3="399" rate4="3" min4="400" max4="449" />
+	<gift id="purple" rate1="55" min1="450" max1="569" rate2="30" min2="570"
+		max2="689" rate3="12" min3="690" max3="759" rate4="3" min4="760" max4="799" />
+	<gift id="red" rate1="55" min1="800" max1="839" rate2="30" min2="840"
+		max2="879" rate3="12" min3="880" max3="919" rate4="3" min4="920" max4="970" />
+	<upGift id="1"  upPoint1="1" upRate1="30" upPoint2="2" upRate2="40" upPoint3="3" upRate3="30"/>
+	<upGift id="2"  upPoint1="1" upRate1="40" upPoint2="2" upRate2="30" upPoint3="3" upRate3="30"/>
+	<upGift id="3"  upPoint1="1" upRate1="50" upPoint2="2" upRate2="30" upPoint3="3" upRate3="20"/>
+	<upGift id="4"  upPoint1="1" upRate1="50" upPoint2="2" upRate2="30" upPoint3="3" upRate3="20"/>
+	<upGift id="5"  upPoint1="1" upRate1="50" upPoint2="2" upRate2="30" upPoint3="3" upRate3="20"/>
+</tavern>
+
+

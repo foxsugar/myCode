@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	<bean id="battleProcessAction" class="com.crystalcg.gamedev.battleProcess.action.BattleProcessAction">
+		<property name="battleProcess" ref="battleProcess"></property>
+		<property name="battleProcessForMulti" ref="battleProcessForMulti"></property>
+	</bean>
+<!-- 	<bean id="battleProcessMapper" class="org.mybatis.spring.mapper.MapperFactoryBean"> -->
+<!-- 		<property name="mapperInterface" value="com.crystalcg.gamedev.battleProcess.mapper.BattleProcessMapper"></property> -->
+<!-- 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property> -->
+<!-- 	</bean> -->
+	<bean id="battleProcess" class="com.crystalcg.gamedev.battleProcess.BattleProcess">
+		<property name="userComet" ref="userComet"></property>
+	</bean>
+	<bean id="battleProcessForMulti" class="com.crystalcg.gamedev.battleProcess.BattleProcessForMulti">
+		<property name="userComet" ref="userComet"></property>
+	</bean>
+       
+
+</beans>

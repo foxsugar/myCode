@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.item.mapper.AuctionMapper"> 
+	<resultMap type="com.crystalcg.gamedev.item.domain.Auction" id="auctionResult">
+		<id property="id" column="id"/>
+		<result property="basePrice" column="base_price"/>
+		<result property="fixedPrice" column="fixed_price"/>
+		<result property="startTime" column="start_time"/>
+		<result property="savingTime" column="saving_time"/>
+		<result property="bidCharacterId" column="bid_character_id"/>
+		<result property="bidTime" column="bid_time"/>
+		<result property="characterId" column="character_id"/>
+		<result property="itemName" column="item_name"/>
+		<result property="itemNo" column="item_no"/>
+		<result property="itemType" column="item_type"/>
+		<result property="itemSubtype" column="item_subtype"/>
+		<result property="quality" column="quality"/>
+		<result property="needLevel" column="need_level"/>
+		<result property="itemAmount" column="item_amount"/>
+		<result property="strengthLevel" column="strength_level"/>
+		<result property="hole1" column="hole1"/>
+		<result property="hole2" column="hole2"/>
+		<result property="hole3" column="hole3"/>
+		<result property="strengthenForce" column="strengthen_force"/>
+		<result property="strengthenStrategy" column="strengthen_strategy"/>
+		<result property="strengthenPhysique" column="strengthen_physique"/>
+		<result property="strengthenAgility" column="strengthen_agility"/>
+		<result property="bidName" column="bidName"/>
+		<result property="sellerName" column="sellerName"/>
+	</resultMap>
+	<insert id="insertNewAuction" parameterType="com.crystalcg.gamedev.item.domain.Auction" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		INSERT INTO auction
+		(base_price,
+		fixed_price,
+		start_time,
+		saving_time,
+		character_id,
+		item_name,
+		item_no,
+		item_type,
+		item_subtype,
+		quality,
+		need_level,
+		item_amount,
+		strength_level,
+		hole1,
+		hole2,
+		hole3,
+		strengthen_force,
+		strengthen_strategy,
+		strengthen_physique,
+		strengthen_agility)
+		values(#{basePrice},#{fixedPrice},#{startTime},#{savingTime},#{characterId},#{itemName},
+		#{itemNo},#{itemType},#{itemSubtype},#{quality},#{needLevel},#{itemAmount},#{strengthLevel},#{hole1},#{hole2},
+		#{hole3},#{strengthenForce},#{strengthenStrategy},#{strengthenPhysique},
+		#{strengthenAgility})
+	</insert>
+	<delete id="deleteAuction" parameterType="int">
+		DELETE FROM auction WHERE id =#{value};
+	</delete>
+	<select id="getMyAuctionItem" parameterType="java.util.Map" resultMap="auctionResult">
+		SELECT auction.*,buyer.name bidName,seller.name sellerName
+		FROM user_character  seller,auction left join user_character buyer on buyer.id=auction.bid_character_id
+		WHERE seller.id=auction.character_id and auction.character_id=#{characterId} 
+		ORDER BY id desc
+		limit #{page},#{pageSize}
+	</select>
+	<select id="getCounts" parameterType="java.util.Map" resultType="int">
+		SELECT COUNT(*) FROM auction WHERE 1=1
+		<if test="characterId!=0">and character_id=#{characterId}</if>
+		<if test="itemName!='%%'">and item_name like #{itemName}</if>
+		<if test="quality!=0">and quality=#{quality}</if>
+		<if test="itemType!=0">and item_type=#{itemType}</if>
+		<if test="itemSubtype!=0">and item_subtype=#{itemSubtype}</if>
+		<if test="levelMax!=0">and need_level &lt;=#{levelMax}</if>
+		<if test="levelMin!=0">and need_level >=#{levelMin}</if>
+		<if test="bidCharacterId!=0">and bid_character_id=#{bidCharacterId}</if>
+	</select>
+	<select id="getAuctionByAuctionId" parameterType="int" resultMap="auctionResult">
+		SELECT * FROM auction WHERE id=#{value}
+	</select>
+	<select id="getItemInfoInAuction" parameterType="java.util.Map" resultMap="auctionResult" >
+		SELECT auction.*,buyer.name bidName,seller.name sellerName
+		FROM user_character  seller,auction left join user_character buyer on buyer.id=auction.bid_character_id
+		WHERE seller.id=auction.character_id
+		<if test="itemName!='%%'">and item_name like #{itemName}</if>
+		<if test="quality!=0">and quality=#{quality}</if>
+		<if test="itemType!=0">and item_type=#{itemType}</if>
+		<if test="itemSubtype!=0">and item_subtype=#{itemSubtype}</if>
+		<if test="levelMax!=0">and need_level &lt;=#{levelMax}</if>
+		<if test="levelMin!=0">and need_level >=#{levelMin}</if>
+		<if test="order==0">order by UNIX_TIMESTAMP(auction.start_time) + saving_time desc</if>
+		<if test="order==1">order by UNIX_TIMESTAMP(auction.start_time) + saving_time asc</if>
+		<if test="order==2"> ORDER BY auction.fixed_price desc,auction.base_price desc</if>
+		<if test="order==3"> ORDER BY auction.fixed_price asc,auction.base_price asc</if>
+		<if test="order==4"> ORDER BY need_level desc</if>
+		<if test="order==5"> ORDER BY need_level asc</if>
+		  limit #{page},#{pageSize}
+	</select>
+	<update id="updateAuctionByAuction" parameterType="com.crystalcg.gamedev.item.domain.Auction">
+		UPDATE auction SET base_price=#{basePrice},bid_character_id=#{bidCharacterId},bid_time=#{bidTime} WHERE id=#{id}
+	</update>
+	<select id="getMyBidItem" parameterType="java.util.Map" resultMap="auctionResult">
+		SELECT auction.*,buyer.name bidName,seller.name sellerName
+		FROM user_character  seller,auction left join user_character buyer on buyer.id=auction.bid_character_id
+		WHERE seller.id=auction.character_id and auction.bid_character_id=#{bidCharacterId} ORDER BY bid_time desc
+		limit #{page},#{pageSize}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	<select id="getAllAuctionItem" resultMap="auctionResult">
+		SELECT * FROM auction
+	</select>
+</mapper>

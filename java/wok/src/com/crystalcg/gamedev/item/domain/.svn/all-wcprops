@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/develop/!svn/ver/6353/wok/src/com/crystalcg/gamedev/item/domain
+END
+UserItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/develop/!svn/ver/4983/wok/src/com/crystalcg/gamedev/item/domain/UserItem.java
+END
+UserQuests.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/develop/!svn/ver/4953/wok/src/com/crystalcg/gamedev/item/domain/UserQuests.java
+END
+ItemGiftBag.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/develop/!svn/ver/4280/wok/src/com/crystalcg/gamedev/item/domain/ItemGiftBag.java
+END
+UserCommonInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/develop/!svn/ver/4979/wok/src/com/crystalcg/gamedev/item/domain/UserCommonInfo.java
+END
+Auction.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/develop/!svn/ver/6332/wok/src/com/crystalcg/gamedev/item/domain/Auction.java
+END
+UserEquipment.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/develop/!svn/ver/5752/wok/src/com/crystalcg/gamedev/item/domain/UserEquipment.java
+END
+UserMaterial.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/develop/!svn/ver/6353/wok/src/com/crystalcg/gamedev/item/domain/UserMaterial.java
+END

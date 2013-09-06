@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/develop/!svn/ver/9096/wok/src/com/crystalcg/gamedev/battleProcess/Job
+END
+SingleBattleReadyDelay.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/develop/!svn/ver/5452/wok/src/com/crystalcg/gamedev/battleProcess/Job/SingleBattleReadyDelay.java
+END
+SingleBattleTurnJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/develop/!svn/ver/5629/wok/src/com/crystalcg/gamedev/battleProcess/Job/SingleBattleTurnJob.java
+END
+MultiBattleOperateDelay.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/develop/!svn/ver/6144/wok/src/com/crystalcg/gamedev/battleProcess/Job/MultiBattleOperateDelay.java
+END
+SingleBattleActionDelayJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/develop/!svn/ver/6018/wok/src/com/crystalcg/gamedev/battleProcess/Job/SingleBattleActionDelayJob.java
+END
+MultiBattleRoundReadyDelay.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/develop/!svn/ver/6144/wok/src/com/crystalcg/gamedev/battleProcess/Job/MultiBattleRoundReadyDelay.java
+END
+MultiBattleActionDelay.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/develop/!svn/ver/6788/wok/src/com/crystalcg/gamedev/battleProcess/Job/MultiBattleActionDelay.java
+END
+MultiBattleReadyDelayJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/develop/!svn/ver/6144/wok/src/com/crystalcg/gamedev/battleProcess/Job/MultiBattleReadyDelayJob.java
+END
+SuburbBackTime.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/9096/wok/src/com/crystalcg/gamedev/battleProcess/Job/SuburbBackTime.java
+END
+SingleBattleEndDelayJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/develop/!svn/ver/6018/wok/src/com/crystalcg/gamedev/battleProcess/Job/SingleBattleEndDelayJob.java
+END

@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	<bean id="userHeroAction" class="com.crystalcg.gamedev.hero.action.UserHeroAction">
+		<property name="userHeroService" ref="userHeroService"></property>
+	</bean>
+	<bean id="userHeroService" class="com.crystalcg.gamedev.hero.service.UserHeroService">
+		<property name="userHeroDao" ref="userHeroDao"></property>
+	</bean>
+	<bean id="userHeroDao" class="com.crystalcg.gamedev.hero.dao.UserHeroDao">
+		<property name="userHeroMapper" ref="userHeroMapper"></property>
+	</bean>
+	<bean id="userHeroMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+  		<property name="mapperInterface" value="com.crystalcg.gamedev.hero.mapper.UserHeroMapper" />
+  		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+</beans>

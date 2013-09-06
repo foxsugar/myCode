@@ -1,0 +1,44 @@
+<html>
+<head>
+
+	<script>
+			function C_Param(c_time,c_location){
+				
+				this.c_time = c_time;
+				this.c_location = c_location;
+				this.interval = null;
+			};
+
+			Clock = {};
+			Clock.intervalFunction = function (c_param){
+					if(c_param.c_time<=0){
+						 window.clearInterval(c_param.interval);
+					}
+					var div = document.getElementById("div"+c_param.c_location);
+					if(div == null){
+						div = document.createElement("div");
+						div.id = "div"+c_param.c_location;
+						document.getElementById("log").appendChild(div);
+					}
+					div.innerHTML = c_param.c_time;
+					c_param.c_time -=1000;
+				}
+			Clock.start = function(c_param){
+				c_param.interval = window.setInterval(function(){Clock.intervalFunction(c_param)},1000)
+			}
+
+	function test(){
+		var myParam1 = new C_Param(5000,2);
+		var myParam2 = new C_Param(7000,3);
+		new Clock.start(myParam1);
+		new Clock.start(myParam2);
+	}
+	</script>
+</head>
+
+
+<body>
+	<button onClick="test()">¶¨Ê±</button>
+	<div id="log"></div>
+</body>
+</html>

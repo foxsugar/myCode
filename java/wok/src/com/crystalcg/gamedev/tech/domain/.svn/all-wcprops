@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/develop/!svn/ver/8851/wok/src/com/crystalcg/gamedev/tech/domain
+END
+UserSoldierTech.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/develop/!svn/ver/5073/wok/src/com/crystalcg/gamedev/tech/domain/UserSoldierTech.java
+END
+UserFormationTech.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/develop/!svn/ver/8851/wok/src/com/crystalcg/gamedev/tech/domain/UserFormationTech.java
+END
+TechQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/develop/!svn/ver/6974/wok/src/com/crystalcg/gamedev/tech/domain/TechQueue.java
+END
+InteriorTechEffectType.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/develop/!svn/ver/6456/wok/src/com/crystalcg/gamedev/tech/domain/InteriorTechEffectType.java
+END
+UserInteriorTech.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/develop/!svn/ver/5062/wok/src/com/crystalcg/gamedev/tech/domain/UserInteriorTech.java
+END

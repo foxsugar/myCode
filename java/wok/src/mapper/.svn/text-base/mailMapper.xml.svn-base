@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.mail.mapper.MailMapper"> 
+
+  <insert id="sendMail" parameterType="com.crystalcg.gamedev.mail.domain.Mail">
+    INSERT INTO mail(addresser,addressee,title,content,send_time,attachment1,attachment2,attachment3,attachment4,attachment5,attachment6,
+   attachment_type1,attachment_type2,attachment_type3,attachment_type4,attachment_type5,attachment_type6,cash )
+    VALUES(#{addresser},#{addressee},#{title},#{content},#{sendTime},#{attachment1},#{attachment2},#{attachment3},#{attachment4},#{attachment5},#{attachment6}
+    ,#{attachmentType1},#{attachmentType2},#{attachmentType3},#{attachmentType4},#{attachmentType5},#{attachmentType6},#{cash})
+  </insert>
+  <select id="getMailList" parameterType="java.util.Map" resultType="java.util.Map">
+  	select id,addresser,title,send_time sendTime,status,attachment1,cash from mail where addressee=#{addressee} 
+  	<if test="status==0">
+  		and status=0
+  	</if>
+  	<if test="status==1">
+  		and status =1
+  	</if>
+  	order by sendTime desc
+  	limit #{start},#{pageSize}  </select>
+  <select id="getCount" parameterType="java.util.Map" resultType="int">
+  	select count(id) from mail where addressee=#{addressee} 
+  	<if test="status==0">
+  		and status=0
+  	</if>
+  	<if test="status==1">
+  		and status =1
+  	</if>
+  </select>
+  <delete id="deleteMail" parameterType="java.util.Map">
+  	delete from mail where addressee=#{characterId} and id in
+  	<foreach collection="mailIds" item="mailId" open="(" separator="," close=")">
+  		#{mailId}
+  	</foreach>
+  </delete>
+  <select id="getMailDetail" parameterType="java.util.Map" resultType="com.crystalcg.gamedev.mail.domain.Mail">
+  	select mail.id,
+	mail.addresser,
+	user_character.name as addresserName,
+	mail.addressee,
+	mail.title,
+	mail.content,
+	mail.send_time sendTime,
+	mail.status, 
+	mail.attachment1, 
+	mail.attachment2, 
+	mail.attachment3, 
+	mail.attachment4, 
+	mail.attachment5, 
+	mail.attachment6,
+	mail. attachment_type1 attachmentType1,
+	mail. attachment_type2 attachmentType2,
+	mail. attachment_type3 attachmentType3,
+	mail. attachment_type4 attachmentType4,
+	mail. attachment_type5 attachmentType5,
+	mail. attachment_type6 attachmentType6,
+	mail.cash
+	from mail left join user_character on mail.addresser=user_character.id
+	where addressee=#{charId} and mail.id=#{mailId}
+  </select>
+  <update id="setRead" parameterType="int">
+  	update mail
+  	set status=1
+  	where id=#{value}
+  </update>
+  <update id="updateAttachment" parameterType="int">
+  	update mail set attachment1=0,attachment2=0,attachment3=0,attachment4=0,attachment5=0,attachment6=0,
+  	attachment_type1=0,attachment_type2=0,attachment_type3=0,attachment_type4=0,attachment_type5=0,attachment_type6=0,
+  	cash=0 where id=#{value};
+  </update>
+</mapper>

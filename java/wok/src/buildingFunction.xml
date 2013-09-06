@@ -1,0 +1,99 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+    <!-- 民居 -->
+	<bean id="houseAction" class="com.crystalcg.gamedev.buildingFunction.action.HouseAction">
+		<property name="houseService" ref="houseService"></property>
+	</bean>
+	<bean id="houseService" class="com.crystalcg.gamedev.buildingFunction.service.HouseService">
+		<property name="houseDao" ref="houseDao"></property>
+	</bean>
+	<bean id="houseDao" class="com.crystalcg.gamedev.buildingFunction.dao.HouseDao">
+		<property name="houseMapper" ref="houseMapper"></property>
+	</bean>
+	<bean id="houseMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+  		<property name="mapperInterface" value="com.crystalcg.gamedev.buildingFunction.mapper.HouseMapper" />
+  		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	<!-- 地窖 -->
+	<bean id="cellarAction" class="com.crystalcg.gamedev.buildingFunction.action.CellarAction">
+		<property name="cellarService" ref="cellarService"></property>
+	</bean>
+	<bean id="cellarService" class="com.crystalcg.gamedev.buildingFunction.service.CellarService">
+	     <property name="cellarDao" ref="cellarDao"></property>
+	</bean>
+	<bean id="cellarDao" class="com.crystalcg.gamedev.buildingFunction.dao.CellarDao">
+	     <property name="cellarMapper" ref="cellarMapper"></property>
+	</bean>
+	<bean id="cellarMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+  		<property name="mapperInterface" value="com.crystalcg.gamedev.buildingFunction.mapper.CellarMapper" />
+  		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	<!-- 酒馆 -->
+	<bean id="tavernAction" class="com.crystalcg.gamedev.buildingFunction.action.TavernAction">
+		<property name="tavernService" ref="tavernService"></property>
+	</bean>
+	<bean id="tavernService" class="com.crystalcg.gamedev.buildingFunction.service.TavernService">
+	</bean>
+	<!-- 教坊 -->
+	<bean id="collegeAction" class="com.crystalcg.gamedev.buildingFunction.action.CollegeAction">
+		<property name="collegeService" ref="collegeService"></property>
+	</bean>
+	<bean id="collegeService" class="com.crystalcg.gamedev.buildingFunction.service.CollegeService">
+		<property name="collegeDao" ref="collegeDao"></property>
+	</bean>
+	<bean id="collegeDao" class="com.crystalcg.gamedev.buildingFunction.dao.CollegeDao">
+		<property name="collegeMapper" ref="collegeMapper"></property>
+	</bean>
+	<bean id="collegeMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+  		<property name="mapperInterface" value="com.crystalcg.gamedev.buildingFunction.mapper.CollegeMapper" />
+  		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	<!-- 军机处 -->
+	<bean id="privycouncilAction" class="com.crystalcg.gamedev.buildingFunction.action.PrivycouncilAction">
+		<property name="privycouncilService" ref="privycouncilService"></property>
+	</bean>
+	<bean id="privycouncilService" class="com.crystalcg.gamedev.buildingFunction.service.PrivycouncilService">
+		<property name="privycouncilDao" ref="privycouncilDao"></property>
+	</bean>
+	<bean id="privycouncilDao" class="com.crystalcg.gamedev.buildingFunction.dao.PrivycouncilDao">
+		<property name="privycouncilMapper" ref="privycouncilMapper"></property>
+	</bean>
+	<bean id="privycouncilMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+  		<property name="mapperInterface" value="com.crystalcg.gamedev.buildingFunction.mapper.PrivycouncilMapper" />
+  		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+  	</bean>
+	<!-- 聚贤阁 -->
+	<bean id="centrestageAction" class="com.crystalcg.gamedev.buildingFunction.action.CentrestageAction">
+		<property name="centrestageService" ref="centrestageService"></property>
+	</bean>
+	<bean id="centrestageService" class="com.crystalcg.gamedev.buildingFunction.service.CentrestageService">
+	</bean>
+	<!-- 太医署 -->
+	<bean id="hospitalAction" class="com.crystalcg.gamedev.buildingFunction.action.HospitalAction">
+		<property name="hospitalService" ref="hospitalService"></property>
+	</bean>
+	<bean id="hospitalService" class="com.crystalcg.gamedev.buildingFunction.service.HospitalService">
+	</bean>
+	<!-- 兵营 -->
+	<bean id="barracksAction" class="com.crystalcg.gamedev.buildingFunction.action.BarracksAction">
+		<property name="barracksService" ref="barracksService"></property>
+	</bean>
+	<bean id="barracksService" class="com.crystalcg.gamedev.buildingFunction.service.BarracksService">
+		<property name="barracksDao" ref="barracksDao"></property>
+	</bean>
+	<bean id="barracksDao" class="com.crystalcg.gamedev.buildingFunction.dao.BarracksDao">
+		<property name="barracksMapper" ref="barracksMapper"></property>
+	</bean>
+	<bean id="barracksMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+  		<property name="mapperInterface" value="com.crystalcg.gamedev.buildingFunction.mapper.BarracksMapper" />
+  		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+  	</bean>
+</beans>

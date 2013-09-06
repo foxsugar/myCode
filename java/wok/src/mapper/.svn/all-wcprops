@@ -1,0 +1,191 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/develop/!svn/ver/9164/wok/src/mapper
+END
+gemstoneMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/develop/!svn/ver/1230/wok/src/mapper/gemstoneMapper.xml
+END
+rankingMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/develop/!svn/ver/8570/wok/src/mapper/rankingMapper.xml
+END
+mailMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/develop/!svn/ver/4317/wok/src/mapper/mailMapper.xml
+END
+privycouncilMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/develop/!svn/ver/4995/wok/src/mapper/privycouncilMapper.xml
+END
+allianceMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/develop/!svn/ver/6933/wok/src/mapper/allianceMapper.xml
+END
+battleMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/develop/!svn/ver/7885/wok/src/mapper/battleMapper.xml
+END
+soldierTechMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/develop/!svn/ver/5193/wok/src/mapper/soldierTechMapper.xml
+END
+marketMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/develop/!svn/ver/6569/wok/src/mapper/marketMapper.xml
+END
+userItemMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/develop/!svn/ver/7145/wok/src/mapper/userItemMapper.xml
+END
+cacheMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/develop/!svn/ver/8547/wok/src/mapper/cacheMapper.xml
+END
+auctionMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/develop/!svn/ver/4953/wok/src/mapper/auctionMapper.xml
+END
+buildQueueMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/develop/!svn/ver/6832/wok/src/mapper/buildQueueMapper.xml
+END
+beaconMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/develop/!svn/ver/2906/wok/src/mapper/beaconMapper.xml
+END
+barracksMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/develop/!svn/ver/6732/wok/src/mapper/barracksMapper.xml
+END
+equipDesignMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/develop/!svn/ver/1476/wok/src/mapper/equipDesignMapper.xml
+END
+resourceMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/develop/!svn/ver/7443/wok/src/mapper/resourceMapper.xml
+END
+itemMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/develop/!svn/ver/4641/wok/src/mapper/itemMapper.xml
+END
+cellarMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/develop/!svn/ver/6486/wok/src/mapper/cellarMapper.xml
+END
+collegeMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/develop/!svn/ver/4947/wok/src/mapper/collegeMapper.xml
+END
+battleProcessMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/develop/!svn/ver/3945/wok/src/mapper/battleProcessMapper.xml
+END
+wallDefensenMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/develop/!svn/ver/8851/wok/src/mapper/wallDefensenMapper.xml
+END
+friendMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/develop/!svn/ver/7451/wok/src/mapper/friendMapper.xml
+END
+questMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/develop/!svn/ver/8454/wok/src/mapper/questMapper.xml
+END
+maincityMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/develop/!svn/ver/9164/wok/src/mapper/maincityMapper.xml
+END
+userHeroMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/develop/!svn/ver/8570/wok/src/mapper/userHeroMapper.xml
+END
+interiorTechMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/develop/!svn/ver/6832/wok/src/mapper/interiorTechMapper.xml
+END
+formationTechMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/develop/!svn/ver/5267/wok/src/mapper/formationTechMapper.xml
+END
+characterMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/develop/!svn/ver/8570/wok/src/mapper/characterMapper.xml
+END
+textMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/develop/!svn/ver/5221/wok/src/mapper/textMapper.xml
+END
+accountMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/develop/!svn/ver/6732/wok/src/mapper/accountMapper.xml
+END
+buildingMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/develop/!svn/ver/7145/wok/src/mapper/buildingMapper.xml
+END

@@ -1,0 +1,275 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/develop/!svn/ver/9320/wok/src
+END
+battleProcess.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/develop/!svn/ver/5876/wok/src/battleProcess.xml
+END
+wallDefensen.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/develop/!svn/ver/5221/wok/src/wallDefensen.xml
+END
+chat.xml
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/develop/!svn/ver/5805/wok/src/chat.xml
+END
+friend.xml
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/develop/!svn/ver/4690/wok/src/friend.xml
+END
+static-dbconf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/develop/!svn/ver/7621/wok/src/static-dbconf.xml
+END
+quest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/develop/!svn/ver/6816/wok/src/quest.xml
+END
+maincity.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/develop/!svn/ver/5530/wok/src/maincity.xml
+END
+userHero.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/develop/!svn/ver/4366/wok/src/userHero.xml
+END
+interiorTech.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/develop/!svn/ver/5062/wok/src/interiorTech.xml
+END
+formationTech.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/develop/!svn/ver/5159/wok/src/formationTech.xml
+END
+materialFuse.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/develop/!svn/ver/6171/wok/src/materialFuse.xml
+END
+character.xml
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/develop/!svn/ver/4286/wok/src/character.xml
+END
+refreshServerTime.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/develop/!svn/ver/3243/wok/src/refreshServerTime.xml
+END
+buildingFunction.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/develop/!svn/ver/6486/wok/src/buildingFunction.xml
+END
+account.xml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/develop/!svn/ver/4795/wok/src/account.xml
+END
+comet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/develop/!svn/ver/7041/wok/src/comet.xml
+END
+building.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/develop/!svn/ver/4255/wok/src/building.xml
+END
+gemstone.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/develop/!svn/ver/4567/wok/src/gemstone.xml
+END
+ranking.xml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/develop/!svn/ver/7609/wok/src/ranking.xml
+END
+mail.xml
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/develop/!svn/ver/4286/wok/src/mail.xml
+END
+privycouncil.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/develop/!svn/ver/2855/wok/src/privycouncil.xml
+END
+alliance.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/develop/!svn/ver/5931/wok/src/alliance.xml
+END
+battle.xml
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/develop/!svn/ver/7597/wok/src/battle.xml
+END
+soldierTech.xml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/develop/!svn/ver/5178/wok/src/soldierTech.xml
+END
+useItem.xml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/develop/!svn/ver/3737/wok/src/useItem.xml
+END
+hospital.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/develop/!svn/ver/2935/wok/src/hospital.xml
+END
+equipStrengthen.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/develop/!svn/ver/4520/wok/src/equipStrengthen.xml
+END
+market.xml
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/develop/!svn/ver/4436/wok/src/market.xml
+END
+mybatis-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/develop/!svn/ver/7621/wok/src/mybatis-config.xml
+END
+quartz.properties
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/develop/!svn/ver/643/wok/src/quartz.properties
+END
+battleSuburb.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/develop/!svn/ver/5452/wok/src/battleSuburb.xml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/develop/!svn/ver/6456/wok/src/log4j.properties
+END
+userItem.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/develop/!svn/ver/4286/wok/src/userItem.xml
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/develop/!svn/ver/7621/wok/src/applicationContext.xml
+END
+cache.xml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/develop/!svn/ver/7701/wok/src/cache.xml
+END
+auction.xml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/develop/!svn/ver/4286/wok/src/auction.xml
+END
+centrestage.xml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/develop/!svn/ver/2870/wok/src/centrestage.xml
+END
+beacon.xml
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/develop/!svn/ver/2906/wok/src/beacon.xml
+END
+barracks.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/develop/!svn/ver/2726/wok/src/barracks.xml
+END
+embedStone.xml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/develop/!svn/ver/4615/wok/src/embedStone.xml
+END
+equipDesign.xml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/develop/!svn/ver/4615/wok/src/equipDesign.xml
+END
+resource.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/develop/!svn/ver/4299/wok/src/resource.xml
+END
+world.xml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/develop/!svn/ver/5530/wok/src/world.xml
+END
+item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/develop/!svn/ver/359/wok/src/item.xml
+END
+dbconf.properties
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/develop/!svn/ver/7621/wok/src/dbconf.properties
+END

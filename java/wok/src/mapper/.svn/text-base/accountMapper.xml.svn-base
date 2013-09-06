@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.user.mapper.AccountMapper"> 
+  
+  <resultMap type="com.crystalcg.gamedev.user.domain.Account" id="account">
+  	<id property="id" column="id"/>
+	<result property="username" column="username"/>
+	<result property="password" column="password"/>
+	<result property="createTime" column="create_time"/>
+	<result property="lastLoginTime" column="last_login_time"/>
+	<result property="lastCharacterId" column="last_character_id"/>
+	<result property="status" column="status"/>
+  </resultMap>
+	
+  <insert id="insertAccount" parameterType="com.crystalcg.gamedev.user.domain.Account" >
+    INSERT INTO USER_ACCOUNT(username,password,create_time)
+    VALUES(#{username},#{password},#{createTime})
+  </insert>
+  <select id="getAccountByName" parameterType="java.lang.String" resultMap="account">
+    SELECT * FROM USER_ACCOUNT
+    WHERE username=#{value}
+  </select>
+  <select id="getAccountById" parameterType="int" resultMap="account">
+    SELECT * FROM USER_ACCOUNT
+    WHERE id=#{value}
+  </select>
+  <update id="updateLastCharId" parameterType="com.crystalcg.gamedev.user.domain.Account">
+    UPDATE USER_ACCOUNT
+    SET last_character_id=#{lastCharacterId}
+    WHERE id=#{id}
+  </update>
+  <update id="updateLastLoginTime" parameterType="com.crystalcg.gamedev.user.domain.Account">
+    UPDATE USER_ACCOUNT
+    SET last_login_time=#{lastLoginTime}
+    WHERE id=#{id}
+  </update>
+   <!-- 
+  <select id="getAccountByNameAndPassword" parameterType="com.crystalcg.gamedev.user.domain.Account" resultMap="account">
+    SELECT * FROM Account
+    WHERE acName=#{acName} and acPassword=#{acPassword}
+  </select>
+  <update id="updateAccount" parameterType="com.crystalcg.gamedev.user.domain.Account">
+    UPDATE Account
+    SET lastCharId=#{lastCharId},acPassword=#{acPassword},createTime=#{createTime},lastLoginTime=#{lastLoginTime}
+    WHERE acId=#{acId}
+  </update>
+  <delete id="deleteAccount" parameterType="int">
+    DELETE FROM Account 
+    WHERE acId=#{value}
+  </delete>
+  <select id="getAllAccount" resultMap="account">
+    SELECT * FROM Account
+  </select>
+   -->
+</mapper>

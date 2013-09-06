@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	<bean id="battleAction" class="com.crystalcg.gamedev.battle.action.BattleAction">
+		<property name="battleService" ref="battleService"></property>
+		<property name="battleSuburbService" ref="battleSuburbServic"></property>
+		<property name="wallDefensenService" ref="walldefService"></property>
+	</bean>
+	<bean id="battleService" class="com.crystalcg.gamedev.battle.service.BattleService">
+		<property name="battleDao" ref="battleDao"></property>
+		<property name="characterService" ref="characterService"></property>
+	</bean>
+	<bean id="battleDao" class="com.crystalcg.gamedev.battle.dao.BattleDao">
+		<property name="battleMapper" ref="battleMapper"></property>
+	</bean>
+	<bean id="battleMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+  		<property name="mapperInterface" value="com.crystalcg.gamedev.battle.mapper.BattleMapper" />
+  		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+</beans>

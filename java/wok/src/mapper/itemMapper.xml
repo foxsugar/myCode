@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.item.mapper.ItemMapper">
+	<select id="getAllEquipment" parameterType="int" resultType="java.util.Map">
+		SELECT id,equipment_no no,equipment_name name,quality,equipment_type itemSubtype,'1' itemType FROM static_equipment
+	</select>
+	<select id="getAllItem" resultType="java.util.Map">
+		SELECT id,item_no no,item_name name,quality,item_subtype itemSubtype,'2' itemType FROM static_item;
+	</select>
+	<select id="getAllMaterial" parameterType="int" resultType="java.util.Map">
+		SELECT id,material_no no,material_name name,quality,material_type itemSubtype,'3' itemType FROM static_material;
+	</select>
+	<select id="getAllQuests" parameterType="int" resultType="java.util.Map">
+		SELECT id,item_no no,item_name name,quality,'4' itemType FROM static_quests;
+	</select>
+</mapper>

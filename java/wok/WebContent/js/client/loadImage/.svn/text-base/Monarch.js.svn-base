@@ -1,0 +1,44 @@
+var monarchLoadImage = function()
+{
+	gbox.addImage("jz_zjm_01","images/Monarch/jz_zjm_01.png?v=1");
+	gbox.addTiles({id :'jz_zjm_01',image :'jz_zjm_01',tilew:796,tileh:464,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("jz_zjm_02","images/Monarch/jz_zjm_02.png?v=1");
+	gbox.addTiles({id :'jz_zjm_02',image :'jz_zjm_02',tilew:325,tileh:40,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("jz_zjm_15","images/Monarch/jz_zjm_15.png?v=1");
+	gbox.addTiles({id :'jz_zjm_15',image :'jz_zjm_15',tilew:184,tileh:10,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("jz_zjm_16","images/Monarch/jz_zjm_16.png?v=1");
+	gbox.addTiles({id :'jz_zjm_16',image :'jz_zjm_16',tilew:318,tileh:154,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("jz_zjm_23","images/Monarch/jz_zjm_23.png?v=1");
+	gbox.addTiles({id :'jz_zjm_23',image :'jz_zjm_23',tilew:318,tileh:154,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("jz_zjm_26","images/Monarch/jz_zjm_26.png?v=1");
+	gbox.addTiles({id :'jz_zjm_26',image :'jz_zjm_26',tilew:449,tileh:396,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("jz_zjm_27","images/Monarch/jz_zjm_27.png?v=1");
+	gbox.addTiles({id :'jz_zjm_27',image :'jz_zjm_27',tilew:101,tileh:101,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("jz_zjm_28","images/Monarch/jz_zjm_28.png?v=1");
+	gbox.addTiles({id :'jz_zjm_28',image :'jz_zjm_28',tilew:101,tileh:101,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("jz_zjm_29","images/Monarch/jz_zjm_29.png?v=1");
+	gbox.addTiles({id :'jz_zjm_29',image :'jz_zjm_29',tilew:28,tileh:28,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("jz_zjm_30","images/Monarch/jz_zjm_30.png?v=1");
+	gbox.addTiles({id :'jz_zjm_30',image :'jz_zjm_30',tilew:28,tileh:28,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("jz_zjm_38","images/Monarch/jz_zjm_38.png?v=1");
+	gbox.addTiles({id :'jz_zjm_38',image :'jz_zjm_38',tilew:318,tileh:154,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("vip1","images/Monarch/vip1.png?v=1");
+	gbox.addTiles({id :'vip1',image :'vip1',tilew:38,tileh:20,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("vip2","images/Monarch/vip2.png?v=1");
+	gbox.addTiles({id :'vip2',image :'vip2',tilew:38,tileh:20,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("vip3","images/Monarch/vip3.png?v=1");
+	gbox.addTiles({id :'vip3',image :'vip3',tilew:38,tileh:20,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("vip4","images/Monarch/vip4.png?v=1");
+	gbox.addTiles({id :'vip4',image :'vip4',tilew:38,tileh:20,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("vip5","images/Monarch/vip5.png?v=1");
+	gbox.addTiles({id :'vip5',image :'vip5',tilew:38,tileh:20,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("vip6","images/Monarch/vip6.png?v=1");
+	gbox.addTiles({id :'vip6',image :'vip6',tilew:38,tileh:20,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("vip7","images/Monarch/vip7.png?v=1");
+	gbox.addTiles({id :'vip7',image :'vip7',tilew:38,tileh:20,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("vip8","images/Monarch/vip8.png?v=1");
+	gbox.addTiles({id :'vip8',image :'vip8',tilew:38,tileh:20,tilerow : 1,gapx : 0,gapy : 0});
+	gbox.addImage("vip9","images/Monarch/vip9.png?v=1");
+	gbox.addTiles({id :'vip9',image :'vip9',tilew:38,tileh:20,tilerow : 1,gapx : 0,gapy : 0});
+
+};

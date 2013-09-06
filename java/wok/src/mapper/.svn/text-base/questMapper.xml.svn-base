@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crystalcg.gamedev.quest.mapper.QuestMapper">
+	<resultMap type="com.crystalcg.gamedev.quest.domain.Quest" id="questResult">
+		<id column="id" property="id"/>
+		<result column="character_id" property="characterId"/>
+		<result column="quest_no" property="questNo"/>
+		<result column="status" property="status"/>
+		<result column="quest_type" property="questType"/>
+		<result column="reset_type" property="resetType"/>
+		<result column="update_time" property="updateTime"/>
+		<result column="target_amount" property="targetAmount"/>
+	</resultMap>
+<!-- 	<resultMap type="com.crystalcg.gamedev.quest.domain.QuestSchedule" id="questScheduleResult"> -->
+<!-- 		<id column="id" property="id"/> -->
+<!-- 		<result column="quest_id" property="questId"/> -->
+<!-- 		<result column="target" property="target"/> -->
+<!-- 		<result column="target_num" property="targetNum"/> -->
+<!-- 		<result column="character_id" property="characterId"/> -->
+<!-- 	</resultMap> -->
+	<resultMap type="com.crystalcg.gamedev.quest.domain.UserDailyRecord" id="userDailyRecordResult">
+		<id column="id" property="id"/>
+		<result column="reputation_amount" property="reputationAmount"/>
+		<result column="hero_amount" property="heroAmount"/>
+		<result column="update_date" property="updateDate"/>
+		<result column="character_id" property="characterId"/>
+	</resultMap>
+	<select id="getUserQuestById" parameterType="java.util.Map" resultMap="questResult">
+		SELECT * FROM user_quest WHERE id=#{id} and character_id=#{characterId}
+	</select>
+	<select id="getAllUserQuest" parameterType="int" resultMap="questResult">
+		SELECT * FROM user_quest WHERE character_id=#{value}
+	</select>
+	<select id="getUserQuestByType" parameterType="java.util.Map" resultMap="questResult">
+		SELECT * FROM user_quest WHERE character_id=#{characterId} AND quest_type = #{questType}
+	</select>
+	<select id="getUserQuestByStatus" parameterType="java.util.Map" resultMap="questResult">
+		SELECT * FROM user_quest WHERE character_id=#{characterId} AND status = #{status}
+	</select>
+<!-- 	<select id="getAllQuestSchedule" parameterType="int" resultMap="questScheduleResult"> -->
+<!-- 		SELECT * FROM user_quest_schedule WHERE character_id = #{value} -->
+<!-- 	</select> -->
+<!-- 	<select id="getQuestSchedule" parameterType="int" resultMap="questScheduleResult"> -->
+<!-- 		SELECT * FROM user_quest_schedule WHERE quest_id = #{value} -->
+<!-- 	</select> -->
+	<insert id="insertUserQuest" parameterType="com.crystalcg.gamedev.quest.domain.Quest" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO user_quest(character_id,quest_no,status,quest_type,reset_type,target_amount ) VALUES(#{characterId},#{questNo},#{status},#{questType},#{resetType},#{targetAmount} )
+	</insert>
+<!-- 	<insert id="insertQuestSchedule" parameterType="list"> -->
+<!-- 		INSERT INTO user_quest_schedule(quest_id,target,target_num,character_id ) VALUES -->
+<!-- 		<foreach collection="list" item="item" separator=","> -->
+<!-- 			(#{item.questId},#{item.target},#{item.targetNum},#{item.characterId} ) -->
+<!-- 		</foreach> -->
+<!-- 	</insert> -->
+	<delete id="deleteUserQuest" parameterType="int">
+		DELETE FROM user_quest where id = #{value}
+	</delete>
+<!-- 	<delete id="deleteQuestSchedule" parameterType="int"> -->
+<!-- 		DELETE FROM user_quest_schedule where id = #{value} -->
+<!-- 	</delete> -->
+	<update id="updateQuestTime" parameterType="com.crystalcg.gamedev.quest.domain.Quest">
+		UPDATE user_quest SET update_time = #{updateTime} WHERE id = #{id}
+	</update>
+	<update id="updateQuestStatus" parameterType="java.util.Map">
+		UPDATE user_quest SET status = #{status} WHERE id = #{id}
+	</update>
+	<update id="updateQuestSchedule" parameterType="com.crystalcg.gamedev.quest.domain.Quest">
+		UPDATE user_quest SET target_amount = #{targetAmount} WHERE id = #{id}
+	</update>
+	<select id="getAllQuestRecord" parameterType="int" resultType="int"> 
+		SELECT target_type FROM user_quest_record where character_id=#{value}
+	</select>
+	<insert id="insertQuestRecord" parameterType="java.util.Map">
+		INSERT INTO user_quest_record(character_id,target_type) values(#{characterId},#{targetType})
+	</insert>
+	<select id="getDailyRecord" parameterType="int" resultMap="userDailyRecordResult">
+		SELECT * FROM user_daily_record WHERE character_id=#{value}
+	</select>
+	<insert id="insertDailyRecord" parameterType="int">
+		INSERT INTO user_daily_record(character_id) VALUES(#{value})
+	</insert>
+	<update id="updateDailyRecord" parameterType="com.crystalcg.gamedev.quest.domain.UserDailyRecord">
+		UPDATE user_daily_record set reputation_amount =#{reputationAmount} ,hero_amount = #{heroAmount} WHERE character_id=#{characterId}
+	</update>
+</mapper>

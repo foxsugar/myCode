@@ -1,0 +1,47 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">  
+<!--         联盟表 -->
+	<bean id="AllianceAction" class="com.crystalcg.gamedev.alliance.action.AllianceAction">
+		<property name="allianceService" ref="allianceService"></property>  
+	</bean>
+	<bean id="allianceService" class="com.crystalcg.gamedev.alliance.service.AllianceService"> 
+	 	<property name="allianceDao" ref="allianceDao"></property> 
+	</bean>
+	<bean id="allianceDao" class=" com.crystalcg.gamedev.alliance.dao.AllianceDao"> 	
+	    <property name="allianceMapper" ref="allianceMapper"></property>   
+	</bean>
+	<bean id="allianceMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	    <property name="mapperInterface" value="com.crystalcg.gamedev.alliance.mapper.AllianceMapper"></property>
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"> </property>
+	</bean>    
+	
+	<!-- 	联盟成员 -->
+	<bean id="AllianceMemberAction" class="com.crystalcg.gamedev.alliance.action.AllianceMemberAction">
+		<property name="allianceMemberService" ref="allianceMemberService"></property>  
+	</bean>
+	<bean id="allianceMemberService" class="com.crystalcg.gamedev.alliance.service.AllianceMemberService"> 
+	 	<property name="allianceMemberDao" ref="allianceMemberDao"></property> 
+	</bean>
+	<bean id="allianceMemberDao" class=" com.crystalcg.gamedev.alliance.dao.AllianceMemberDao"> 	
+	    <property name="allianceMapper" ref="allianceMapper"></property>   
+	</bean>
+	
+	<!--  联盟福利，兵营-->
+	<bean id="allianceWelfareAction" class="com.crystalcg.gamedev.alliance.action.AllianceWelfareAction">
+		<property name="allianceWelfareService" ref="allianceWelfareService"></property>  
+	</bean>
+	<bean id="allianceWelfareService" class="com.crystalcg.gamedev.alliance.service.AllianceWelfareService"> 
+	 	<property name="allianceWelfareDao" ref="allianceWelfareDao"></property> 
+	</bean>
+	<bean id="allianceWelfareDao" class=" com.crystalcg.gamedev.alliance.dao.AllianceWelfareDao"> 	
+	    <property name="allianceMapper" ref="allianceMapper"></property>   
+	</bean>   
+</beans>

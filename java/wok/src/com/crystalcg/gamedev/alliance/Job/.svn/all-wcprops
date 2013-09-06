@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/develop/!svn/ver/7324/wok/src/com/crystalcg/gamedev/alliance/Job
+END
+UpgradeAllianceTechnologyJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/alliance/Job/UpgradeAllianceTechnologyJob.java
+END
+UpgradeAllianceJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/7324/wok/src/com/crystalcg/gamedev/alliance/Job/UpgradeAllianceJob.java
+END
+DisbandAllianceJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/alliance/Job/DisbandAllianceJob.java
+END

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crystalcg.gamedev.resource.mapper.ResourceMapper">
+<resultMap type="com.crystalcg.gamedev.resource.domain.UserField" id="userField">
+	<id column="id" property="id"/>
+	<result column="character_id" property="characterId"/>
+	<result column="field_id" property="fieldId"/>
+	<result column="field_type" property="fieldType"/>
+	<result column="field_status" property="fieldStatus"/>
+	<result column="grow_time" property="growTime"/>
+	<result column="harvest_time" property="harvestTime"/>
+	<result column="batch_key" property="batchKey"/>
+</resultMap>
+	<insert id="insertNewField" parameterType="com.crystalcg.gamedev.resource.domain.UserField" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO user_resource_field(
+		character_id,
+		field_id,
+		field_type,
+		field_status,
+		grow_time,
+		harvest_time
+		)
+		VALUES
+		(
+		#{characterId},
+		#{fieldId},
+		#{fieldType},
+		#{fieldStatus},
+		#{growTime},
+		#{harvestTime}
+		);
+	</insert>
+	<update id="updateResourceField" parameterType="com.crystalcg.gamedev.resource.domain.UserField">
+		UPDATE user_resource_field SET
+		character_id = #{characterId},
+		field_id = #{fieldId},
+		field_type = #{fieldType},
+		field_status = #{fieldStatus},
+		grow_time = #{growTime},
+		harvest_time = #{harvestTime},
+		batch_key = #{batchKey}
+		WHERE character_id = #{characterId} and field_id = #{fieldId} and field_type = #{fieldType};
+	
+	</update>
+	<select id="getSpecificUserField" parameterType="java.util.Map" resultMap="userField">
+		SELECT * FROM user_resource_field WHERE  character_id= #{characterId} and field_id = #{fieldId} and field_type = #{fieldType};
+	</select>
+	<select id="getUserFieldByCharId" parameterType="int" resultMap="userField">
+		SELECT * FROM user_resource_field WHERE character_id = #{value} order by field_id asc
+	</select>
+	<select id="getUserFieldByCharIdAndStatus" parameterType="java.util.Map" resultMap="userField">
+		SELECT * FROM user_resource_field WHERE character_id = #{characterId} and field_status = #{fieldStatus};
+	</select>
+	<select id="getUserFieldWithSameTime" parameterType="int" resultMap="userField">
+		SELECT * FROM user_resource_field WHERE character_id = #{characterId} and batch_key = #{batchKey} order by field_id asc
+	</select>
+	<select id="getUserResourceCount" parameterType="java.util.Map" resultType="int">
+		SELECT count(*) FROM user_resource_field WHERE character_id = #{characterId} and field_status = #{fieldStatus};
+	</select>
+	<delete id="deleteResource" parameterType="com.crystalcg.gamedev.resource.domain.UserField">
+		DELETE FROM user_resource_field WHERE id = #{id}
+	</delete>
+
+</mapper>

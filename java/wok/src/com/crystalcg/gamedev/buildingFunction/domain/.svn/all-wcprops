@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/develop/!svn/ver/7188/wok/src/com/crystalcg/gamedev/buildingFunction/domain
+END
+UserWallHero.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/develop/!svn/ver/7188/wok/src/com/crystalcg/gamedev/buildingFunction/domain/UserWallHero.java
+END
+UserCellar.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/develop/!svn/ver/6486/wok/src/com/crystalcg/gamedev/buildingFunction/domain/UserCellar.java
+END
+UserWallDefensenQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/develop/!svn/ver/5221/wok/src/com/crystalcg/gamedev/buildingFunction/domain/UserWallDefensenQueue.java
+END
+UserSoldierQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/develop/!svn/ver/5112/wok/src/com/crystalcg/gamedev/buildingFunction/domain/UserSoldierQueue.java
+END
+MilitaryRank.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/develop/!svn/ver/4241/wok/src/com/crystalcg/gamedev/buildingFunction/domain/MilitaryRank.java
+END
+AffairQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/develop/!svn/ver/4950/wok/src/com/crystalcg/gamedev/buildingFunction/domain/AffairQueue.java
+END
+UserSoldier.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/develop/!svn/ver/5112/wok/src/com/crystalcg/gamedev/buildingFunction/domain/UserSoldier.java
+END
+UserMarket.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/develop/!svn/ver/6571/wok/src/com/crystalcg/gamedev/buildingFunction/domain/UserMarket.java
+END
+UserMilitaryRank.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/develop/!svn/ver/4241/wok/src/com/crystalcg/gamedev/buildingFunction/domain/UserMilitaryRank.java
+END
+UserWallDefensen.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/develop/!svn/ver/5221/wok/src/com/crystalcg/gamedev/buildingFunction/domain/UserWallDefensen.java
+END

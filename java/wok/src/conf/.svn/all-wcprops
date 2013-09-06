@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/develop/!svn/ver/5825/wok/src/conf
+END
+tavern.xml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/develop/!svn/ver/2782/wok/src/conf/tavern.xml
+END
+imageLayer.data
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/develop/!svn/ver/5825/wok/src/conf/imageLayer.data
+END
+imageLayer__deleted.data
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/develop/!svn/ver/3684/wok/src/conf/imageLayer__deleted.data
+END
+heroName.properties
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/develop/!svn/ver/5561/wok/src/conf/heroName.properties
+END
+fuseStone.properties
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/develop/!svn/ver/1230/wok/src/conf/fuseStone.properties
+END
+building.xml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/develop/!svn/ver/2726/wok/src/conf/building.xml
+END

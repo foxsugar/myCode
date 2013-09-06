@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/develop/!svn/ver/9318/wok/src/com/crystalcg/gamedev/battleProcess/domain
+END
+SkillOjbect.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/5487/wok/src/com/crystalcg/gamedev/battleProcess/domain/SkillOjbect.java
+END
+MultiBattleObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/develop/!svn/ver/9318/wok/src/com/crystalcg/gamedev/battleProcess/domain/MultiBattleObject.java
+END
+SingleBattle.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/battleProcess/domain/SingleBattle.java
+END
+SingleBattleObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/develop/!svn/ver/6144/wok/src/com/crystalcg/gamedev/battleProcess/domain/SingleBattleObject.java
+END
+SoldierForBattle.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/develop/!svn/ver/8578/wok/src/com/crystalcg/gamedev/battleProcess/domain/SoldierForBattle.java
+END
+SoldierAttribute.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/develop/!svn/ver/7145/wok/src/com/crystalcg/gamedev/battleProcess/domain/SoldierAttribute.java
+END
+HeroForBattle.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/battleProcess/domain/HeroForBattle.java
+END
+HeroAttribute.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/develop/!svn/ver/8731/wok/src/com/crystalcg/gamedev/battleProcess/domain/HeroAttribute.java
+END
+BattleData.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/5452/wok/src/com/crystalcg/gamedev/battleProcess/domain/BattleData.java
+END
+BuffObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/6144/wok/src/com/crystalcg/gamedev/battleProcess/domain/BuffObject.java
+END
+MultiBattle.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/9304/wok/src/com/crystalcg/gamedev/battleProcess/domain/MultiBattle.java
+END
+DefenceWork.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/9318/wok/src/com/crystalcg/gamedev/battleProcess/domain/DefenceWork.java
+END

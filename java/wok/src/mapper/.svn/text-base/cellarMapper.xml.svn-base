@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.buildingFunction.mapper.CellarMapper"> 
+  
+  <resultMap type="com.crystalcg.gamedev.buildingFunction.domain.UserCellar" id="userCellar">
+  	<id property="id" column="id"/>
+	<result property="characterId" column="character_id"/>
+	<result property="protectionNo" column="protection_no"/>
+	<result property="protectionAmount" column="protection_amount"/>
+	<result property="protectionTime" column="protection_time"/>
+  </resultMap>
+  
+  <select id="getAllCellarProtection" parameterType="int" resultMap="userCellar">
+    SELECT * FROM USER_CELLAR
+    WHERE character_id=#{characterId}
+  </select>
+  <insert id="insertUserCellar" parameterType="list">
+    INSERT INTO user_cellar (character_id,protection_no,protection_time)
+		VALUES
+		<foreach collection="list" item="item" index="index"
+			separator=",">
+			(#{item.characterId},#{item.protectionNo},#{item.protectionTime})
+		</foreach>
+   </insert>
+   <update id="updateUserCellar" parameterType="com.crystalcg.gamedev.buildingFunction.domain.UserCellar">
+      UPDATE USER_CELLAR SET protection_time=#{protectionTime},protection_amount=#{protectionAmount}
+      WHERE character_id=#{characterId} AND protection_no=#{protectionNo}
+   </update>
+   <select id="getUserCellar" parameterType="java.util.Map" resultMap="userCellar">
+     SELECT * FROM USER_CELLAR WHERE character_id=#{characterId} AND protection_no=#{protectionNo}
+   </select>
+   	<delete id="deleteUserCellar" parameterType="int">
+		DELETE FROM USER_CELLAR 
+		WHERE character_id=#{characterId}
+	</delete>
+  </mapper>

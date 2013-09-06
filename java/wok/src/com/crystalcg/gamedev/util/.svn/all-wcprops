@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/develop/!svn/ver/9304/wok/src/com/crystalcg/gamedev/util
+END
+BattleMathForMulti.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/develop/!svn/ver/9304/wok/src/com/crystalcg/gamedev/util/BattleMathForMulti.java
+END
+ComparatorHero.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/develop/!svn/ver/8725/wok/src/com/crystalcg/gamedev/util/ComparatorHero.java
+END
+TimeUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/develop/!svn/ver/7315/wok/src/com/crystalcg/gamedev/util/TimeUtil.java
+END
+NumericalComparator.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/develop/!svn/ver/8961/wok/src/com/crystalcg/gamedev/util/NumericalComparator.java
+END
+CacheClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/develop/!svn/ver/1859/wok/src/com/crystalcg/gamedev/util/CacheClient.java
+END
+LockUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/develop/!svn/ver/9217/wok/src/com/crystalcg/gamedev/util/LockUtil.java
+END
+ChangeSkillToToolTip.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/ChangeSkillToToolTip.java
+END
+RandomFunc.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/develop/!svn/ver/6788/wok/src/com/crystalcg/gamedev/util/RandomFunc.java
+END
+CookieUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/develop/!svn/ver/7271/wok/src/com/crystalcg/gamedev/util/CookieUtil.java
+END
+CacheUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/develop/!svn/ver/1859/wok/src/com/crystalcg/gamedev/util/CacheUtil.java
+END
+Const.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/develop/!svn/ver/9195/wok/src/com/crystalcg/gamedev/util/Const.java
+END
+HeroMath.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/develop/!svn/ver/4520/wok/src/com/crystalcg/gamedev/util/HeroMath.java
+END
+ChangeArticleToToolTip.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/ChangeArticleToToolTip.java
+END
+LoginFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/develop/!svn/ver/3791/wok/src/com/crystalcg/gamedev/util/LoginFilter.java
+END
+ServiceLocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/ServiceLocator.java
+END
+BattleMath.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/develop/!svn/ver/8731/wok/src/com/crystalcg/gamedev/util/BattleMath.java
+END
+ComparatorMaxFighting.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/develop/!svn/ver/8725/wok/src/com/crystalcg/gamedev/util/ComparatorMaxFighting.java
+END
+FloatUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/develop/!svn/ver/4363/wok/src/com/crystalcg/gamedev/util/FloatUtil.java
+END
+ChangeHeroToToolTip.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/ChangeHeroToToolTip.java
+END
+BuildingAlgorithm.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/develop/!svn/ver/7670/wok/src/com/crystalcg/gamedev/util/BuildingAlgorithm.java
+END
+QuestTargeType.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/develop/!svn/ver/7352/wok/src/com/crystalcg/gamedev/util/QuestTargeType.java
+END
+TechAlgorithm.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/develop/!svn/ver/4613/wok/src/com/crystalcg/gamedev/util/TechAlgorithm.java
+END
+ResourceMath.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/develop/!svn/ver/6002/wok/src/com/crystalcg/gamedev/util/ResourceMath.java
+END
+HeroAlgorithm.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/develop/!svn/ver/8869/wok/src/com/crystalcg/gamedev/util/HeroAlgorithm.java
+END
+ComparatorUserFighting.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/develop/!svn/ver/8725/wok/src/com/crystalcg/gamedev/util/ComparatorUserFighting.java
+END
+ChangeToMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/util/ChangeToMap.java
+END

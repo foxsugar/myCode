@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crystalcg.gamedev.battle.mapper.BattleMapper">
+	<resultMap type="com.crystalcg.gamedev.battle.domain.BattleJobQueue" id="battleJobQueue">
+		<id property="id" column="id"/>
+		<result property="characterId" column="character_id"/>
+		<result property="characterName" column="character_name"/>
+		<result property="battleType" column="battle_type"/>
+		<result property="heroList" column="hero_list"/>
+		<result property="userForce" column="user_force"/>
+		<result property="targetType" column="target_type"/>
+		<result property="targetId" column="target_id"/>
+		<result property="targetNo" column="target_no"/>
+		<result property="targetName" column="target_name"/>
+		<result property="arrivingTime" column="arriving_time"/>
+		<result property="status" column="status"/>
+		<result property="formationNo" column="formation_no"/>
+		<result property="needTime" column="need_time"/>
+		<result property="backTime" column="back_time"/>
+		<result property="backArriveTime" column="back_arrive_time"/>
+		<result property="goTime" column="go_time"/>
+	</resultMap>
+	
+	<resultMap type="com.crystalcg.gamedev.battle.domain.CollectionJobQueue" id="collectionJobQueue">
+		<id property="id" column="id"/>
+		<result property="x" column="x"/>
+		<result property="y" column="y"/>
+		<result property="resourceNo" column="resource_no"/>
+		<result property="arriveTime" column="arrive_time"/>
+		<result property="backTime" column="back_time"/>
+	</resultMap>
+
+	<insert id="insertBattelQueue" parameterType="com.crystalcg.gamedev.battle.domain.BattleJobQueue"
+		useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+		INSERT INTO
+		battle_job_queue
+		(
+		character_id,
+		character_name,
+		battle_type,
+		hero_list,
+		user_force,
+		target_type,
+		target_id,
+		target_no,
+		target_name,
+		go_time,
+		arriving_time,
+		status,
+		formation_no,
+		need_time)
+		VALUES
+		(
+		#{characterId},
+		#{characterName},
+		#{battleType},
+		#{heroList},
+		#{userForce},
+		#{targetType},
+		#{targetId},
+		#{targetNo},
+		#{targetName},
+		#{goTime},
+		#{arrivingTime},
+		#{status},
+		#{formationNo},
+		#{needTime}
+		);
+	</insert>
+	<update id="updateBattelQueue" parameterType="com.crystalcg.gamedev.battle.domain.BattleJobQueue">
+		UPDATE
+		battle_job_queue
+		SET
+		arriving_time = #{arrivingTime},
+		back_time=#{backTime},
+		back_arrive_time = #{backArriveTime},
+		status = #{status}
+		WHERE id = #{id};
+	</update>
+	<delete id="deleteBattelQueue" parameterType="com.crystalcg.gamedev.battle.domain.BattleJobQueue">
+		DELETE FROM battle_job_queue WHERE id = #{id};
+	</delete>
+	
+	<select id="selectBattleQueue" parameterType="java.util.Map" resultMap="battleJobQueue">
+	SELECT * FROM battle_job_queue
+	where 1=1 and 
+	<if test="searchType==0">
+	(character_id =#{characterId} or target_id =#{characterId} and target_type =1) 
+	</if>
+	<if test="searchType==1">
+	(target_id =#{characterId} and target_type =1)
+	</if>
+	<if test="searchType==2">
+	(character_id =#{characterId})
+	</if>
+	<if test="searchType==3">
+	battle_type = 2 and (character_id =#{characterId} or target_id =#{characterId} and target_type =1) 
+	</if>
+	limit #{page},#{pageSize}
+	</select>
+	
+	<select id="getBattleQueueAmount" parameterType="java.util.Map" resultType="int">
+		SELECT count(*) FROM battle_job_queue where 
+		<if test="searchType==0">
+		character_id=#{characterId} or target_id =#{characterId} and target_type =1
+		</if>
+		<if test="searchType==1">
+		target_id =#{characterId} and target_type =1
+		</if>
+		<if test="searchType==2">
+		character_id=#{characterId}
+		</if>
+		<if test="searchType==3">
+		battle_type = 2 and (character_id=#{characterId} or target_id =#{characterId} and target_type =1);
+		</if>
+	</select>
+	<select id="selectBattleQueueById" parameterType="int" resultMap="battleJobQueue">
+		SELECT * from battle_job_queue where id=#{value};
+	</select>
+	<select id="getBattleQueueForSuburbByStatus" parameterType="java.util.Map" resultMap="battleJobQueue">
+		SELECT * from battle_job_queue where target_id=#{targetId} and status >= 2
+		<if test="battleType!=-1"> and battle_type = #{battleType}</if> 
+		order by arriving_time
+	</select>
+	<select id="getBattleByCidAndTargetId" parameterType="java.util.Map" resultMap="battleJobQueue">
+		SELECT * from battle_job_queue where target_id=#{targetId}  and status >= 2
+		and character_id =#{characterId}
+		<if test="battleType!=-1"> and battle_type = #{battleType}</if> 
+		order by arriving_time
+	</select>
+	<select id="getBattleAmountForSuburb" parameterType="java.util.Map" resultType="int">
+		SELECT count(*) from battle_job_queue where target_id=#{targetId} and status = #{status} and battle_type = #{battleType}
+	</select>
+	<select id="getBattleQueue" parameterType="java.util.Map" resultMap="battleJobQueue">
+		SELECT * from battle_job_queue where status = #{status}
+		AND (character_id=#{characterId} or target_id =#{characterId})
+	</select>
+	<select id="selectAllBattleQueueByStatus" parameterType="int" resultMap="battleJobQueue">
+		SELECT * from battle_job_queue where status = #{value}
+	</select>
+	<select id="selectAllBattleQueue"  resultMap="battleJobQueue">
+		SELECT * from battle_job_queue;
+	</select>
+	
+	<select id="getCollectionQueue"  resultMap="collectionJobQueue">
+		SELECT * from user_collection_queue where x=#{x} and y=#{y};
+	</select>
+		
+	<insert id="insertCollectionJobQueue" parameterType="com.crystalcg.gamedev.battle.domain.CollectionJobQueue">
+		INSERT INTO
+		user_collection_queue
+		(
+		x,
+		y,
+		resource_no,
+		arrive_time)
+		VALUES(
+		#{x},
+		#{y},
+		#{resource_no},
+		#{arrive_time}
+		);
+	</insert>
+	
+
+</mapper>

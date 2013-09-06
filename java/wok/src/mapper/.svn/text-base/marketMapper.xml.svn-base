@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.buildingFunction.mapper.MarketMapper">
+<resultMap type="com.crystalcg.gamedev.buildingFunction.domain.UserMarket" id="userMarketResult">
+	<id column="id" property="id"/>
+	<result column="character_id" property="characterId"/>
+	<result column="exchange_resource" property="exchangeResource"/>
+	<result column="update_time" property="updateTime"/>
+</resultMap>
+<select id="getUserMarket" parameterType="int" resultMap="userMarketResult">
+	SELECT * FROM user_market WHERE character_id=#{value};
+</select>
+<update id="updateUserMarket" parameterType="com.crystalcg.gamedev.buildingFunction.domain.UserMarket">
+	UPDATE user_market SET exchange_resource=#{exchangeResource} WHERE character_id=#{characterId};
+</update>
+<delete id="deleteUserMarket" parameterType="int">
+	DELETE FROM user_market WHERE character_id=#{characterId}
+</delete>
+<insert id="insertUserMarket" parameterType="int">
+	INSERT INTO user_market(character_id) values(#{value});
+</insert>
+</mapper>

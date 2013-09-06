@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.item.mapper.GemstoneMapper">
+	<select id="getUserGemstone" parameterType="int" resultType="java.util.Map">
+		select userItemId,itemCounts,bindState
+			   ,itemName,itemDescription,itemIcon
+			   ,itemLevel,itemType,itemSubType
+			   ,attack,defence,stamina,agility
+			   ,intelligence,commandNum
+			   ,salePrice,sumAble,throwAble
+			   ,stoneType,stoneLevel
+		from userItem,item
+		where userItem.itemid=item.itemid and item.itemType=3 and item.itemSubType=3
+		order by stoneType,stoneLevel
+	</select>
+</mapper>

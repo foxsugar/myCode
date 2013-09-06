@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.crystalcg.gamedev.tech.mapper.InteriorTechMapper">
+		<select id="getUserInteriorInfo" parameterType="int" resultType="com.crystalcg.gamedev.tech.domain.UserInteriorTech">
+			SELECT id,tech_no techNo,character_id characterId,tech_key techKey FROM user_interior_tech WHERE character_id = #{value}
+		</select>
+		<select id="getUserInteriorByKey" parameterType="java.util.Map" resultType="com.crystalcg.gamedev.tech.domain.UserInteriorTech">
+			SELECT id,tech_no techNo,character_id characterId,tech_key techKey FROM user_interior_tech WHERE character_id = #{characterId}
+			and tech_key = #{techKey}
+		</select>
+		<select id="getUserInteriorByNo" parameterType="java.util.Map" resultType="com.crystalcg.gamedev.tech.domain.UserInteriorTech">
+			SELECT id,tech_no techNo,character_id characterId,tech_key techKey FROM user_interior_tech WHERE character_id = #{characterId}
+			and tech_no = #{techNo}
+		</select>
+		<insert id="addTechQueue" parameterType="com.crystalcg.gamedev.tech.domain.TechQueue">
+			INSERT INTO user_interior_queue(character_id,completing_time,study_tech_no) 
+			VALUES (#{characterId},#{completingTime},#{studyTechNo});
+		</insert>
+		<insert id="addInteriorTech" parameterType="com.crystalcg.gamedev.tech.domain.UserInteriorTech">
+			INSERT INTO user_interior_tech(character_id,tech_key,tech_no)
+			VALUES(#{characterId},#{techKey},#{techNo});
+		</insert>
+		<delete id="deleteInteriorTech" parameterType="java.util.Map">
+			DELETE FROM user_interior_tech WHERE character_id=#{characterId} and tech_key=#{techKey};
+		</delete>
+		<update id="updateTechQueue" parameterType="java.util.Map">
+			UPDATE user_interior_queue SET completing_time=#{completeTime} WHERE character_id=#{characterId} and study_tech_no=#{techNo};
+		</update>
+		<delete id="deleteTechQueue" parameterType="int">
+			DELETE FROM user_interior_queue WHERE character_id=#{characterId}
+		</delete>
+		<update id="updateInteriorTech" parameterType="com.crystalcg.gamedev.tech.domain.UserInteriorTech">
+			UPDATE user_interior_tech SET tech_no=#{techNo} WHERE character_id=#{characterId} and tech_key=#{techKey};
+		</update>
+		<select id="getTechQueue" parameterType="int" resultType="com.crystalcg.gamedev.tech.domain.TechQueue">
+			SELECT id, character_id characterId,completing_time completingTime,study_tech_no studyTechNo 
+			FROM user_interior_queue WHERE character_id=#{value}
+		</select>
+	</mapper>

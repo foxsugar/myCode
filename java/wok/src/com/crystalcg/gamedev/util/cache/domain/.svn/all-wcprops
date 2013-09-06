@@ -1,0 +1,269 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/develop/!svn/ver/8547/wok/src/com/crystalcg/gamedev/util/cache/domain
+END
+StaticWorldCity.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/develop/!svn/ver/5530/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticWorldCity.java
+END
+StaticAlliancePrivilege.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticAlliancePrivilege.java
+END
+StaticSpeedItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/develop/!svn/ver/7024/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticSpeedItem.java
+END
+StaticSoldierTech.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/develop/!svn/ver/7398/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticSoldierTech.java
+END
+StaticEnemyNPC.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/8547/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticEnemyNPC.java
+END
+StaticTavern.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/develop/!svn/ver/4932/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticTavern.java
+END
+StaticSoldierSkill.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/develop/!svn/ver/4932/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticSoldierSkill.java
+END
+StaticHeroLevel.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/develop/!svn/ver/4932/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticHeroLevel.java
+END
+StaticImageResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/develop/!svn/ver/5629/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticImageResource.java
+END
+StaticCity.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/develop/!svn/ver/4932/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticCity.java
+END
+StaticArticleReward.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/develop/!svn/ver/4932/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticArticleReward.java
+END
+StaticCentrestage.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/develop/!svn/ver/4932/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticCentrestage.java
+END
+StaticMaterial.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/7643/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticMaterial.java
+END
+StaticBattleHurt.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/develop/!svn/ver/6144/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticBattleHurt.java
+END
+StaticQuest.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/develop/!svn/ver/7315/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticQuest.java
+END
+StaticAllianceGrade.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticAllianceGrade.java
+END
+StaticHeroSkillLastEffect.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/develop/!svn/ver/5949/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticHeroSkillLastEffect.java
+END
+StaticAllianceSalary.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticAllianceSalary.java
+END
+StaticAlliancePosition.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/develop/!svn/ver/6391/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticAlliancePosition.java
+END
+StaticGiftBox.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/5820/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticGiftBox.java
+END
+StaticHeroSkill.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/develop/!svn/ver/5629/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticHeroSkill.java
+END
+StaticAffairBonus.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/develop/!svn/ver/6732/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticAffairBonus.java
+END
+StaticCountry.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/4932/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticCountry.java
+END
+StaticAllianceShoping.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/develop/!svn/ver/6486/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticAllianceShoping.java
+END
+StaticFormation.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/develop/!svn/ver/5267/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticFormation.java
+END
+StaticEnemyAi.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/5683/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticEnemyAi.java
+END
+StaticBuilding.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/7597/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticBuilding.java
+END
+StaticItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/develop/!svn/ver/7807/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticItem.java
+END
+StaticProduceReward.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/develop/!svn/ver/4932/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticProduceReward.java
+END
+StaticDefenceworks.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/develop/!svn/ver/5240/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticDefenceworks.java
+END
+StaticEquipment.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/develop/!svn/ver/7643/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticEquipment.java
+END
+StaticQuests.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/develop/!svn/ver/7643/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticQuests.java
+END
+StaticPic.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/develop/!svn/ver/6732/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticPic.java
+END
+StaticCharacter.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/develop/!svn/ver/4932/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticCharacter.java
+END
+StaticProducePlan.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/develop/!svn/ver/5752/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticProducePlan.java
+END
+StaticRank.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/develop/!svn/ver/4932/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticRank.java
+END
+StaticFormationTech.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/develop/!svn/ver/7398/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticFormationTech.java
+END
+StaticAllianceBuilding.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/develop/!svn/ver/6535/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticAllianceBuilding.java
+END
+StaticStrengthenEquipment.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/develop/!svn/ver/6144/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticStrengthenEquipment.java
+END
+StaticBattleReward.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/develop/!svn/ver/4932/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticBattleReward.java
+END
+StaticInteriorTech.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/develop/!svn/ver/7398/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticInteriorTech.java
+END
+StaticSoldier.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/7145/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticSoldier.java
+END
+StaticWorldResource.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/develop/!svn/ver/7440/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticWorldResource.java
+END
+StaticTavernHeroAttr.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/develop/!svn/ver/5889/wok/src/com/crystalcg/gamedev/util/cache/domain/StaticTavernHeroAttr.java
+END

@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+body{
+	background-color: black;
+	background-image: url(../images/login/loginBg.jpg);
+	background-attachment:fixed;
+	background-position:top;
+	background-repeat: no-repeat;
+	margin:0;
+}
+
+#container{
+	margin:5%;
+}
+
+#left-container{
+	background-image: url(../images/login/announcementBg.png);
+	background-repeat: no-repeat;
+	width:277px;
+	height:524px;
+}
+
+#center-container{
+	width:500px;
+	height:100%;
+}
+
+#right-container{
+	width:277px;
+	height:100%;
+}
+#login-button{
+	background-image: url(../images/login/1.png);
+	background-repeat: no-repeat;
+	width:215px;
+	height:51px;
+}

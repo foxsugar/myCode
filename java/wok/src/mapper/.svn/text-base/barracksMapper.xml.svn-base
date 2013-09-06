@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.buildingFunction.mapper.BarracksMapper">
+	<resultMap type="com.crystalcg.gamedev.buildingFunction.domain.UserSoldier" id="userSoldier">
+		<id property="id" column="id"/>
+		<result property="characterId" column="character_id"/>
+		<result property="soldierNo" column="soldier_no"/>
+		<result property="soldierAmount" column="soldier_amount"/>
+	</resultMap>
+	<resultMap type="com.crystalcg.gamedev.buildingFunction.domain.UserSoldierQueue" id="userSoldierQueue">
+		<id property="id" column="id"/>
+		<result property="characterId" column="character_id"/>
+		<result property="startTime" column="start_time"/>
+		<result property="time" column="time"/>
+		<result property="soldierNo" column="soldier_no"/>
+	</resultMap>
+	<select id="getUserSoldier" resultMap="userSoldier">
+		SELECT * FROM USER_SOLDIER WHERE character_id=#{value}
+	</select>
+	<select id="getUserSoldierAmount" parameterType="java.util.Map" resultType="int">
+		SELECT soldier_amount FROM USER_SOLDIER WHERE character_id=#{characterId} and soldier_no=#{soldierNo}
+	</select>
+	<select id="getUserSoldierQueueCount" resultType="int">
+		SELECT count(*) FROM USER_SOLDIER_QUEUE WHERE character_id=#{value}
+	</select>
+	<insert id="addUserSoldierQueue" parameterType="com.crystalcg.gamedev.buildingFunction.domain.UserSoldierQueue">
+		INSERT INTO USER_SOLDIER_QUEUE(character_id,start_time,time,soldier_no,amount)
+		VALUES(#{characterId},#{startTime},#{time},#{soldierNo},#{amount})
+	</insert>
+	<delete id="deleteUserSoldierQueue" parameterType="java.util.Map">
+		DELETE FROM USER_SOLDIER_QUEUE
+		WHERE character_id=#{characterId} and soldier_no=#{soldierNo}
+	</delete>
+	<insert id="addUserSoldier" parameterType="java.util.Map">
+		INSERT INTO USER_SOLDIER(character_id,soldier_no,soldier_amount)
+		VALUES(#{characterId},#{soldierNo},#{soldierAmount})
+	</insert>
+	<update id="updateUserSoldier" parameterType="java.util.Map">
+		UPDATE USER_SOLDIER
+		SET soldier_amount=#{soldierAmount}
+		WHERE character_id=#{characterId} AND soldier_no=#{soldierNo}
+	</update>
+	<delete id="deleteUserSoldier" parameterType="java.util.Map">
+		DELETE FROM USER_SOLDIER
+		WHERE character_id=#{characterId} AND soldier_no=#{soldierNo}
+	</delete>
+	<select id="getUserSoldierQueue" parameterType="java.util.Map" resultMap="userSoldierQueue">
+		SELECT * FROM USER_SOLDIER_QUEUE
+		WHERE character_id=#{characterId}
+	</select>
+	<select id="getAllUserSoldier" resultMap="userSoldierQueue">
+		SELECT * FROM USER_SOLDIER_QUEUE
+	</select>
+	<delete id="updateUserSoldierQueue" parameterType="java.util.Map">
+		UPDATE USER_SOLDIER_QUEUE
+		SET amount=#{amount},time=#{time}
+		WHERE character_id=#{characterId} AND soldier_no=#{soldierNo}
+	</delete>
+	<!-- 
+	<select id="getUserSoldierByPage" parameterType="java.util.Map" resultMap="userSoldier">
+		SELECT * FROM USER_SOLDIER WHERE character_id=#{characterId} limit #{page},#{pageSize}
+	</select>
+	<select id="getUserSoldierTypeAmount" parameterType="int" resultType="int">
+		SELECT count(*) FROM USER_SOLDIER WHERE character_id=#{value}
+	</select>
+	
+	<update id="updateResource" parameterType="java.util.Map">
+		UPDATE USERCHARACTER SET food=#{food},bronze=#{ferrum},money=#{money} WHERE charId=#{charId}
+	</update>
+	<select id="getUserSoldierById"  parameterType="java.util.Map" resultType="com.crystalcg.gamedev.barracks.domain.Soldier">
+		SELECT s.soldierId,s.soldierType,s.money,s.food,s.ferrum FROM userSoldier u,soldier s WHERE u.charId=#{charId} AND u.soldierId=#{soldierId} AND u.soldierId = s.soldierId
+	</select>
+	<select id="getTechSoldierByType" parameterType="java.util.Map" resultType="com.crystalcg.gamedev.barracks.domain.Soldier">
+		SELECT s.soldierId,s.money,s.soldierName,s.food,s.ferrum FROM userTech t,soldier s WHERE t.charId=#{charId} AND t.soldierType=#{soldierType} AND t.soldierId = s.soldierId
+	</select>
+	<select id="getResource" resultType="java.util.Map">
+		SELECT money,food,bronze ferrum FROM usercharacter WHERE charId=#{value}
+	</select>
+	<select id="getTechSoldier" resultType="java.util.Map">
+		SELECT s.soldierId,s.soldierName,s.imageName,s.soldierDescription,s.soldierLevel,
+		s.soldierDefence,s.soldierAttack,s.soldierStamina,s.soldierAgility,s.maxRange `range`,s.movingRate,
+		s.money,s.food,s.ferrum
+		FROM userTech t,soldier s WHERE t.charId=#{charId} AND t.soldierId = s.soldierId
+	</select>
+	<select id="getSummary" resultType="java.util.Map">
+		SELECT army,armyLimit,newSoldier,newSoldierLimit FROM usercharacter WHERE charId=#{value}
+	</select>
+	<update id="updateSummary" parameterType="java.util.Map">
+		UPDATE USERCHARACTER SET army=#{army},newSoldier=#{newSoldier} WHERE charId=#{charId}
+	</update>
+	<select id="getUserSoldierAmountById" parameterType="java.util.Map" resultType="int">
+		SELECT IFNULL((SELECT soldierAmount FROM userSoldier WHERE charId=#{charId} AND soldierId=#{soldierId}),0) AS soldierAmount
+	</select>
+	<select id="unitResource" resultType="java.util.Map">
+		SELECT money,food,ferrum FROM soldier WHERE soldierId=#{value}
+	</select>
+	 -->
+</mapper>

@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+        <bean id="SoldierTechAction" class="com.crystalcg.gamedev.tech.action.SoldierTechAction">
+        	<property name="soldierTechService" ref="soldierTechService"></property>
+        </bean>
+        <bean id="soldierTechService" class="com.crystalcg.gamedev.tech.service.SoldierTechService">
+        	<property name="interiorTechService" ref="interiorTechService"></property>
+        	<property name="soldierTechDao" ref="soldierTechDao"></property>
+        </bean>
+        <bean id="soldierTechDao" class="com.crystalcg.gamedev.tech.dao.SoldierTechDao">
+        	<property name="soldierTechMapper" ref="soldierTechMapper"/>
+        </bean>
+        <bean id="soldierTechMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	       	<property name="mapperInterface" value="com.crystalcg.gamedev.tech.mapper.SoldierTechMapper"/>	
+	       	<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+        </bean>
+</beans>

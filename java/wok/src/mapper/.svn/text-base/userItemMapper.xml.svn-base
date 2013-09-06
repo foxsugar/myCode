@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.item.mapper.UserItemMapper">
+	<!-- 用户装备 -->
+	<resultMap type="com.crystalcg.gamedev.item.domain.UserEquipment" id="userEquipmentResult">
+		<id property="id" column="id"/>
+		<result property="characterId" column="character_id"/>
+		<result property="itemNo" column="item_no"/>
+		<result property="itemType" column="item_type"/>
+		<result property="equipmentType" column="equipment_type"/>
+		<result property="itemAmount" column="item_amount"/>
+		<result property="strengthLevel" column="strength_level"/>
+		<result property="isBound" column="is_bound"/>
+		<result property="hole1" column="hole1"/>
+		<result property="hole2" column="hole2"/>
+		<result property="hole3" column="hole3"/>
+		<result property="itemPosition" column="item_position"/>
+		<result property="heroUseId" column="hero_use_id"/>
+		<result property="strengthenForce" column="strengthen_force"/>
+		<result property="strengthenStrategy" column="strengthen_strategy"/>
+		<result property="strengthenPhysique" column="strengthen_physique"/>
+		<result property="strengthenAgility" column="strengthen_agility"/>
+	</resultMap>
+	<!-- 用户道具 -->
+	<resultMap type="com.crystalcg.gamedev.item.domain.UserItem" id="userItemResult">
+		<id property="id" column="id"/>
+		<result property="characterId" column="character_id"/>
+		<result property="itemNo" column="item_no"/>
+		<result property="itemType" column="item_type"/>
+		<result property="itemSubtype" column="item_subtype"/>
+		<result property="itemAmount" column="item_amount"/>
+		<result property="isBound" column="is_bound"/>
+		<result property="itemPosition" column="item_position"/>
+	</resultMap>
+	<!-- 用户材料 -->
+	<resultMap type="com.crystalcg.gamedev.item.domain.UserMaterial" id="userMaterialResult">
+		<id property="id" column="id"/>
+		<result property="characterId" column="character_id"/>
+		<result property="itemNo" column="item_no"/>
+		<result property="itemType" column="item_type"/>
+		<result property="itemAmount" column="item_amount"/>
+		<result property="isBound" column="is_bound"/>
+		<result property="itemPosition" column="item_position"/>
+	</resultMap>
+	<!-- 用户任务物品 -->
+	<resultMap type="com.crystalcg.gamedev.item.domain.UserQuests" id="userQuestsResult">
+		<id property="id" column="id"/>
+		<result property="characterId" column="character_id"/>
+		<result property="itemNo" column="item_no"/>
+		<result property="itemType" column="item_type"/>
+		<result property="itemAmount" column="item_amount"/>
+		<result property="isBound" column="is_bound"/>
+		<result property="itemPosition" column="item_position"/>
+	</resultMap>
+	
+	<insert id="addUserItemToCharacter" parameterType="java.util.Map" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+		INSERT INTO USER_ITEM(character_id,item_no,item_type,item_subtype,item_amount,is_bound,item_position)
+		VALUES(#{characterId},#{itemNo},#{itemType},#{itemSubtype},#{itemAmount},#{isBound},#{itemPosition})
+	</insert>
+	<insert id="addUserEquipmentToCharacter" parameterType="com.crystalcg.gamedev.item.domain.UserEquipment" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+		INSERT INTO USER_EQUIPMENT(character_id,item_no,item_type,equipment_type,item_amount,is_bound,item_position)
+		VALUES(#{characterId},#{itemNo},#{itemType},#{equipmentType},#{itemAmount},#{isBound},#{itemPosition});
+	</insert>
+	
+	<!-- 获取同ID物品,用于判断叠加 -->
+	<select id="getUserEquipmentByItemNo" parameterType="java.util.Map" resultMap="userItemResult">
+		SELECT * FROM USER_EQUIPMENT 
+		WHERE item_no=#{itemNo}
+		AND character_id=#{characterId}
+		AND item_position=0<!-- 0为在背包 -->
+		<if test="isBound!=3">and is_bound=#{isBound}</if>
+		ORDER BY is_bound DESC,id
+	</select>
+	<select id="getUserItemByItemNo" parameterType="java.util.Map" resultMap="userItemResult">
+		SELECT * FROM USER_ITEM 
+		WHERE item_no=#{itemNo}
+		AND item_type=#{itemType}
+		AND character_id=#{characterId}
+		AND item_position=0<!-- 0为在背包 -->
+		<if test="isBound!=3">and is_bound=#{isBound}</if>
+		ORDER BY is_bound DESC,user_item.id
+	</select>
+	<select id="getUserMaterialByItemNo" parameterType="java.util.Map" resultMap="userMaterialResult">
+		SELECT * FROM USER_ITEM 
+		WHERE item_no=#{itemNo} 
+		AND item_type =#{itemType}
+		AND character_id=#{characterId}
+		AND item_position=0
+		<if test="isBound!=3">and is_bound=#{isBound}</if>
+		ORDER BY is_bound DESC,id
+	</select>
+	<select id="getUserQuestsByItemNo" parameterType="java.util.Map" resultMap="userQuestsResult">
+		SELECT * FROM USER_ITEM
+		WHERE item_no=#{itemNo}
+		AND item_type =#{itemType}
+		AND character_id=#{characterId}
+		AND item_position=0
+	</select>
+	<!-- 改变物品数量 -->
+	<update id="updateUserItemAmount" parameterType="java.util.Map" >
+		UPDATE USER_ITEM
+		SET item_amount=#{itemAmount}
+		WHERE id=#{id}
+	</update>
+	<!-- 需要重新排序 -->
+	<select id="getAllUserEquipment" parameterType="java.util.Map" resultMap="userEquipmentResult">
+		SELECT * FROM USER_EQUIPMENT
+		WHERE character_id=#{characterId} 
+		AND item_position=#{itemPosition}
+		<if test="isBound!=3">AND is_bound=#{isBound}</if>
+		<if test="equipmentType!=0">AND equipment_type=#{equipmentType}</if>
+		<if test="heroUseId!=0">AND hero_use_id=#{heroUseId}</if>
+		<!-- ORDER BY static_equipment.need_level desc,static_equipment.quality desc,
+			static_equipment.equipment_type,user_equipment.item_no,user_equipment.id
+		 -->
+	</select>
+	<!-- 需要重新排序 -->
+	<select id="getAllUserItem" parameterType="java.util.Map" resultMap="userItemResult">
+		SELECT * FROM USER_ITEM
+		WHERE character_id=#{characterId}
+		AND item_position=#{itemPosition}
+		AND item_type=2<!-- 2为消耗品道具编号 -->
+		<if test="isBound!=3">AND is_bound=#{isBound}</if>
+		<!-- ORDER BY static_item.item_subtype,user_item.item_no,user_item.id
+		 -->
+	</select>
+	<!-- 需要重新排序 -->
+	<select id="getAllUserMaterial" parameterType="java.util.Map" resultMap="userMaterialResult">
+		SELECT * FROM USER_ITEM
+		WHERE character_id=#{characterId}
+		AND item_position=#{itemPosition}
+		AND item_type=3<!-- 3为材料编号,0为物品位置在背包 -->
+		<if test="isBound!=3">AND is_bound=#{isBound}</if>
+		<!-- ORDER BY static_material.material_type,user_item.item_no,user_item.id -->
+	</select>
+	<select id="getAllUserQuests" parameterType="java.util.Map" resultMap="userQuestsResult">
+		SELECT * FROM USER_ITEM
+		WHERE character_id=#{characterId}
+		AND item_position=#{itemPosition}
+		AND item_type=4<!-- 4为任务道具编号 -->
+	</select>
+	
+	<select id="getUserItemById" parameterType="int" resultMap="userItemResult">
+		SELECT * FROM USER_ITEM
+		WHERE user_item.id=#{value}
+		AND item_type=2;<!-- 2为消耗品道具编号 -->
+	</select>
+	<select id="getUserMaterialById" parameterType="int" resultMap="userMaterialResult">
+		SELECT * FROM USER_ITEM
+		WHERE user_item.id=#{value}
+		AND item_type=3;<!-- 3为材料编号 -->
+	</select>
+	<select id="getUserQuestsById" parameterType="int" resultMap="userQuestsResult">
+		SELECT * FROM USER_ITEM
+		WHERE user_item.id=#{value}
+		AND item_type=4;<!-- 4为任务道具编号 -->
+	</select>
+	<select id="getUserEquipmentById" parameterType="int" resultMap="userEquipmentResult">
+		SELECT * FROM USER_EQUIPMENT
+		WHERE user_equipment.id=#{value} ;
+	</select>
+	
+	<delete id="deleteFromUserItem" parameterType="int">
+		DELETE FROM USER_ITEM WHERE id=#{value}
+	</delete>
+	<delete id="deleteFromUserEquipment" parameterType="int">
+		DELETE FROM USER_EQUIPMENT WHERE id=#{value}
+	</delete>
+	
+	<insert id="insertEquipmentForAuction" parameterType="com.crystalcg.gamedev.item.domain.UserEquipment" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+		INSERT INTO USER_EQUIPMENT
+		(character_id,item_no,item_type,equipment_type,item_amount,strength_level,
+		 hole1,hole2,hole3,item_position,
+		 strengthen_force,strengthen_strategy,strengthen_physique,strengthen_agility)
+		values(#{characterId},#{itemNo},#{itemType},#{equipmentType},#{itemAmount},#{strengthLevel},
+		#{hole1},#{hole2},#{hole3},#{itemPosition},
+		#{strengthenForce},#{strengthenStrategy},#{strengthenPhysique},#{strengthenAgility})
+	</insert>
+	<insert id="insertItemForAuction" parameterType="com.crystalcg.gamedev.item.domain.UserItem" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+		INSERT INTO USER_ITEM(character_id,item_no,item_type,item_subtype,item_amount,is_bound,item_position)
+		VALUES(#{characterId},#{itemNo},#{itemType},#{itemSubtype},#{itemAmount},#{isBound},#{itemPosition})
+	</insert>
+	<update id="updateUserItemPostion" parameterType="java.util.Map">
+		UPDATE USER_ITEM SET item_position = #{itemPostion} where id=#{id} ;
+	</update>
+	<update id="updateUserEquipmentPosition" parameterType="java.util.Map">
+		UPDATE USER_EQUIPMENT SET item_position = #{itemPostion} where id=#{id}
+	</update>
+	<select id="getArticleAmount" parameterType="int" resultType="int">
+		SELECT 
+		(
+		 SELECT count(*) FROM USER_ITEM WHERE character_id = #{value} and item_position=0)
+		 +(SELECT count(*) FROM USER_EQUIPMENT WHERE character_id = #{value} and item_position=0
+		)
+		as amount
+	</select>
+	
+	<!-- 未完成 -->
+		<!-- 镶嵌宝石或者物品强化后修改装备属性 -->
+	<!-- end -->
+	<update id="updateEquipmentForStrength" parameterType="com.crystalcg.gamedev.item.domain.UserEquipment">
+		UPDATE USER_EQUIPMENT
+		SET strength_level = #{strengthLevel},
+			strengthen_force=#{strengthenForce},
+			strengthen_strategy=#{strengthenStrategy},
+			strengthen_physique=#{strengthenPhysique},
+			strengthen_agility=#{strengthenAgility}
+		WHERE id=#{id}
+	</update>
+	<select id="getGemStoneInBag" parameterType="int" resultMap="userMaterialResult">
+		SELECT * FROM USER_ITEM
+		WHERE character_id=#{value}
+		AND item_position=0
+		AND item_type=3
+		AND item_subtype=3<!-- 3为宝石编号,0为物品位置在背包 -->
+		ORDER BY item_no,id
+	</select>
+	<select id="getMaterialForProduceInBag" parameterType="int" resultMap="userMaterialResult">
+		SELECT * FROM USER_ITEM
+		WHERE character_id=#{value}
+		AND item_position=0
+		AND item_type=3
+		AND item_subtype=1<!-- 1为材料分类,0为物品位置在背包 -->
+		ORDER BY item_no,id
+	</select>
+	<update id="updateEquipmentHole" parameterType="com.crystalcg.gamedev.item.domain.UserEquipment">
+		UPDATE USER_EQUIPMENT
+		SET hole1 = #{hole1},
+			hole2=#{hole2},
+			hole3=#{hole3},
+			is_bound=#{isBound} 
+		WHERE id=#{id}
+	</update>
+	<!-- 武将换装 -->
+	<update id="heroAddEquipment" parameterType="java.util.Map">
+		UPDATE USER_EQUIPMENT 
+		SET item_position = #{position},
+			hero_use_id=#{heroId},
+			is_bound=1 
+		WHERE id=#{equipId} and character_id=#{characterId}
+	</update>
+	<update id="heroRemoveEuipment" parameterType="java.util.Map">
+		UPDATE USER_EQUIPMENT 
+		SET item_position=#{position},
+			hero_use_id=null
+		WHERE id=#{equipId} and character_id=#{characterId}
+	</update>
+	<update id="heroRemoveAllEuipment" parameterType="java.util.Map">
+		UPDATE USER_EQUIPMENT 
+		SET item_position=#{position},
+			hero_use_id=null
+		WHERE hero_use_id=#{heroId} and character_id=#{characterId}
+	</update>
+	<!-- 武将界面装备栏 -->
+	<select id="getAllUserEquipmentAmountInBag" parameterType="java.util.Map" resultType="int">
+		SELECT count(*) FROM USER_EQUIPMENT WHERE character_id=#{characterId} AND item_position=#{position}
+	</select>
+	<!-- 需要重新排序 -->
+	<select id="getAllUserEquipmentByPage" parameterType="java.util.Map" resultMap="userEquipmentResult">
+		SELECT * 
+		FROM USER_EQUIPMENT
+		WHERE character_id=#{characterId} 
+			and item_position=#{position}
+		<!-- 
+		ORDER BY static_equipment.need_level desc,
+				 static_equipment.quality desc,
+				 static_equipment.equipment_type,
+				 static_equipment.id
+		 -->
+		Limit #{start},#{pageSize}
+	</select>
+</mapper>

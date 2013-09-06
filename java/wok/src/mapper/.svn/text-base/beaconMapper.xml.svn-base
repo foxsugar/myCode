@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.beacon.mapper.BeaconMapper"> 
+	<select id="getFuel" resultType="int">
+		SELECT
+		fuel
+		FROM usercharacter
+		WHERE charId=#{value}
+	</select>
+	<update id="addFuel" parameterType="java.util.Map">
+		update usercharacter
+		set fuel=fuel+#{fuel}
+		WHERE charId=#{charId}
+	</update>
+</mapper>

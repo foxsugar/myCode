@@ -1,0 +1,793 @@
+drop table if exists new_webgame.auction;
+
+drop table if exists new_webgame.battle_job_queue;
+
+drop table if exists new_webgame.log_login;
+
+drop table if exists new_webgame.mail;
+
+drop table if exists new_webgame.static_affair_bonus;
+
+drop table if exists new_webgame.static_building;
+
+drop table if exists new_webgame.static_country;
+
+drop table if exists new_webgame.static_defenceworks;
+
+drop table if exists new_webgame.static_enemy_npc;
+
+drop table if exists new_webgame.static_equipment;
+
+drop table if exists new_webgame.static_formation;
+
+drop table if exists new_webgame.static_hero_skill;
+
+drop table if exists new_webgame.static_hero_skill_last_effect;
+
+drop table if exists new_webgame.static_item;
+
+drop table if exists new_webgame.static_material;
+
+drop table if exists new_webgame.static_quests;
+
+drop table if exists new_webgame.static_soldier;
+
+drop table if exists new_webgame.static_soldier_skill;
+
+drop table if exists new_webgame.user_account;
+
+drop table if exists new_webgame.user_build_queue;
+
+drop table if exists new_webgame.user_character;
+
+drop table if exists new_webgame.user_hero;
+
+drop table if exists new_webgame.user_item;
+
+drop table if exists new_webgame.user_main_building;
+
+drop table if exists new_webgame.user_main_city;
+
+drop table if exists new_webgame.user_soldier;
+
+drop table if exists new_webgame.user_suburbs;
+
+drop table if exists new_webgame.user_tributary_building;
+
+drop table if exists new_webgame.user_tributary_city;
+
+drop table if exists new_webgame.world;
+
+/*==============================================================*/
+/* User: new_webgame                                            */
+/*==============================================================*/
+create user new_webgame;
+
+/*==============================================================*/
+/* Table: auction                                               */
+/*==============================================================*/
+create table new_webgame.auction
+(
+   id                   int(11) not null auto_increment comment '拍卖行Id',
+   base_price           int(11) comment '底价',
+   fixed_price          int(11) comment '一口价',
+   start_time           timestamp comment '开始拍卖时间',
+   saving_time          int(11) comment '保管时间',
+   bid_character_id          int(11) comment '出价君主id',
+   bid_time             timestamp comment '出价时间',
+   character_id              int(11) default 0 comment '拍卖人君主Id',
+   item_id              int(11) default 0 comment '道具标识Id',
+   item_type            int comment '道具类型',
+   item_counts          int(11) default 1 comment '道具数量',
+   strength_level       int(11) default 0 comment '强化等级',
+   hole1                int(11) default 0 comment '孔1',
+   hole2                int(11) default 0 comment '孔2',
+   hole3                int(11) default 0 comment '孔3',
+   strengthen_force     int(11) default 0 comment '强化附加武力值',
+   strengthen_strategy  int(11) default 0 comment '强化附加谋略值',
+   strengthen_physique  int(11) default 0 comment '强化附加体质值',
+   strengthen_agility   int(11) default 0 comment '强化附加身法值',
+   primary key (id),
+   key userItemId_UNIQUE (id)
+);
+
+alter table new_webgame.auction comment '拍卖行表';
+
+/*==============================================================*/
+/* Table: battle_job_queue                                      */
+/*==============================================================*/
+create table new_webgame.battle_job_queue
+(
+   id                   int(11) not null auto_increment,
+   character_id              int(11) comment '玩家Id',
+   battle_type          int(11) comment '战斗类型，0讨伐，1单挑，2派遣，3摧毁',
+   hero_list            varchar(45) comment '英雄参数',
+   target_type          int(11) comment '目标类型，0野怪，1玩家',
+   target_id            int(11) comment '目标Id',
+   go_time              timestamp comment '出发时间',
+   arriving_time        timestamp comment '到达目标时间',
+   back_time            timestamp comment '返回开始时间',
+   back_arrive_time     timestamp comment '返回结束时间',
+   need_time            int(11) comment '需求时间(路程)，秒',
+   status               int(11) comment '出征状态，0前往，1到达，2返回',
+   formation_id         int(11) comment '阵法Id',
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: log_login                                             */
+/*==============================================================*/
+create table new_webgame.log_login
+(
+   id                   int(11) not null auto_increment,
+   account_name         varchar(45) comment '用户名',
+   ip                   varchar(45) comment '登陆ip',
+   login_time           int(11) comment '登录时间',
+   logout_time          int(11) comment '下线时间',
+   status               int(11) comment '登录是否成功（0：否，1：是）',
+   primary key (id)
+);
+
+alter table new_webgame.log_login comment '登录日志';
+
+/*==============================================================*/
+/* Table: mail                                                  */
+/*==============================================================*/
+create table new_webgame.mail
+(
+   id                   int(11) not null auto_increment,
+   addresser            int(11) comment '发件人id，系统：-1，拍卖行：-2',
+   addressee            int(11) comment '收件人id',
+   title                national varchar(45) comment '邮件标题',
+   content              national varchar(400) comment '邮件正文',
+   attachment           int(11) comment '附件,道具ID，',
+   send_time            timestamp comment '发送时间',
+   status               int(11) comment '0未读，1已读',
+   primary key (id)
+);
+
+alter table new_webgame.mail comment '邮件';
+
+/*==============================================================*/
+/* Table: static_affair_bonus                                   */
+/*==============================================================*/
+create table new_webgame.static_affair_bonus
+(
+   id                   int not null,
+   affair_no            varchar(45) comment '内政编号',
+   affair_name          varchar(45) comment '内政名称',
+   need_item            varchar(45) comment '需求物品编号',
+   need_amount          int comment '需求数量',
+   need_hero_level      int comment '需求武将等级',
+   add_hero_exp         int comment '武将获得经验',
+   add_money            int comment '获得铜币奖励数量',
+   add_iornore          int comment '获得铁矿奖励数量',
+   add_wood             int comment '获得木材奖励数量',
+   add_food             int comment '获得粮食奖励数量',
+   add_soldier          int comment '获得新兵奖励数量',
+   add_people           int comment '获得人口奖励数量',
+   add_item             varchar(45) comment '获得道具奖励编号',
+   add_item_amount      varchar(45) comment '获得道具奖励数量',
+   add_force            float comment '提升武力概率',
+   add_strategy         float comment '提升谋虑概率',
+   add_physique         float comment '提升体质概率',
+   add_agility          float comment '提升身法概率',
+   primary key (id)
+);
+
+alter table new_webgame.static_affair_bonus comment '内政奖励表';
+
+/*==============================================================*/
+/* Table: static_building                                       */
+/*==============================================================*/
+create table new_webgame.static_building
+(
+   id                   int(11) not null,
+   building_no          varchar(45) comment '建筑编号',
+   building_name        varchar(45) comment '建筑名称',
+   pre_building         varchar(45) comment '前置建筑',
+   building_type        int(11) comment '建筑类型',
+   need_wood            int(11) comment '需要木材',
+   need_stone           int(11) comment '需要石料',
+   need_ironore         int(11) comment '需要铁矿',
+   need_money           int(11) comment '需要铜币',
+   character_exp        int(11) comment '升级提高君主经验',
+   castle_exp           int(11) comment '升级提高城池繁荣度',
+   limit_amount         int(11) comment '可建造数量上限',
+   upgradeable          int(11) comment '能否升级',
+   upgrade_time         int(11) comment '升级时间（秒）',
+   level                int(11) comment '当前等级',
+   image                varchar(45) comment '美术资源',
+   building_desc        varchar(45) comment '描述',
+   function1            int(11) comment '效果1',
+   functionvalue1       int(11) comment '效果值1',
+   function2            int(11),
+   functionvalue2       int(11),
+   function3            int(11),
+   functionvalue3       int(11),
+   function4            int(11),
+   functionvalue4       int(11),
+   primary key (id)
+);
+
+alter table new_webgame.static_building comment '建筑信息表';
+
+/*==============================================================*/
+/* Table: static_country                                        */
+/*==============================================================*/
+create table new_webgame.static_country
+(
+   id                   int(11) not null,
+   country_name         national varchar(45) not null,
+   primary key (id)
+);
+
+alter table new_webgame.static_country comment '国家';
+
+/*==============================================================*/
+/* Table: static_defenceworks                                   */
+/*==============================================================*/
+create table new_webgame.static_defenceworks
+(
+   id                   int(11) not null,
+   defenceworks_no      varchar(45) comment '城防编号',
+   name                 varchar(45) comment '城防名',
+   produce_time         int(11) comment '建造时间',
+   need_wood            int(11) comment '需要木材',
+   need_stone           int(11) comment '需要石料',
+   need_ironore         int(11) comment '需要铁矿',
+   need_item            int(11) comment '需要物品',
+   item_rate            int(11) comment '物品城防兑换率',
+   atk                  int(11) comment '攻击',
+   atk_type             int(11) comment '攻击类型 1=普通 2=弓箭 3=投石 ',
+   atk_range            int(11) comment '攻击范围 1=1 2=5 3=13',
+   description          varchar(45) comment '描述',
+   primary key (id)
+);
+
+alter table new_webgame.static_defenceworks comment '城防建筑';
+
+/*==============================================================*/
+/* Table: static_enemy_npc                                      */
+/*==============================================================*/
+create table new_webgame.static_enemy_npc
+(
+   id                   int not null,
+   enemy_no             varchar(45) comment '野外势力Id',
+   enemy_name           varchar(45) comment '野外势力名称',
+   soldier_num          int comment '士兵数量',
+   soldier_level        int comment '士兵等级',
+   soldier_type1        int comment '兵种1',
+   soldier_type2        int comment '兵种2',
+   soldier_type3        int comment '兵种3',
+   soldier_type4        int comment '兵种4',
+   soldier_type5        int comment '兵种5',
+   formation_id         int comment '阵法类型',
+   belong_to_force      int comment '所属势力 1=山贼 2=暴民 3=马贼 4=叛军',
+   hero_level           int comment '武将等级',
+   hero_force           int comment '武将武力',
+   hero_strategy        int comment '武将谋虑',
+   hero_physique        int comment '武将体质',
+   hero_agility         int comment '武将身法',
+   ai_no                varchar(45) comment 'AI编号',
+   hero_icon            varchar(45) comment '武将图标',
+   small_hero_icon      varchar(45) comment '武将小图标',
+   description          varchar(45) comment '描述',
+   force_level          int comment '势力级别，初级中级高级',
+   hero_action          varchar(45) comment '武将动作资源',
+   hero_weapon       int comment '武将武器类型',
+   primary key (id)
+);
+
+alter table new_webgame.static_enemy_npc comment '野外势力静态表';
+
+/*==============================================================*/
+/* Table: static_equipment                                      */
+/*==============================================================*/
+create table new_webgame.static_equipment
+(
+   id                   int not null comment '装备Id',
+   equipment_no         varchar(45) comment '装备编号',
+   equipmentname        varchar(45) comment '装备名称',
+   quality              int comment '品质',
+   equipment_type       int comment '装备类型',
+   need_level           int comment '需求武将等级',
+   sellable             int comment '是否可卖商店',
+   dropable             int comment '是否可丢弃',
+   is_bop               int comment '是否拾取绑定，bop=bound on pickup',
+   price                int comment '出售给商店的价格',
+   hero_force                int comment '附加武力',
+   strategy             int comment '附加谋略',
+   physique             int comment '附加体质',
+   agility              int comment '附加身法',
+   special_skill1       varchar(45) comment '装备上附加的特殊效果1',
+   skill_probability1   int comment '特殊效果出发几率1',
+   special_skill2       varchar(45) comment '装备上附加的特殊效果2',
+   skill_probability2   int comment '特殊效果2触发几率',
+   special_skill3       varchar(45) comment '特殊效果3',
+   skill_probability3   int comment '特殊效果触发3',
+   icon                 varchar(45) comment '装备图标',
+   description          varchar(45) comment '装备描述',
+   primary key (id)
+);
+
+alter table new_webgame.static_equipment comment '装备静态表';
+
+/*==============================================================*/
+/* Table: static_formation                                      */
+/*==============================================================*/
+create table new_webgame.static_formation
+(
+   id                   int(11) not null,
+   formation_no         varchar(45) comment '阵型编号',
+   name                 varchar(45) comment '阵型名',
+   need_technology      varchar(45) comment '需要的前置科技ID号（唯一）',
+   coordinate1          varchar(45) comment '部队1在阵型中的坐标',
+   coordinate2          varchar(45),
+   coordinate3          varchar(45),
+   coordinate4          varchar(45),
+   coordinate5          varchar(45),
+   apply_to_soldier1    int(11) comment '享受阵型影响的兵种1(1= 刀兵  2=枪兵  3=骑兵  4=弓兵  5=投石车)',
+   effect1              int(11) comment '效果值1',
+   apply_to_soldier2    int(11),
+   effect2              int(11),
+   apply_to_soldier3    int(11),
+   effect3              int(11),
+   description          int(11),
+   primary key (id)
+);
+
+alter table new_webgame.static_formation comment '阵型表';
+
+/*==============================================================*/
+/* Table: static_hero_skill                                     */
+/*==============================================================*/
+create table new_webgame.static_hero_skill
+(
+   id                   int(11) not null,
+   skill_no             varchar(45) comment '技能编号',
+   name                 varchar(45) comment '技能名',
+   level                int(11) comment '技能等级',
+   icon                 varchar(45) comment '技能图标',
+   animation            varchar(45) comment '技能动画',
+   description          varchar(45) comment '技能描述',
+   type                 int(11) comment '技能的分类（1=单挑技   2=战阵技  3=全场合适用）',
+   dmg_type             int(11) comment '技能的伤害类型（1=物理型   2=计略型   3=无属性）',
+   target_limit         int(11) comment '可被施展的目标（1=敌方   2=自身  3=友方部队  4=敌我双方）',
+   skill_range                int(11) comment '以被施法目标为中心的效果范围（1=1  2=5  3=9  4=13 5=全屏)',
+   effect_type          int(11) comment '"技能效果的类型（1=伤害  2=治疗  3=持续性属性增减  
+            4=持续性伤害/治疗  5=持续性特殊效果 ）',
+   effect_mode          int(11) comment '效果值的影响方式（1=数值，2=百分比，3=特殊效果）',
+   effect_value         varchar(45) comment '效果的具体值',
+   need_weapon          int(11) comment '装备相应类型的武器才能施展（0=无要求 1=短柄  2=长柄  3=弓）',
+   cool_down            int(11) comment '技能的冷却时间（回合数）',
+   upgrade_need_exp     int(11) comment '升级所需的经验',
+   upgrade_need_item    varchar(45) comment '升级所需的物品（编号）',
+   upgrade_need_item_num int(11) comment '升级所需的物品数目',
+   need_vnp             int(11) comment '使用技能所需要耗费的精力（不足则无法使用）',
+   need_item            varchar(45) comment '使用技能所需要耗费的材料（不足则无法使用）',
+   need_item_num        int(11) comment '使用技能所需要耗费的材料数目',
+   add_effect1          varchar(45) comment '附加的效果编号',
+   add_effect_rate1     int(11) comment '附加效果的触发率',
+   add_effect2          varchar(45),
+   add_effect_rate2     int(11),
+   add_effect3          varchar(45),
+   add_effect_rate3     int(11),
+   primary key (id)
+);
+
+alter table new_webgame.static_hero_skill comment '武将技能';
+
+/*==============================================================*/
+/* Table: static_hero_skill_last_effect                         */
+/*==============================================================*/
+create table new_webgame.static_hero_skill_last_effect
+(
+   id                   int(11) not null,
+   effect_no            varchar(45) comment '效果编号',
+   icon                 varchar(45) comment '效果图标',
+   description          varchar(45) comment '效果描述',
+   last_time            int(11) comment '效果持续的时间（回合数） （0=瞬时  自然数=持续的回合数  ',
+   coexist_type         int(11) comment '共存类型',
+   dispelable           int(11) comment '能否净化',
+   type                 int(11) comment '效果类型',
+   mode                 int(11) comment '效果值的影响方式（1=数值，2=百分比）',
+   value                varchar(45) comment '效果的具体值',
+   hero_force                int(11) comment '武力的改变（前面添加“-”号为减少)',
+   strartegy            int(11) comment '谋略的改变（前面添加“-”号为减少)',
+   agility              int(11) comment '身法的改变（前面添加“-”号为减少)',
+   physique             int(11) comment '体质的改变（前面添加“-”号为减少)',
+   atk                  int(11) comment '攻击力的改变（前面添加“-”号为减少)',
+   def                  int(11) comment '防御力的改变（前面添加“-”号为减少)',
+   crit                 int(11) comment '暴击率的改变（前面添加“-”号为减少)',
+   hit                  int(11) comment '命中率的改变（前面添加“-”号为减少)',
+   dodge                int(11) comment '闪避率的改变（前面添加“-”号为减少)',
+   mobility             int(11) comment '行动力的改变（前面添加“-”号为减少)',
+   primary key (id)
+);
+
+alter table new_webgame.static_hero_skill_last_effect comment '武将技能持续性效果表';
+
+/*==============================================================*/
+/* Table: static_item                                           */
+/*==============================================================*/
+create table new_webgame.static_item
+(
+   id                   int not null,
+   item_no              varchar(45) comment '道具ID号',
+   item_name            varchar(45) comment '道具名称',
+   quality              int comment '品质',
+   useable              int comment '能否使用',
+   sellable             int comment '可否卖商店',
+   price                int comment '卖商店价格',
+   stackable            int comment '可否堆叠',
+   stack_limit          int comment '最大堆叠数',
+   dropable             int comment '可否被丢弃',
+   is_bop               int comment '是否拾取绑定',
+   special_skill1       int comment '特殊效果1',
+   special_skill2       int comment '特殊效果2',
+   special_skill3       int comment '特殊效果3',
+   icon                 varchar(45) comment '道具图标',
+   description          varchar(45) comment '道具描述',
+   primary key (id)
+);
+
+alter table new_webgame.static_item comment '消耗品道具表';
+
+/*==============================================================*/
+/* Table: static_material                                       */
+/*==============================================================*/
+create table new_webgame.static_material
+(
+   id                   int not null comment '材料Id',
+   material_no          varchar(45) comment '材料id号',
+   material_name        varchar(45),
+   quality              int comment '品质',
+   sellable             int comment '是否可卖商店',
+   price                int comment '出售给商店的价格',
+   stackable            int comment '是否可堆叠',
+   stack_limit          int comment '最大堆叠数',
+   is_bop               int comment '是否拾取绑定，bop=bound on pickup',
+   dropable             int comment '是否可丢弃',
+   icon                 varchar(45) comment '装备图标',
+   description          varchar(45) comment '装备描述',
+   primary key (id)
+);
+
+alter table new_webgame.static_material comment '材料静态表';
+
+/*==============================================================*/
+/* Table: static_quests                                    */
+/*==============================================================*/
+create table new_webgame.static_quests
+(
+   id                   int not null,
+   item_no              varchar(45) comment '道具编号',
+   item_name            varchar(45) comment '道具名称',
+   quality              int comment '品质',
+   stackable            int comment '是否可堆叠',
+   stack_limit          int comment '最大堆叠数',
+   icon                 varchar(45) comment '道具图标',
+   description          varchar(45) comment '道具描述',
+   primary key (id)
+);
+
+alter table new_webgame.static_quests comment '任务道具静态表';
+
+/*==============================================================*/
+/* Table: static_soldier                                        */
+/*==============================================================*/
+create table new_webgame.static_soldier
+(
+   id                   int(11) not null comment '士兵Id',
+   soldier_no           varchar(45) comment '士兵编号',
+   soldier_name         national varchar(45) comment '士兵名称',
+   soldier_level        int(11) comment '士兵阶级',
+   image_name           national varchar(45) comment '士兵图片资源名',
+   train_time           int comment '训练时间',
+   soldier_description  national varchar(45) comment '士兵描述',
+   soldier_type         int(11) comment '士兵类型',
+   soldier_attack       int(11) comment '攻击',
+   soldier_defence      int(11) comment '防御',
+   soldier_critical     int comment '士兵暴击',
+   soldier_hit          int comment '士兵命中',
+   soldier_dodge        int comment '士兵闪避',
+   attack_type          int(11) comment '攻击类型',
+   armor_type           int(11) comment '护甲类型',
+   soldier_hp           int(11) comment '士兵血值',
+   max_range            int(11) comment '最大攻击距离',
+   min_range            int(11) comment '最小攻击距离',
+   mobility             int(11) comment '士兵机动性',
+   need_money           int(11) comment '消耗铜币',
+   need_food            int(11) comment '消耗粮食',
+   need_ironore         int(11) comment '消耗铁矿',
+   soldier_skill        national varchar(45) comment '技能编号',
+   primary key (id)
+);
+
+alter table new_webgame.static_soldier comment '士兵信息，士兵种类，士兵阶级，士兵属性等';
+
+/*==============================================================*/
+/* Table: static_soldier_skill                                  */
+/*==============================================================*/
+create table new_webgame.static_soldier_skill
+(
+   id                   int not null,
+   skill_no             varchar(45) comment '技能编号',
+   skill_level          int comment '技能等级',
+   effect_type          int comment '特效类型',
+   probability          float comment '触发几率',
+   primary key (id)
+);
+
+alter table new_webgame.static_soldier_skill comment '兵种技能静态表';
+
+/*==============================================================*/
+/* Table: user_account                                          */
+/*==============================================================*/
+create table new_webgame.user_account
+(
+   id                   int(11) not null auto_increment,
+   username             varchar(45) not null comment '账号',
+   password             varchar(45) not null comment '密码',
+   create_time          timestamp comment '账号创建时间',
+   last_login_time      timestamp comment '上次登录时间',
+   last_character_id    int(11) default 0 comment '上次登录的角色',
+   status               int(11) default 9 comment '账号状态，0:注册、1:在线、2：活动、3：死号、4：封号',
+   primary key (id),
+   key acName_UNIQUE (username)
+);
+
+alter table new_webgame.user_account comment '账号';
+
+/*==============================================================*/
+/* Table: user_build_queue                                      */
+/*==============================================================*/
+create table new_webgame.user_build_queue
+(
+   id                   int(11) not null auto_increment,
+   character_id         int(11) comment '角色ID',
+   building_id          int(11) comment '建筑物ID',
+   level                int(11) comment '建筑物等级',
+   start_time           int(11) comment '起始时间',
+   time                 int(11) comment '建造持续时间',
+   location             int(11) comment '建筑物位置',
+   random_no            int(11) comment '随机序列号，用于删除',
+   primary key (id)
+);
+
+alter table new_webgame.user_build_queue comment '用户建筑队列';
+
+/*==============================================================*/
+/* Table: user_character                                        */
+/*==============================================================*/
+create table new_webgame.user_character
+(
+   id                   int(11) not null auto_increment,
+   account_id           int(11) default 0 comment '所属账号',
+   name                 national varchar(45) not null comment '君主名',
+   country_id           int(4) default 0 comment '所属国家的id',
+   gender               national varchar(2) default '男' comment '性别',
+   image                national varchar(45) comment '君主头像图片名',
+   level                int(11) default 1 comment '君主等级',
+   experience           int(11) default 0 comment '当前基本经验值',
+   cash                 int(11) default 0 comment '元宝',
+   ticket               int(11) default 999999999 comment '点券',
+   alliance_id          int(11) default 0 comment '联盟id',
+   alliance_position    int(11) comment '联盟职位',
+   alliance_reputation  int(11) comment '联盟声望',
+   reputation           int(11) comment '国家声望',
+   strategy_value       int(11) comment '策略值',
+   vip_level            int(11) comment 'vip等级',
+   primary key (id)
+);
+
+alter table new_webgame.user_character comment '君主';
+
+/*==============================================================*/
+/* Table: user_hero                                             */
+/*==============================================================*/
+create table new_webgame.user_hero
+(
+   id                   int(11) not null auto_increment comment '武将Id',
+   character_id              int(11) comment '玩家Id',
+   hero_name            national varchar(45) comment '武将名称',
+   gender               int(2) comment '武将性别',
+   hero_icon            national varchar(45) comment '武将头像大图标资源名',
+   small_hero_icon      national varchar(45) comment '武将头像小图标资源名',
+   level                int(11) default 1 comment '等级',
+   hero_force           double comment '武力',
+   strategy             double comment '谋略',
+   physique             double comment '体质',
+   agility              double comment '身法',
+   force_add            double comment '武力附加点',
+   strategy_add         double comment '智力附加点',
+   physique_add         double comment '耐力附加点',
+   agility_add          double comment '身法附加点',
+   primary_force        double comment '原始武力值，最初1级时的武力值',
+   intelligence         double comment '原始谋略，最初1级时的谋略',
+   primary_physique     double comment '原始体力值，最初1级时的体力值',
+   primary_agility      double comment '原始身法值，最初1级时的身法值',
+   command              int(11) default 20 comment '统帅',
+   exp                  int(11) default 0 comment '武将经验',
+   quality              int(11) default 1 comment '品级',
+   gift                 double default 0.1 comment '根骨',
+   stamina_max          double comment '体力上限',
+   stamina              double comment '当前体力',
+   mp_max               double comment '精力上限',
+   mp                   double comment '当前精力',
+   attack               double comment '攻击',
+   defence              double comment '防御',
+   critical_strike      double comment '暴击',
+   hit                  double comment '命中',
+   dodge                double comment '闪避',
+   hero_title           national varchar(45) comment '武将评级',
+   hero_status          int(11) default 0 comment '武将状态,0空闲,1出征,2修炼',
+   soldier_id           int(11) default 0 comment '所带士兵Id',
+   soldier_amount       int(11) default 0 comment '士兵数量',
+   hero_soul_id         int(11) default 0 comment '武魂Id',
+   hero_soul_grade      int(11) default 0 comment '武魂品级',
+   hero_soul_exp        int(11) default 0 comment '武魂经验',
+   military_rank_id     int(11) default 0 comment '武将官职',
+   exploit              int(11) default 0 comment '军功',
+   isin_wall            int(11) default 0 comment '是否守城，0：否 1：是',
+   hero_action          national varchar(45) comment '武将动作模型资源',
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: user_item                                             */
+/*==============================================================*/
+create table new_webgame.user_item
+(
+   id                   int(11) not null auto_increment comment '用户国库（所有道具）表',
+   character_id              int(11) not null default 0 comment '玩家角色Id',
+   item_id              int(11) not null default 0 comment '道具标识Id',
+   item_type            int comment '道具类型',
+   item_counts          int(11) default 1 comment '道具数量',
+   strength_level       int(11) default 0 comment '强化等级',
+   bind_state           int(11) default 0 comment '道具是否绑定',
+   hole1                int(11) default 0 comment '孔1',
+   hole2                int(11) default 0 comment '孔2',
+   hole3                int(11) default 0 comment '孔3',
+   item_position        int(11) default 0 comment '道具位置状态：0国库，1武将，2邮件',
+   hero_use_id          int(11) default 0 comment '装备的武将ID',
+   strengthen_force     int(11) default 0 comment '武力强化值',
+   strengthen_strategy  int(11) default 0 comment '强化附加谋略值',
+   strengthen_physique  int(11) default 0 comment '强化附加体质值',
+   strengthen_agility   int(11) default 0 comment '强化附加身法值',
+   primary key (id),
+   key userItemId_UNIQUE (id)
+);
+
+alter table new_webgame.user_item comment '用户拥有道具表';
+
+/*==============================================================*/
+/* Table: user_main_building                                    */
+/*==============================================================*/
+create table new_webgame.user_main_building
+(
+   id                   int(11) not null auto_increment,
+   character_id         int(11) comment '君主id',
+   building_id          int(11),
+   level                int(11) comment '等级',
+   location             int(11) comment '位置（1-31）',
+   primary key (id)
+);
+
+alter table new_webgame.user_main_building comment '用户主城建筑';
+
+/*==============================================================*/
+/* Table: user_main_city                                        */
+/*==============================================================*/
+create table new_webgame.user_main_city
+(
+   id                   int(11) not null auto_increment,
+   character_id         int(11) comment '所属的角色id',
+   level                int(11) comment '主城基本',
+   experience           int(11) comment '繁荣度',
+   status               int(11) comment '0：正常；1：被打；2：流亡',
+   x                    int(11) comment 'x坐标',
+   y                    int(11) comment 'y坐标',
+   image                varchar(45) comment '城池图片',
+   money                int(11) default 10000 comment '铜币',
+   moneyLimit           int(11) default 99999999 comment '铜币上限',
+   food                 int(11) default 99999999 comment '粮食',
+   food_limit           int(11) default 99999999,
+   wood                 int(11) default 99999999 comment '木材',
+   wood_limit           int(11) default 99999999,
+   stone                int(11) default 99999999 comment '石料',
+   stone_limit          int(11) default 99999999,
+   ironore              int(11) default 99999999 comment '铁矿',
+   ironore_limit        int(11) default 99999999,
+   people               int(11) default 400 comment '人口',
+   people_limit         int(11) default 1600,
+   working_people       int(11) default 200 comment '工作人口',
+   soldier              int(11) default 10 comment '总兵',
+   soldier_limit        int(11) default 40,
+   new_soldier          int(11) default 3000 comment '新兵',
+   new_soldier_limit    int(11) default 3000,
+   medicine             int(11) default 20 comment '药膏',
+   medicine_limit       int(11) default 9999,
+   popular_support      int(11) default 50 comment '民心',
+   primary key (id)
+);
+
+alter table new_webgame.user_main_city comment '主城';
+
+/*==============================================================*/
+/* Table: user_soldier                                          */
+/*==============================================================*/
+create table new_webgame.user_soldier
+(
+   id                   int not null auto_increment,
+   character_id              int,
+   soldier_id           int,
+   soldier_amount       int comment '士兵数量',
+   primary key (id)
+);
+
+alter table new_webgame.user_soldier comment '用户兵种表';
+
+/*==============================================================*/
+/* Table: user_suburbs                                          */
+/*==============================================================*/
+create table new_webgame.user_suburbs
+(
+   id                   int(11) not null auto_increment,
+   character_id         int(11),
+   field_id             int(11),
+   field_type           int(11),
+   field_status         int(11),
+   grow_time            int(11),
+   harvest_time         timestamp,
+   primary key (id)
+);
+
+alter table new_webgame.user_suburbs comment '城郊';
+
+/*==============================================================*/
+/* Table: user_tributary_building                               */
+/*==============================================================*/
+create table new_webgame.user_tributary_building
+(
+   id                   int(11) not null auto_increment,
+   character_id         int(11),
+   building_id          int(11),
+   level                int(11),
+   location             int(11),
+   primary key (id)
+);
+
+alter table new_webgame.user_tributary_building comment '用户分城建筑';
+
+/*==============================================================*/
+/* Table: user_tributary_city                                   */
+/*==============================================================*/
+create table new_webgame.user_tributary_city
+(
+   id                   int(11) not null auto_increment,
+   character_id         int(11),
+   name                 varchar(45),
+   x                    int(11),
+   y                    int(11),
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: world                                                 */
+/*==============================================================*/
+create table new_webgame.world
+(
+   id                   int(11) not null auto_increment,
+   x                    int(11) comment 'x坐标',
+   y                    int(11) comment 'y坐标',
+   terrain              int(11) comment '地形',
+   type                 int(11) comment '地块类型：0空地，1可建城点，2玩家城池，3野城，4资源，5名城',
+   resource             varchar(45) comment '资源产量',
+   country              int(11) comment '所属国家',
+   rel_id               int(11) comment '该地块上的对象',
+   primary key (id)
+);
+
+alter table new_webgame.world comment '世界';

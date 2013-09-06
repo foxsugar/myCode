@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crystalcg.gamedev.buildingFunction.mapper.CollegeMapper">
+	<select id="getUserHeroSkillNo" parameterType="java.util.Map" resultType="java.lang.String">
+		SELECT hero_skill_no
+		FROM REL_HERO_SKILL 
+		WHERE character_id=#{characterId} and user_hero_id=#{userHeroId}
+	</select>
+	<insert id="insertRelHeroSkill" parameterType="java.util.Map">
+		INSERT INTO REL_HERO_SKILL(character_id,user_hero_id,hero_skill_no)
+		VALUES (#{characterId},#{userHeroId},#{heroSkillNo})
+	</insert>
+</mapper>

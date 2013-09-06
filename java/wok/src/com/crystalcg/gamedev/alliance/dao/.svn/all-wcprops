@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/alliance/dao
+END
+AllianceWelfareDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/alliance/dao/AllianceWelfareDao.java
+END
+AllianceDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/alliance/dao/AllianceDao.java
+END
+AllianceMemberDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/develop/!svn/ver/7120/wok/src/com/crystalcg/gamedev/alliance/dao/AllianceMemberDao.java
+END

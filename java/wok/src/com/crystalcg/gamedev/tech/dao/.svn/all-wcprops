@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/develop/!svn/ver/6829/wok/src/com/crystalcg/gamedev/tech/dao
+END
+InteriorTechDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/develop/!svn/ver/6829/wok/src/com/crystalcg/gamedev/tech/dao/InteriorTechDao.java
+END
+FormationTechDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/develop/!svn/ver/5267/wok/src/com/crystalcg/gamedev/tech/dao/FormationTechDao.java
+END
+SoldierTechDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/develop/!svn/ver/5178/wok/src/com/crystalcg/gamedev/tech/dao/SoldierTechDao.java
+END

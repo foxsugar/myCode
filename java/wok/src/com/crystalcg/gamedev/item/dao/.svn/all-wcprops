@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/develop/!svn/ver/7145/wok/src/com/crystalcg/gamedev/item/dao
+END
+AuctionDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/develop/!svn/ver/4286/wok/src/com/crystalcg/gamedev/item/dao/AuctionDao.java
+END
+UserItemDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/develop/!svn/ver/7145/wok/src/com/crystalcg/gamedev/item/dao/UserItemDao.java
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/develop/!svn/ver/731/wok/src/com/crystalcg/gamedev/util/jsonFilter
+END
+DynamicJsonFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/develop/!svn/ver/731/wok/src/com/crystalcg/gamedev/util/jsonFilter/DynamicJsonFilter.java
+END
+WebContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/develop/!svn/ver/731/wok/src/com/crystalcg/gamedev/util/jsonFilter/WebContext.java
+END
+JsonFilterAdvice.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/731/wok/src/com/crystalcg/gamedev/util/jsonFilter/JsonFilterAdvice.java
+END
+DynamicJsonFilters.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/develop/!svn/ver/731/wok/src/com/crystalcg/gamedev/util/jsonFilter/DynamicJsonFilters.java
+END
+WebContextFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/develop/!svn/ver/731/wok/src/com/crystalcg/gamedev/util/jsonFilter/WebContextFilter.java
+END

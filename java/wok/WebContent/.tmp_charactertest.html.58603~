@@ -1,0 +1,206 @@
+<html>
+<head>
+	<script type="text/javascript" src="js/prototype.js">
+	</script>
+	<script type="text/javascript">
+		function getInfo(){
+			new Ajax.Request("getInfo",{
+				method:'post',
+				onSuccess:function(x){
+					var data = x.responseText.evalJSON(true);
+					var account = data.account;
+					var account_str = "";
+					for(var s in account){
+						account_str+=s+"="+account[s]+",";
+					}
+					$("showAccount").innerHTML = account_str;
+					var character = data.character;
+					var character_str = "";
+					for(var s in character){
+						character_str+=s+"="+character[s]+",";
+					}
+					$("showCharacter").innerHTML = character_str;
+					$("i_level").value = character.level;
+					$("i_exp").value = character.exp;
+					$("i_cash").value = character.cash;
+					$("i_wood").value = character.wood;
+					$("i_stone").value = character.stone;
+					$("i_food").value = character.food;
+					$("i_bronze").value = character.bronze;
+					$("i_army").value = character.army;
+					$("i_people").value = character.people;
+					$("i_money").value = character.money;
+					$("i_ticket").value = character.ticket;
+					$("i_armyLimit").value = character.armyLimit;
+					$("i_peopleLimit").value = character.peopleLimit;
+				}
+			});
+		}
+		function getUserInfo(){
+			new Ajax.Request("getUserInfo",{
+				method:'post',
+				onSuccess:function(x){
+					$("getUserInfo").innerHTML = x.responseText;
+				}
+			});
+		}
+		function updateInfoFromDB(){
+			new Ajax.Request("updateInfoFromDB",{
+				method:'post',
+				onSuccess:function(x){
+					var data = x.responseText.evalJSON(true);
+					var account = data.account;
+					var account_str = "";
+					for(var s in account){
+						account_str+=s+"="+account[s]+",";
+					}
+					$("showAccount").innerHTML = account_str;
+					var character = data.character;
+					var character_str = "";
+					for(var s in character){
+						character_str+=s+"="+character[s]+",";
+					}
+					$("showCharacter").innerHTML = character_str;
+					$("i_level").value = character.level;
+					$("i_exp").value = character.exp;
+					$("i_cash").value = character.cash;
+					$("i_wood").value = character.wood;
+					$("i_stone").value = character.stone;
+					$("i_food").value = character.food;
+					$("i_bronze").value = character.bronze;
+					$("i_army").value = character.army;
+					$("i_people").value = character.people;
+					$("i_money").value = character.money;
+					$("i_ticket").value = character.ticket;
+					$("i_armyLimit").value = character.armyLimit;
+					$("i_peopleLimit").value = character.peopleLimit;
+				}
+			});
+		}
+		function s_exp(){
+			new Ajax.Request("updateExp",{
+				method:'post',
+				parameters:{exp:$("i_exp").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_cash(){
+			new Ajax.Request("updateCash",{
+				method:'post',
+				parameters:{cash:$("i_cash").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_wood(){
+			new Ajax.Request("updateWood",{
+				method:'post',
+				parameters:{wood:$("i_wood").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_stone(){
+			new Ajax.Request("updateStone",{
+				method:'post',
+				parameters:{stone:$("i_stone").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_food(){
+			new Ajax.Request("updateFood",{
+				method:'post',
+				parameters:{food:$("i_food").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_bronze(){
+			new Ajax.Request("updateBronze",{
+				method:'post',
+				parameters:{bronze:$("i_bronze").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_army(){
+			new Ajax.Request("updateArmy",{
+				method:'post',
+				parameters:{army:$("i_army").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_people(){
+			new Ajax.Request("updatePeople",{
+				method:'post',
+				parameters:{people:$("i_people").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_money(){
+			new Ajax.Request("updateMoney",{
+				method:'post',
+				parameters:{money:$("i_money").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_ticket(){
+			new Ajax.Request("updateTicket",{
+				method:'post',
+				parameters:{ticket:$("i_ticket").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_armyLimit(){
+			new Ajax.Request("updateArmyLimit",{
+				method:'post',
+				parameters:{armyLimit:$("i_armyLimit").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_peopleLimit(){
+			new Ajax.Request("updatePeopleLimit",{
+				method:'post',
+				parameters:{peopleLimit:$("i_peopleLimit").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_explevel(){
+			new Ajax.Request("updateExpAndLevel",{
+				method:'post',
+				parameters:{exp:$("i_exp").value,level:$("i_level").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+		function s_resource(){
+			new Ajax.Request("updateResource",{
+				method:'post',
+				parameters:{wood:$("i_wood").value,stone:$("i_stone").value,bronze:$("i_bronze").value},
+				onSuccess:updateInfoFromDB
+			});
+		}
+	</script>
+</head>
+<body onload="getInfo()">
+	<button onClick="getInfo()">getInfo</button>
+	<button onClick="getUserInfo()">getUserInfo</button>
+	<div id="showAccount">
+		
+	</div>
+	<div id="getUserInfo">
+		
+	</div>
+	<div id="showCharacter">
+		
+	</div>
+	<input id="i_level" type="text" /><br />
+	<input id="i_exp" type="text" /><button onClick="s_exp()">exp</button><button onClick="s_explevel()">expandlevel</button><br />
+	<input id="i_cash" type="text" /><button onClick="s_cash()">cash</button><br />
+	<input id="i_wood" type="text" /><button onClick="s_wood()">wood</button><br />
+	<input id="i_stone" type="text" /><button onClick="s_stone()">stone</button><br />
+	<input id="i_food" type="text" /><button onClick="s_food()">food</button><br />
+	<input id="i_bronze" type="text" /><button onClick="s_bronze()">bronze</button><button onClick="s_resource()">resource</button><br />
+	<input id="i_army" type="text" /><button onClick="s_army()">army</button><br />
+	<input id="i_people" type="text" /><button onClick="s_people()">people</button><br />
+	<input id="i_money" type="text" /><button onClick="s_money()">money</button><br />
+	<input id="i_ticket" type="text" /><button onClick="s_ticket()">ticket</button><br />
+	<input id="i_armyLimit" type="text" /><button onClick="s_armyLimit()">armyLimit</button><br />
+	<input id="i_peopleLimit" type="text" /><button onClick="s_peopleLimit()">peopleLimit</button><br />
+</body>
+</html>

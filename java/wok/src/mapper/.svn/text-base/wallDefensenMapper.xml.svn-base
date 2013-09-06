@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.crystalcg.gamedev.buildingFunction.mapper.WallDefensenMapper">
+
+	<resultMap
+		type="com.crystalcg.gamedev.buildingFunction.domain.UserWallDefensen"
+		id="wallDefensenResult">
+		<id property="id" column="id" />
+		<result property="characterId" column="character_id " />
+		<result property="wallDefensenNo" column="wall_defensen_no" />
+		<result property="wallDefensenNum" column="wall_defensen_num" />
+	</resultMap>
+
+	<resultMap type="com.crystalcg.gamedev.buildingFunction.domain.UserWallHero"
+		id="userwallHero">
+		<result property="characterId" column="character_id " />
+		<result property="heroId" column="hero_id" />
+		<result property="wallCombat" column="wall_combat" />
+		<result property="formationNo" column="formation_no" />
+	</resultMap>
+	
+	<resultMap type="com.crystalcg.gamedev.buildingFunction.domain.UserWallDefensenQueue"
+		id="userWallDefensenQueue">
+		<id property="id" column="id" />
+		<result property="characterId" column="character_id " />
+		<result property="no" column="no" />
+		<result property="completetime" column="complete_time"/>
+		<result property="num" column="num"/>
+	</resultMap>
+	
+
+	<select id="getAllWallDefensen" parameterType="int"
+		resultMap="wallDefensenResult">
+		SELECT * FROM user_wall_defensen WHERE character_id=#{characterId};
+	</select>
+	<select id="getWallDefensenNum"
+		parameterType="com.crystalcg.gamedev.buildingFunction.domain.UserWallDefensen"
+		resultType="int">
+		SELECT wall_defensen_num FROM user_wall_defensen
+		WHERE character_id=#{characterId} AND wall_defensen_no =#{wallDefensenNo}
+	</select>
+	
+	<select id="getSumWallDefensen"
+		parameterType="int" resultType="int">
+		SELECT sum(wall_defensen_num) FROM user_wall_defensen
+		WHERE character_id=#{characterId} 
+	</select>
+	
+	<select id="getWallDefensenNo"
+		parameterType="int" resultType="String">
+		SELECT wall_defensen_no FROM user_wall_defensen
+		WHERE character_id=#{characterId} 
+	</select>
+	
+<!-- 	<select id="getAllWallHero" parameterType="int" resultMap="userwallHero"> -->
+<!-- 		SELECT * FROM user_wall_hero WHERE character_id=#{characterId} -->
+<!-- 	</select> -->
+
+<!-- 	<insert id="insertWallHero" -->
+<!-- 		parameterType="com.crystalcg.gamedev.buildingFunction.domain.UserWallHero"> -->
+<!-- 		INSERT INTO user_wall_hero (character_id,hero_id,order_id) -->
+<!-- 		VALUES(#{characterId},#{heroId},#{orderId}) -->
+<!-- 	</insert> -->
+
+<!-- 	<insert id="insertWallHeros" parameterType="list"> -->
+<!-- 		INSERT INTO user_wall_hero (character_id,hero_id,order_id) -->
+<!-- 		VALUES -->
+<!-- 		<foreach collection="list" item="item" index="index" -->
+<!-- 			separator=","> -->
+<!-- 			(#{item.characterId},#{item.heroId},#{item.orderId}) -->
+<!-- 		</foreach> -->
+<!-- 		on duplicate key update character_id=values(character_id),hero_id=values(hero_id),order_id=values(order_id) -->
+<!-- 	</insert> -->
+	<insert id="insertWallDefensen" parameterType="com.crystalcg.gamedev.buildingFunction.domain.UserWallDefensen">
+	    INSERT INTO user_wall_defensen (character_id,wall_defensen_no,wall_defensen_num)
+	    VALUES(#{characterId},#{wallDefensenNo},#{wallDefensenNum})
+	</insert>
+	
+	<insert id="insertQueueWallDefens" parameterType="com.crystalcg.gamedev.buildingFunction.domain.UserWallDefensenQueue">
+	     INSERT INTO user_defenseworks_queue (character_id,no,complete_time,num)
+	     VALUES(#{characterId},#{no},#{completetime},#{num})
+	</insert>
+    
+    <update id="updateWallDefensen" parameterType="com.crystalcg.gamedev.buildingFunction.domain.UserWallDefensen">
+        UPDATE user_wall_defensen
+		SET wall_defensen_num=wall_defensen_num+#{wallDefensenNum}
+		WHERE character_id=#{characterId} AND wall_defensen_no =#{wallDefensenNo}
+    </update>
+    
+    <delete id="deleteWallDefensenQueue"
+		parameterType="int">
+		DELETE FROM user_defenseworks_queue 
+		WHERE character_id=#{characterId}
+	</delete>
+	
+	<select id="getWallDefensenQueue" parameterType="int" resultMap="userWallDefensenQueue">
+		SELECT*FROM user_defenseworks_queue
+		WHERE character_id=#{characterId} 
+	</select>
+	<update id="updateQueueWallDefens" parameterType="com.crystalcg.gamedev.buildingFunction.domain.UserWallDefensenQueue">
+	 UPDATE user_defenseworks_queue
+		SET complete_time=#{completetime}
+		WHERE character_id=#{characterId} AND no=#{no}	     
+	</update>
+	
+	<insert id="saveWallHero"
+		parameterType="com.crystalcg.gamedev.buildingFunction.domain.UserWallHero">
+		INSERT INTO user_wall_hero (character_id,hero_id,wall_combat,formation_no)
+		VALUES(#{characterId},#{heroId},#{wallCombat},#{formationNo})
+	</insert>
+	
+	<update id="updateWallHero" parameterType="com.crystalcg.gamedev.buildingFunction.domain.UserWallHero">
+	    UPDATE user_wall_hero
+		SET hero_id=#{heroId},wall_combat=#{wallCombat},formation_no=#{formationNo}
+		WHERE character_id=#{characterId}   
+	</update>
+	
+	<select id="getWallHero" parameterType="int" resultMap="userwallHero">
+		SELECT*FROM user_wall_hero
+		WHERE character_id=#{characterId} 
+	</select>
+</mapper>

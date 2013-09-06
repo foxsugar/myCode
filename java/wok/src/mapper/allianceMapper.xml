@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.crystalcg.gamedev.alliance.mapper.AllianceMapper">
+
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.Alliance" id="allianceResult">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="banner" column="banner" />
+		<result property="country" column="country" />
+		<result property="chief" column="chief" />
+		<result property="level" column="level" />
+		<result property="ownCountry" column="own_country" />
+		<result property="memberAmount" column="member_amount" />
+		<result property="wealth" column="wealth" />
+		<result property="bulletin" column="bulletin" />
+		<result property="introduction" column="introduction" />
+		<result property="friendStatus" column="friend_alliance_status" />
+	</resultMap>
+	
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceMember" id="alliancememberResult">
+		<id property="id" column="id" />
+		<result property="allianceId" column="alliance_id" />
+		<result property="characterId" column="character_id" />
+		<result property="wealth" column="wealth"/>
+		<result property="speakStatus" column="speak_status"/>
+		<result property="closeSpeakTime" column="close_speak_time"/>
+	</resultMap>
+		
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.ApplicationList" id="applicationListResult">
+		<id property="id" column="id" />
+		<result property="allianceId" column="alliance_id" />
+		<result property="characterId" column="character_id" />
+		<result property="type" column="type"/>
+	</resultMap>
+	
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceQueue" id="allianceQueue">
+	    <id property="id" column="id" />
+		<result property="allianceId" column="alliance_id" />
+		<result property="completetime" column="complete_time" />
+	</resultMap>
+	
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceEvent" id="allianceEvent">
+	    <id property="id" column="id" />	
+		<result property="completetime" column="complete_time" />
+		<result property="event" column="event" />
+		<result property="allianceId" column="alliance_id" />
+	</resultMap>
+	
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceContribute" id="allianceContribute">
+	    <id property="id" column="id" />	
+		<result property="allianceId" column="alliance_id" />
+		<result property="characterId" column="character_id" />
+		<result property="contributeAmount" column="contribute_amount" />
+		<result property="todayAmount" column="today_amount" />
+		<result property="completeTime" column="complete_time" />
+	</resultMap>
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceBarrack" id="allianceBarrack">
+	    <id property="id" column="id" />	
+		<result property="allianceId" column="alliance_id" />
+		<result property="soldierNo" column="soldier_no" />
+		<result property="amount" column="amount" />
+	</resultMap>
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceSite" id="allianceSite">
+	    <id property="id" column="id" />	
+		<result property="allianceId" column="alliance_id" />
+		<result property="alliancePosition" column="alliance_position" />
+		<result property="wealth" column="wealth" />
+		<result property="soldierAmount" column="soldier_amount" />
+		<result property="completetime" column="complete_time" />
+	</resultMap>
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceReceive" id="allianceReceive">
+	    <id property="id" column="id" />	
+		<result property="allianceId" column="alliance_id" />
+		<result property="characterId" column="character_id" />
+		<result property="receiveNumber" column="receive_number" />
+		<result property="completeTime" column="complete_time" />
+	</resultMap>
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceTechnology" id="allianceTechnology">
+	    <id property="id" column="id" />	
+		<result property="allianceId" column="alliance_id" />
+		<result property="technologyNo" column="technology_no" />
+		<result property="level" column="level" />
+	</resultMap>
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceTechnologyQueue" id="allianceTechnologyQueue">
+	    <id property="id" column="id" />	
+		<result property="allianceId" column="alliance_id" />
+		<result property="technologyNo" column="technology_no" />
+		<result property="level" column="level" />
+		<result property="completeTime" column="complete_time" />
+	</resultMap>
+	
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceUpgradeQueue" id="allianceUpQueue">
+	    <id property="id" column="id" />	
+		<result property="allianceId" column="alliance_id" />
+		<result property="level" column="level" />
+		<result property="completeTime" column="complete_time" />
+	</resultMap>
+	
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceAllyApply" id="allianceAllyApply">
+	    <id property="id" column="id" />	
+		<result property="allianceId" column="alliance_id" />
+		<result property="allianceFriendId" column="alliance_friend_id" />
+		<result property="allianceEvent" column="alliance_event" />
+	</resultMap>
+	
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceFriends" id="allianceFriends">
+	    <id property="id" column="id" />	
+		<result property="allianceId" column="alliance_id" />
+		<result property="FriendId" column="friend_alliance_id" />
+		<result property="type" column="type" />
+	</resultMap>
+	
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceSalary" id="allianceSalary">
+	    <id property="id" column="id" />	
+		<result property="characterId" column="character_id" />
+	</resultMap>
+	
+	<resultMap type="com.crystalcg.gamedev.alliance.domain.AllianceShoping" id="allianceShoping">
+	    <id property="id" column="id" />	
+		<result property="allianceId" column="alliance_id" />
+		<result property="characterId" column="character_id" />
+		<result property="itemNo" column="item_no"/>
+		<result property="buyAmount" column="buy_amount"/>
+		<result property="buyTime" column="buy_time"/>
+	</resultMap>
+	
+	<insert id="insertAlliance" parameterType="com.crystalcg.gamedev.alliance.domain.Alliance">
+	  INSERT INTO USER_ALLIANCE(name,banner,country,chief,level,member_amount,introduction,friend_alliance_status)
+      VALUES(#{name},#{banner},#{country},#{chief},#{level},#{memberAmount},#{introduction},#{friendStatus})
+	</insert>
+	
+	<select id="getAllAllianceName" resultType="String">
+	  SELECT name FROM USER_ALLIANCE
+	</select>
+	
+	<select id="getAllAllianceByName" parameterType="String" resultMap="allianceResult">
+	  SELECT * FROM USER_ALLIANCE WHERE name=#{name}
+	</select>
+	<select id="getAllianceById" parameterType="int" resultMap="allianceResult">
+	  SELECT * FROM USER_ALLIANCE WHERE id=#{id}
+	</select>
+	
+	<insert id="insertAllianceApplication" parameterType="com.crystalcg.gamedev.alliance.domain.ApplicationList">
+	  INSERT INTO USER_ALLIANCE_APPLICATION(alliance_id,character_id,type)
+	  VALUES(#{allianceId},#{characterId},#{type})
+	</insert>
+	
+	<select id="getAllAllianceApplication" parameterType="java.util.Map" resultMap="applicationListResult">
+	  SELECT * FROM USER_ALLIANCE_APPLICATION WHERE alliance_id = #{allianceId} limit #{page},#{pageSize}
+	</select>
+	
+	<select id="getApplicationByAllianceId" parameterType="int" resultMap="applicationListResult">
+	  SELECT * FROM USER_ALLIANCE_APPLICATION WHERE alliance_id = #{allianceId}
+	</select>
+	<select id="getApplicationIdByCharacterId" parameterType="int" resultMap="applicationListResult">
+	  SELECT * FROM USER_ALLIANCE_APPLICATION WHERE character_id = #{characterId}
+	</select>
+	<select id="getAllianceApplicationAomunt" parameterType="int" resultType="int">
+	  SELECT count(*) FROM USER_ALLIANCE_APPLICATION WHERE alliance_id = #{allianceId}
+	</select>
+	<select id="getcharacterApplicationAomunt" parameterType="int" resultType="int">
+	  SELECT count(*) FROM USER_ALLIANCE_APPLICATION WHERE character_id = #{characterId}
+	</select>
+	<select id="getAllCharacterApplication" parameterType="java.util.Map" resultMap="applicationListResult">
+	  SELECT * FROM USER_ALLIANCE_APPLICATION WHERE character_id = #{characterId} limit #{page},#{pageSize}
+	</select>
+	<select id="getAllAllianceMember" parameterType="java.util.Map" resultMap="alliancememberResult">
+	  SELECT * FROM USER_ALLIANCE_MEMBER WHERE alliance_id = #{allianceId} limit #{page},#{pageSize}
+	</select>
+	
+	<select id="getAllAllianceMemberId" parameterType="int" resultType="int">
+	  SELECT character_id FROM USER_ALLIANCE_MEMBER WHERE alliance_id = #{allianceId} 
+	</select>
+	
+	<insert id="insertAllianceMember" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceMember">
+	  INSERT INTO USER_ALLIANCE_MEMBER(alliance_id,character_id)
+	  VALUES(#{allianceId},#{characterId})
+	</insert>
+	
+	<delete id="deleteAllianceApplication" parameterType="java.util.Map">
+		DELETE FROM USER_ALLIANCE_APPLICATION 
+		WHERE character_id=#{characterId} AND alliance_id=#{allianceId}
+	</delete>
+	
+	<delete id="deleteAllianceMember" parameterType="int">
+		DELETE FROM USER_ALLIANCE_MEMBER 
+		WHERE character_id=#{characterId}
+	</delete>
+	
+	<select id="getAllAllianceAmount" resultType="int">
+	   SELECT count(*) FROM USER_ALLIANCE 
+    </select>
+    
+    <select id="getAllAlliance" parameterType="java.util.Map" resultMap="allianceResult">
+	   SELECT * FROM USER_ALLIANCE limit #{page},#{pageSize} 
+    </select>
+    
+    <select id="getWhereAllianceMember" parameterType="int" resultType="int">
+	   SELECT alliance_id FROM USER_ALLIANCE_MEMBER WHERE character_id=#{characterId}
+    </select>
+    <select id="getAllianceMemberAmount" resultType="int">
+	   SELECT count(*) FROM USER_ALLIANCE_MEMBER where alliance_id=#{allianceId}
+    </select>
+    
+    <insert id="insertAllianceQueue" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceQueue">
+	  INSERT INTO USER_ALLIANCE_QUEUE(alliance_id,complete_time)
+	  VALUES(#{allianceId},#{completetime})
+	</insert>
+	  <select id="getAllianceQueue" resultType="int" resultMap="allianceQueue">
+	   SELECT * FROM USER_ALLIANCE_QUEUE WHERE alliance_id=#{allianceId} 
+    </select>
+	
+	<delete id="deleteAllianceQueue" parameterType="int">
+		DELETE FROM USER_ALLIANCE_QUEUE 
+		WHERE alliance_id=#{allianceId}
+	</delete>
+	<delete id="deleteAlliance" parameterType="int">
+		DELETE FROM USER_ALLIANCE 
+		WHERE id=#{allianceId}
+	</delete>
+	<delete id="deleteAllAllianceMember" parameterType="int">
+		DELETE FROM USER_ALLIANCE_MEMBER 
+		WHERE alliance_id=#{allianceId}
+	</delete>
+	<update id="updateAllianceChief" parameterType="java.util.Map">
+	    UPDATE USER_ALLIANCE SET chief=#{name} WHERE id=#{allianceId}
+	</update>
+	<update id="changeAllianceInfo" parameterType="com.crystalcg.gamedev.alliance.domain.Alliance" >
+	    UPDATE USER_ALLIANCE SET bulletin=#{bulletin},introduction=#{introduction} WHERE id=#{id}
+	</update>
+	<insert id="insertAllianceEvent" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceEvent">
+	    INSERT INTO USER_ALLIANCE_EVENT(complete_time,event,alliance_id)
+	    VALUES(#{completetime},#{event},#{allianceId})
+	</insert>
+	<select id="getAllianceEvent" parameterType="java.util.Map" resultMap="allianceEvent">
+	    SELECT complete_time,event FROM USER_ALLIANCE_EVENT where alliance_id=#{allianceId}  order by complete_time Desc limit #{page},#{pageSize}
+	</select>
+	<select id="getAllianceLevel" parameterType="int" resultType="int">
+	    SELECT level FROM USER_ALLIANCE where id=#{allianceId}
+	</select>
+	<update id="uptadeAllianceMemberSpeakStatus" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceMember" >
+	    UPDATE USER_ALLIANCE_MEMBER SET speak_status=#{speakStatus},close_speak_time=#{speakStatusTime}
+	    WHERE character_id=#{characterId} AND alliance_id=#{allianceId}
+	</update>
+	<select id="getAllianceMemberSpeakStatusTime" parameterType="java.util.Map" resultType="java.util.Map">
+	    SELECT close_speak_time time,speak_status status FROM USER_ALLIANCE_MEMBER where alliance_id=#{allianceId} AND character_id=#{characterId} 
+	</select>
+	<select id="getAllianceByCountry" parameterType="String" resultMap="allianceResult">
+	    SELECT * FROM USER_ALLIANCE where country=#{country} limit #{page},#{pageSize}
+	</select>
+	<select id="getAllianceCountryAmount" parameterType="String" resultType="int">
+	    SELECT count(*) FROM USER_ALLIANCE where country=#{country}
+	</select>
+	<select id="getAianceContributeByCharacterId" parameterType="java.util.Map" resultMap="allianceContribute">
+	    SELECT * FROM USER_ALLIANCE_CONTRIBUTE where character_id=#{characterId} AND alliance_id=#{allianceId}
+	</select>
+	<insert id="insertAllianceContribute" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceContribute">
+	    INSERT INTO USER_ALLIANCE_CONTRIBUTE(alliance_id,character_id,contribute_amount,today_amount,complete_time)
+	    VALUES(#{allianceId},#{characterId},#{contributeAmount},#{todayAmount},#{completeTime})
+	</insert>
+	<update id="updateAllianceContribute" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceContribute" >
+	    UPDATE USER_ALLIANCE_CONTRIBUTE 
+	    SET contribute_amount=#{contributeAmount},today_amount=#{todayAmount},complete_time=#{completeTime} 
+	    WHERE character_id=#{characterId} AND alliance_id=#{allianceId}
+	</update>
+	<select id="getAllAianceContribute" parameterType="java.util.Map" resultMap="allianceContribute">
+	    SELECT * FROM USER_ALLIANCE_CONTRIBUTE where alliance_id=#{allianceId} order by contribute_amount Desc limit #{page},#{pageSize}
+	</select>
+	<update id="updateAllianceWealth" parameterType="java.util.Map" >
+	    UPDATE USER_ALLIANCE
+	    SET wealth=wealth+#{wealth}
+	    WHERE id=#{allianceId}
+	</update>
+	<update id="updateAllianceMemberWealth" parameterType="java.util.Map" >
+	    UPDATE USER_ALLIANCE_MEMBER
+	    SET wealth=wealth+#{wealth}
+	    WHERE alliance_id=#{allianceId} AND character_id=#{characterId}
+	</update>
+	<select id="getAllianceMemberWealth" parameterType="java.util.Map" resultType="Integer">
+	    SELECT wealth FROM USER_ALLIANCE_MEMBER WHERE alliance_id =#{allianceId} AND character_id=#{characterId}
+	</select>
+	<select id="getAllianceContributeAmount" parameterType="int" resultType="int">
+	    SELECT count(*) FROM USER_ALLIANCE_CONTRIBUTE where alliance_id=#{allianceId}
+	</select>
+	<select id="getAllianceEventAmount" parameterType="int" resultType="int">
+	    SELECT count(*) FROM USER_ALLIANCE_EVENT where alliance_id=#{allianceId}
+	</select>
+	
+	<select id="getAllAllianceBarrack" parameterType="java.util.Map" resultMap="allianceBarrack">
+	    SELECT * FROM USER_ALLIANCE_BARRACK where soldier_no=#{soldierNo} AND alliance_id =#{allianceId}
+	</select>
+	<select id="getAllianceBarrackBySoldierNo" parameterType="java.util.Map" resultMap="allianceBarrack">
+	    SELECT * FROM USER_ALLIANCE_BARRACK where alliance_id =#{allianceId} AND soldier_no like #{like} limit #{page},#{pageSize}
+	</select>
+	<insert id="insertAllianceBarrack" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceBarrack">
+	    INSERT INTO USER_ALLIANCE_BARRACK(alliance_id,soldier_no,amount)
+	    VALUES(#{allianceId},#{soldierNo},#{amount})
+	</insert>
+	<update id="updateAllianceBarrack" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceBarrack" >
+	    UPDATE USER_ALLIANCE_BARRACK
+	    SET amount=amount+#{amount}
+	    WHERE alliance_id=#{allianceId} AND soldier_no=#{soldierNo}
+	</update>
+	
+	<delete id="deleteAllianceBarrack" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceBarrack">
+		DELETE FROM USER_ALLIANCE_BARRACK 
+		WHERE alliance_id=#{allianceId} AND soldier_no=#{soldierNo}
+	</delete>
+	
+	<insert id="insertAllianceSite" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceSite">
+	    INSERT INTO USER_ALLIANCE_SITE(alliance_id,alliance_position,soldier_amount)
+	    VALUES(#{allianceId},#{alliancePosition},#{soldierAmount})
+	</insert>
+	<update id="updateAllianceSite" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceSite" >
+	    UPDATE USER_ALLIANCE_SITE
+	    SET soldier_amount=#{soldierAmount},last_number=#{lastNumber}
+	    WHERE alliance_id=#{allianceId} AND alliance_position=#{alliancePosition}
+	</update>
+	<select id="getAllianceSoldierAmount" parameterType="int" resultType="Integer">
+	    SELECT SUM(amount) FROM USER_ALLIANCE_BARRACK WHERE alliance_id =#{allianceId}
+	</select>
+	<select id="getAllianceSiteSoldierAmount" parameterType="int" resultType="int">
+	    SELECT SUM(soldier_amount) FROM USER_ALLIANCE_SITE WHERE alliance_id =#{allianceId}
+	</select>
+	<select id="getAllianceSiteTime" parameterType="java.util.Map" resultType="java.util.Date">
+	    SELECT complete_time FROM USER_ALLIANCE_SITE WHERE alliance_id =#{allianceId} AND alliance_position=#{alliancePosition}
+	</select>
+	<select id="getAllianceSite" parameterType="java.util.Map" resultMap="allianceSite">
+	    SELECT * FROM USER_ALLIANCE_SITE WHERE alliance_id =#{allianceId} AND alliance_position=#{alliancePosition}
+	</select>
+	<insert id="insertAllianceReceive" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceReceive">
+	    INSERT INTO USER_ALLIANCE_RECEIVE(alliance_id,character_id,receive_number)
+	    VALUES(#{allianceId},#{characterId},#{receiveNumber})
+	</insert>
+	<update id="updateAllianceReceive" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceReceive" >
+	    UPDATE USER_ALLIANCE_RECEIVE
+	    SET receive_number=#{receiveNumber}
+	    WHERE alliance_id=#{allianceId} AND character_id=#{characterId}
+	</update>
+	<select id="getAllianceReceive" parameterType="java.util.Map" resultMap="allianceReceive">
+	    SELECT * FROM USER_ALLIANCE_RECEIVE WHERE alliance_id =#{allianceId} AND character_id =#{characterId}
+	</select>
+	<insert id="insertAllianceTechnology" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceTechnology">
+	    INSERT INTO USER_ALLIANCE_TECHNOLOGY(alliance_id,technology_no,level)
+	    VALUES(#{allianceId},#{technologyNo},#{level})
+	</insert>
+    <select id="getAllianceTechnology" parameterType="java.util.Map" resultMap="allianceTechnology">
+	    SELECT * FROM USER_ALLIANCE_TECHNOLOGY WHERE alliance_id =#{allianceId} AND technology_no =#{technologyNo}
+	</select>
+	<select id="getAllianceTechnologyWelfare" parameterType="java.util.Map" resultMap="allianceTechnology">
+	    SELECT * FROM USER_ALLIANCE_TECHNOLOGY WHERE alliance_id =#{allianceId} AND technology_no like #{buildingNo}
+	</select>
+	 <insert id="insertAllianceTechnologyQueue" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceTechnologyQueue">
+	  INSERT INTO USER_ALLIANCE_TECHNOLOGY_QUEUE(alliance_id,technology_no,level,complete_time)
+	  VALUES(#{allianceId},#{technologyNo},#{level},#{completeTime})
+	</insert>
+	
+	<select id="getAllianceTechnologyQueue" parameterType="java.util.Map" resultMap="allianceTechnologyQueue">
+	    SELECT * FROM USER_ALLIANCE_TECHNOLOGY_QUEUE WHERE alliance_id =#{allianceId} AND technology_no like #{like}
+	</select>
+	
+	<delete id="deleteAllianceTechnologyQueue" parameterType="java.util.Map">
+		DELETE FROM USER_ALLIANCE_TECHNOLOGY_QUEUE 
+		WHERE alliance_id=#{allianceId} AND technology_no=#{technologyNo}
+	</delete>
+	 <insert id="insertAllianceUpQueue" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceUpgradeQueue">
+	  INSERT INTO USER_ALLIANCE_UP_QUEUE(alliance_id,level,complete_time)
+	  VALUES(#{allianceId},#{level},#{completeTime})
+	</insert>
+	
+	<select id="getAllianceUpQueue" parameterType="int" resultMap="allianceUpQueue" >
+	  SELECT * FROM user_alliance_up_queue WHERE alliance_id=#{allianceId}
+	</select>
+	
+	<delete id="deleteAllianceUpQueue" parameterType="int">
+		DELETE FROM USER_ALLIANCE_UP_QUEUE 
+		WHERE alliance_id=#{allianceId}
+	</delete>
+	<update id="updateAllianceLevel" parameterType="java.util.Map" >
+	    UPDATE USER_ALLIANCE
+	    SET level=#{level}
+	    WHERE id=#{allianceId}
+	</update>
+		<update id="updateAllianceMemberNum" parameterType="java.util.Map" >
+	    UPDATE USER_ALLIANCE
+	    SET member_amount=#{number}
+	    WHERE id=#{allianceId}
+	</update>
+	 <insert id="insertAllianceAlly" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceAllyApply">
+	  INSERT INTO USER_ALLIANCE_ALLY(alliance_id,alliance_friend_id,alliance_event)
+	  VALUES(#{allianceId},#{allianceFriendId},#{allianceEvent})
+	</insert>
+    <select id="getAllianceAllyApply" parameterType="java.util.Map" resultMap="allianceAllyApply">
+	    SELECT * FROM USER_ALLIANCE_ALLY WHERE alliance_id =#{allianceId} AND alliance_friend_id =#{allianceFriendId}
+	</select>
+	 <select id="getAllianceAllyApplyAmount" parameterType="int" resultType="int">
+	    SELECT count(*) FROM USER_ALLIANCE_ALLY WHERE alliance_id =#{allianceId}
+	</select>
+	 <select id="getAllAllianceAllyApply" parameterType="java.util.Map" resultMap="allianceAllyApply">
+	    SELECT * FROM USER_ALLIANCE_ALLY WHERE alliance_id =#{allianceId} limit #{page},#{pageSize}
+	</select>
+	<delete id="deleteAllainceAllyApply" parameterType="java.util.Map">
+		DELETE FROM USER_ALLIANCE_ALLY 
+		WHERE alliance_id=#{allianceId} AND alliance_friend_id =#{allyAllianceId}
+	</delete>
+	
+	 <insert id="insertAllianceFriend" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceFriends">
+	  INSERT INTO USER_ALLIANCE_FRIENDS(alliance_id,friend_allance_id,type)
+	  VALUES(#{allianceId},#{friendId},#{type})
+	</insert>
+	<update id="updateAllianceFriendStatus" parameterType="java.util.Map" >
+	    UPDATE USER_ALLIANCE
+	    SET friend_alliance_status=#{status}
+	    WHERE id=#{allianceId}
+	</update>
+	<select id="getallianceTechologyInfo" parameterType="java.util.Map" resultMap="allianceTechnology">
+	    SELECT * FROM USER_ALLIANCE_TECHNOLOGY where alliance_id=#{allianceId} AND technology_no like  #{like}
+	</select>
+	<update id="updateAllianceTechnology" parameterType="java.util.Map" >
+	    UPDATE USER_ALLIANCE_TECHNOLOGY
+	    SET technology_no=#{technologyNo},level=#{level}
+	    WHERE alliance_id=#{allianceId} AND technology_no like #{like}
+	</update>
+	<select id="getAllianceTechnologyList" parameterType="int" resultMap="allianceTechnology">
+	    SELECT * FROM USER_ALLIANCE_TECHNOLOGY where alliance_id=#{allianceId}
+	</select>
+	<select id="getAllyLocation" parameterType="int" resultType="java.util.Map">
+		SELECT t3.character_id id,t3.x,t3.y 
+		FROM USER_CHARACTER t1,USER_ALLIANCE_MEMBER t2,USER_MAIN_CITY t3 
+		WHERE t1.id=#{value} AND t1.alliance_id=t2.alliance_id AND t2.character_id = t3.character_id
+	</select>
+	
+	 <insert id="insertAllianceSalary" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceSalary">
+	  INSERT INTO USER_ALLIANCE_SALARY(character_id)
+	  VALUES(#{characterId})
+	</insert>
+	<select id="getAllianceSalary" parameterType="int" resultMap="allianceSalary">
+	    SELECT * FROM USER_ALLIANCE_SALARY where character_id=#{characterId}
+	</select>
+	<select id="getAllianceShopingSoldAmount" parameterType="java.util.Map" resultType="Integer">
+	   SELECT COUNT(*) FROM user_alliance_shoping WHERE alliance_id=#{allianceId} AND item_no=#{itemNo}
+	</select>
+	<select id="getShopingAmountByCharacterId" parameterType="java.util.Map" resultType="Integer">
+	   SELECT COUNT(*) FROM user_alliance_shoping WHERE character_id=#{characterId} AND item_no=#{itemNo}
+	</select>
+	 <insert id="insertAllianceShoping" parameterType="com.crystalcg.gamedev.alliance.domain.AllianceShoping">
+	  INSERT INTO USER_ALLIANCE_SHOPING(alliance_id,character_id,item_no,buy_amount)
+	  VALUES(#{allianceId},#{characterId},#{itemNo},#{buyAmount})
+	</insert>
+	<select id="getAllianceSolierCount" parameterType="java.util.Map" resultType="int">
+	   SELECT COUNT(*) FROM USER_ALLIANCE_BARRACK WHERE alliance_id =#{allianceId} AND soldier_no like #{like} 
+	</select>
+</mapper>

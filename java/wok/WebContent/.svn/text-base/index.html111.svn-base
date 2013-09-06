@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+html { height:100%; }
+body{ 
+	background-image:url('img/body_bg.jpg');
+    background-repeat:no-repeat;
+    background-position:center center;
+}
+</style>
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript">
+	function login(){
+		new Ajax.Request("login",{
+			method:"post",
+			parameters:{userName:$("userName").value,password:$("password").value},
+			onSuccess:function(x){
+				var data = x.responseText.evalJSON(true);
+				if(data.command=="main"){
+					window.location="main.jsp";
+				}else if(data.command=="createCharactor"){
+					window.location="createCharactor.jsp";
+				}
+			}
+		});
+	}
+	function doLogin(data){
+		if(data.command=="main"){
+			window.location="main.jsp";
+		}else if(data.command=="createCharactor"){
+			window.location="createCharactor.jsp";
+		}
+	}
+</script>
+<title>登录</title>
+</head>
+<body>
+<div align="center" style="margin-top:200px">
+	<form name="form1" action="login" method="post">
+		username:<input id="userName" type="text" name="userName" value="" /><br />
+		password:<input id="password" type="text" name="password" value="" /><br />
+		<br />
+		<img alt="" src="img/logon_button.jpg" style="cursor:pointer" onclick="login()">
+	</form>
+</div>
+</body>
+</html>

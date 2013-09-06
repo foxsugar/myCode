@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<script type="text/javascript" src="js/client/jquery.js"></script>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	function changeImage(id,url){
+		var e = document.getElementById(id);
+		e.src = url;
+	}
+	//注册用户变亮
+	function changeRegisterImage(id){
+		var url = "images/login/4.png";
+		changeImage(id,url);
+		var e = document.getElementById(id);
+		e.style.cursor="pointer";
+	}
+	function resetRegisterImage(id){
+		var url = "images/login/12.png";
+		changeImage(id,url);
+	}
+	//忘记密码变亮
+	function changePwdImage(id){
+		var url = "images/login/5.png";
+		changeImage(id,url);
+		var e = document.getElementById(id);
+		e.style.cursor="pointer";
+	}
+	function resetPwdImage(id){
+		var url = "images/login/11.png";
+		changeImage(id,url);
+	}
+	//记住密码
+	var isSave = false;
+	function passwordSave(k,v,d) { 
+		var date = new Date();
+		date.setTime(date.getTime()+((d?d:365*10)*24*60*60*1000));
+		document.cookie =this._systemcookie+"~"+k+"="+v+"; expires="+date.toGMTString()+"; path=/";
+	}
+	function savePwd(id){
+		
+		isSave = !isSave;
+		if(isSave){
+			if(document.getElementById("password").value != null && document.getElementById("password").value != "" && document.getElementById("password").value != "undefined")
+			   passwordSave("" + document.getElementById("username").value,document.getElementById("password").value);
+			changeCheckBoxImage(id);
+		}else{
+			//passwordSave("" + document.getElementById("username").value,"");
+			//resetCheckBoxImage(id);
+		}
+	}
+	function dataLoad(k,a) {
+		var nameeq=this._systemcookie+"~"+k+"=";
+		var ca = document.cookie.split(";");
+		var rt;
+		for (var i=0;i<ca.length;i++) {
+			var c=ca[i];
+			while (c.charAt(0)==' ') c=c.substring(1,c.length);
+			if (c.indexOf(nameeq)==0) {
+				rt=c.substring(nameeq.length,c.length);
+				if (a&&a.number) return rt*1; else return rt;
+			}
+		}
+		return null;
+	}
+	function changeCheckBoxImage(id){
+		var url = "images/login/14.png";
+		changeImage(id,url);
+	}
+	function resetCheckBoxImage(id){
+		var url = "images/login/13.png";
+		changeImage(id,url);
+	}
+	
+	function changeLoginImage(id){
+		var bg = "url(images/login/0.png) no-repeat";
+		var e = document.getElementById(id);
+		e.style.background = bg;
+		e.style.cursor="pointer";
+	}
+	function resetLoginImage(id){
+		var bg = "url(images/login/1.png) no-repeat";
+		var e = document.getElementById(id);
+		e.style.background = bg;
+	}
+	//登录
+	function _login(){
+		var un = document.getElementById("username").value;
+		var pwd = document.getElementById("password").value;
+		$.ajaxPost('login',{username:un,password:pwd},doLogin);
+	}
+	
+	function doLogin(data){
+	  	//window.serverTime = data.loginTime;
+		if(data.command=="success")
+		{
+	        window.location="main.html";  
+		}
+		else if(data.command=="failure")
+		{
+	        alert(data.desc);
+		}
+		else if(data.command=="createCharactor")
+		{
+	        window.location="main.html";
+		}
+	       
+	}
+	function getPassWord()
+	{
+		if(document.getElementById("username").value != null && document.getElementById("username").value != "" && document.getElementById("username").value != "undefined")
+		{
+		   document.getElementById("password").value = dataLoad(document.getElementById("username").value);  
+		}
+	}
+	function gotoRegisterPage(){
+		window.location="register.html";
+	}
+	function focusName(){
+		document.getElementById("username").focus();
+	}
+//onload = "testSave()	
+</script>
+<title>王者之战</title>
+</head>
+<body onkeydown='if(event.keyCode==13){_login()}' onload="focusName()">
+	<div align="center">
+	<table id="container" width="1065">
+		<tr>
+			<td id="left-container" align="center" valign="top">
+				<img alt="" src="images/login/7.png">
+				<br />
+				<br />
+				<img alt="" src="images/login/2.png">
+			</td>
+			<td id="center-container" align="right" valign="top">
+				<table style="color:white">
+					<tr>
+						<td>
+							<img alt="" src="images/login/loginTitle.png">
+						</td>
+					</tr>
+					
+					<tr>
+						<td align="center" >
+							<table>
+								<tr>
+									<td><img alt="" src="images/login/9.png"></td>
+									<td><input type="text" name="username" id="username" onkeyup = "getPassWord()" tabindex=1/></td>
+									<td width="102" height="26"><img alt="" src="images/login/12.png"
+									 id="reg" onMouseOver="changeRegisterImage('reg')" onMouseOut="resetRegisterImage('reg')"
+									 onClick="gotoRegisterPage()"
+									></td>
+								</tr>
+								<tr>
+									<td><img alt="" src="images/login/10.png"></td>
+									<td><input type="password" name="password" id="password" tabindex=2 /></td>
+									<td width="102" height="26"><img alt="" src="images/login/11.png"
+										id="pwd" onMouseOver="changePwdImage('pwd')" onMouseOut="resetPwdImage('pwd');"
+									></td>
+								</tr>
+								<tr>
+									<td colspan="3" align="center">
+										<img alt="" src="images/login/13.png" id="spwd" onClick="savePwd('spwd')" tabindex=3>
+										<img alt="" src="images/login/6.png"  onClick="savePwd('spwd')">
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3" align="center" onMouseOver="changeLoginImage('login-button')" onMouseOut="resetLoginImage('login-button')">
+										<table>
+											<tr>
+												<td align="center" id="login-button">
+													<img alt="" src="images/login/3.png" onclick="_login()" tabindex=4>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>				
+							</table>
+						</td>
+					</tr>
+					
+				</table>
+			</td>
+			<td id="right-container" align="center" valign="bottom">
+				<img alt="" src="images/login/2.png">
+			</td>
+		</tr>
+	</table>
+	</div>
+</body>
+</html>

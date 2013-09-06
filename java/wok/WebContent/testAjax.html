@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript" src="js/euipmentStrengthen.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fun(){
+		alert("adf");
+		new Ajax.Request($("url").value,
+		{
+			parameters:{position:0,type:1,userItemId:23},
+			method:"post",
+			onSuccess:function(x){
+				var data = x.responseText.evalJSON(true);
+				$("myDiv").innerHTML=x.responseText;
+			}
+		});
+	}
+	function fun1(){
+		new Ajax.PeriodicalUpdater("chat",'periodicalUpdater', {
+			  method: 'post',
+			  frequency: 1, 
+			  decay: 2,
+			  parameters:{userName:"风云雄霸天下"},
+			  insertion: Insertion.Bottom,
+			  evalScripts: true
+			});
+	}
+	function isNull(){
+		var data = '{"aa":null}'.evalJSON(true);
+		alert(data.aa==null);
+	}
+	function testAjax(){
+		getEquipmentByPositonAndType(1,0,function(){alert("success");});
+	}
+</script>
+</head>
+<body>
+	<div id="myDiv">
+	</div>
+		<img alt="" src="img/logon_button.jpg" style="cursor:pointer" onclick="fun()">
+		<img alt="" src="img/logon_button.jpg" style="cursor:pointer" onclick="fun1()">
+		<hr />
+	<div id="chat" style="background-color:#CCFF99;border-bottom-style:groove;width: 300px;height: 180px;overflow:scroll;">
+	</div>
+	<button>升级</button>
+	<button onClick="isNull()">是否为空</button>
+	<hr />
+	<input type="text" id="url" />
+	<button onClick="fun()">提交</button>
+	<button onClick="testAjax()">测试</button>
+</body>
+</html>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/develop/!svn/ver/9328/wok
+END
+sql.txt
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/develop/!svn/ver/4120/wok/sql.txt
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/develop/!svn/ver/359/wok/.project
+END
+temp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/develop/!svn/ver/713/wok/temp.xml
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/develop/!svn/ver/8454/wok/.classpath
+END

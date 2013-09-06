@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	
+	<bean id="wallDefensenAction" class="com.crystalcg.gamedev.buildingFunction.action.WallDefensenAction">
+		<property name="walldefService" ref="walldefService"></property>  
+	</bean>
+	<bean id="walldefService" class="com.crystalcg.gamedev.buildingFunction.service.WallDefensenService"> 
+	 	<property name="walldefDao" ref="walldefDao"></property> 
+	</bean>
+	<bean id="walldefDao" class=" com.crystalcg.gamedev.buildingFunction.dao.WallDefensenDao"> 	
+	    <property name="walldefMapper" ref="walldefMapper"></property>   
+	</bean>
+	<bean id="walldefMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	    <property name="mapperInterface" value="com.crystalcg.gamedev.buildingFunction.mapper.WallDefensenMapper"></property>
+	    <property name="sqlSessionFactory" ref="sqlSessionFactory"> </property>
+	</bean>    
+</beans>

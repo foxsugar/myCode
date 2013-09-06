@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/develop/!svn/ver/6999/wok/src/com/crystalcg/gamedev/chat
+END
+ChatAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/develop/!svn/ver/5805/wok/src/com/crystalcg/gamedev/chat/ChatAction.java
+END
+MessageIndex.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/develop/!svn/ver/5796/wok/src/com/crystalcg/gamedev/chat/MessageIndex.java
+END
+MessageStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/develop/!svn/ver/5805/wok/src/com/crystalcg/gamedev/chat/MessageStore.java
+END
+MessageQueue.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/develop/!svn/ver/2080/wok/src/com/crystalcg/gamedev/chat/MessageQueue.java
+END
+ModifyIndex.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/develop/!svn/ver/2001/wok/src/com/crystalcg/gamedev/chat/ModifyIndex.java
+END
+Message.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/develop/!svn/ver/6999/wok/src/com/crystalcg/gamedev/chat/Message.java
+END
+Test.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/develop/!svn/ver/2080/wok/src/com/crystalcg/gamedev/chat/Test.java
+END

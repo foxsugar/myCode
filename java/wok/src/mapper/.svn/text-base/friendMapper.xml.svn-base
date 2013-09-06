@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+	<mapper namespace="com.crystalcg.gamedev.friend.mapper.FriendMapper">
+		<insert id="insertFriend" parameterType="java.util.Map">
+			INSERT INTO user_friend(character_id,friend_id,friend_type) values(#{characterId},#{friendId},#{friendType})
+		</insert>
+		<insert id="insertFriendList" parameterType="java.util.Map">
+			INSERT INTO user_friend_list(character_id,apply_id) values(#{characterId},#{applyId})
+		</insert>
+		<select id="getFriendList" parameterType="java.util.Map" resultType="java.util.Map">
+			SELECT user_character.name,user_friend_list.id FROM user_character,user_friend_list WHERE user_character.id=user_friend_list.apply_id and user_friend_list.character_id=#{characterId}
+			limit #{page},#{pageSize} 
+		</select>
+		<select id="getFriendListAmount" parameterType="int" resultType="int">
+			SELECT count(*) FROM user_friend_list WHERE character_id=#{value}
+		</select>
+		<select id="getFriendAmount" parameterType="java.util.Map" resultType="int">
+			SELECT count(*) FROM user_friend WHERE character_id=#{characterId} and friend_type = #{friendType}
+		</select>
+		<delete id="deleteFriendList" parameterType="java.util.Map">
+			DELETE FROM user_friend_list WHERE id = #{id} and character_id=#{characterId};
+		</delete>
+		<select id="getFriendListById" parameterType="int" resultType="java.util.Map">
+			SELECT id,character_id characterId,apply_id applyId FROM user_friend_list WHERE id = #{value};
+		</select>
+		<select id="getFriendListByApplyId" parameterType="java.util.Map" resultType="java.util.Map">
+			SELECT id,character_id characterId,apply_id applyId FROM user_friend_list WHERE character_id = #{characterId} and apply_id=#{applyId};
+		</select>
+		<select id="getUserFriends" parameterType="java.util.Map" resultType="com.crystalcg.gamedev.friend.domain.FriendInfo">
+			SELECT user_friend.id ,friend.name friendName,friend.country_id friendCountryId,friend.level friendLevel ,friendCity.level friendMaincityLevel,
+			friend.login_time loginTime,friend.logout_time logoutTime,friendCity.x friendX,friendCity.y friendY,alliance.name friendLeague,
+			mine.x mineX,mine.y mineY,friend.id friendId
+			FROM user_friend,user_main_city friendCity,user_main_city mine 
+			,user_character friend left join user_alliance alliance on friend.alliance_id = alliance.id
+			WHERE user_friend.friend_id = friend.id and user_friend.character_id = mine.character_id and user_friend.friend_id =friendCity.character_id
+			and user_friend.friend_id = friend.id and user_friend.character_id = #{characterId} and friend_type = #{friendType} 
+			ORDER BY user_friend.id LIMIT #{page},#{pageSize}
+		</select>
+		<select id="getUserFriendByFriendId" parameterType="java.util.Map" resultType="java.util.Map">
+			SELECT id,character_id characterId,friend_id friendId,friend_type friendType FROM user_friend
+			WHERE character_id=#{characterId} and friend_id=#{friendId}
+		</select>
+		<select id="selectUserFriend" parameterType="java.util.Map" resultType="com.crystalcg.gamedev.friend.domain.FriendInfo">
+			SELECT user_friend.id ,friend.name friendName,friend.country_id friendCountryId,friend.level friendLevel ,friendCity.level friendMaincityLevel,
+			friend.login_time loginTime,friend.logout_time logoutTime,friendCity.x friendX,friendCity.y friendY,alliance.name friendLeague,
+			mine.x mineX,mine.y mineY,friend.id friendId
+			FROM user_friend,user_main_city friendCity,user_main_city mine  
+			,user_character friend left join user_alliance alliance on friend.alliance_id = alliance.id
+			WHERE user_friend.friend_id = friend.id and user_friend.character_id = mine.character_id and user_friend.friend_id =friendCity.character_id
+			and user_friend.friend_id = friend.id and user_friend.character_id = #{characterId} and friend_type = #{friendType} and friend.name=#{name}
+		</select>
+		<select id="getUserFriendById" parameterType="int" resultType="java.util.Map">
+			SELECT user_friend.id ,character_id characterId,friend_id friendId,friend_type friendType
+			FROM user_friend
+			WHERE user_friend.id = #{value} 
+		</select>
+		<delete id="deleteUserFriend" parameterType="java.util.Map">
+			DELETE FROM user_friend WHERE id=#{id} and character_id=#{characterId}
+		</delete>
+		<delete id="deleteUserFriendByFriendId" parameterType="java.util.Map">
+			DELETE FROM user_friend WHERE friend_id=#{friendId} and character_id=#{characterId}
+		</delete>
+		<select id="getFriendLocation" parameterType="java.util.Map" resultType="int">
+			SELECT count(*) FROM user_friend where character_id=#{characterId} and friend_type=#{friendType} and id&lt;=#{id}
+		</select>
+		<!-- 世界地图显示全部仇人 -->
+		<select id="getEnemyLocation" parameterType="int" resultType="java.util.Map">
+			SELECT t2.character_id id,t2.x,t2.y FROM user_friend t1,user_main_city t2 where t1.character_id=#{value} and t1.friend_type=1 and t1.friend_id=t2.character_id
+		</select>
+	</mapper>

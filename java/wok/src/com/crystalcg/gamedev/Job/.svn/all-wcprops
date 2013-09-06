@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/develop/!svn/ver/9317/wok/src/com/crystalcg/gamedev/Job
+END
+ExecuteBattleJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/develop/!svn/ver/9317/wok/src/com/crystalcg/gamedev/Job/ExecuteBattleJob.java
+END
+ExecuteTavernJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/develop/!svn/ver/5751/wok/src/com/crystalcg/gamedev/Job/ExecuteTavernJob.java
+END
+ExecuteJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/develop/!svn/ver/9096/wok/src/com/crystalcg/gamedev/Job/ExecuteJob.java
+END

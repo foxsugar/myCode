@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.crystalcg.gamedev.building.mapper.BuildingMapper"> 
+  <resultMap type="com.crystalcg.gamedev.building.domain.Building" id="building">
+  	<id property="id" column="id"/>
+  	<result property="characterId" column="character_id"/>
+  	<result property="buildingNo" column="building_no"/>
+  	<result property="level" column="level"/>
+  	<result property="location" column="location"/>
+  	<result property="time" column="time"/>
+  </resultMap>
+  <insert id="insertBuilding" parameterType="com.crystalcg.gamedev.building.domain.Building">
+    INSERT INTO USER_MAIN_BUILDING(character_id,building_no,level,location)
+    VALUES(#{characterId},#{buildingNo},#{level},#{location})
+  </insert>
+  <delete id="deleteBuildingByLocation" parameterType="com.crystalcg.gamedev.building.domain.Building">
+	DELETE FROM USER_MAIN_BUILDING
+	WHERE character_id=#{characterId} AND location=#{location}
+  </delete>
+  <update id="updateBuildingbyLocation" parameterType="com.crystalcg.gamedev.building.domain.Building">
+    UPDATE USER_MAIN_BUILDING
+    SET building_no=#{buildingNo},level=#{level}
+    WHERE character_id=#{characterId} AND location=#{location}
+  </update>
+  <select id="getAllBuildingsByCharacterId" parameterType="int" resultMap="building">
+    SELECT * FROM USER_MAIN_BUILDING
+    WHERE character_id=#{value} order by location;
+  </select>
+  <select id="getBuildingByLoation" parameterType="com.crystalcg.gamedev.building.domain.Building" resultMap="building">
+    SELECT * FROM USER_MAIN_BUILDING
+    WHERE character_id=#{characterId} AND location=#{location}
+  </select>
+  
+  <select id="getPreBuildingsAmount" parameterType="com.crystalcg.gamedev.building.domain.Building" resultType="int">
+    SELECT count(id) FROM USER_MAIN_BUILDING
+    WHERE character_id=#{characterId} AND building_no like #{buildingNo}"%" and level>=#{level}
+  </select>
+  <select id="getBuildingsAmountByPrefix" parameterType="com.crystalcg.gamedev.building.domain.Building" resultType="int">
+    SELECT count(id) FROM USER_MAIN_BUILDING
+    WHERE character_id=#{characterId} AND building_no like #{buildingNo}"%"
+  </select>
+  <select id="getbBuildingByPrefix" parameterType="com.crystalcg.gamedev.building.domain.Building" resultMap="building">
+    SELECT * FROM USER_MAIN_BUILDING
+    WHERE character_id=#{characterId} AND building_no like #{buildingNo}"%"
+  </select>
+  <select id="getBuildingAmountByNo" parameterType="java.util.Map" resultType="int">
+  	SELECT count(*) FROM USER_MAIN_BUILDING WHERE character_id=#{characterId} AND building_no = #{buildingNo}
+  </select>
+  
+</mapper>
